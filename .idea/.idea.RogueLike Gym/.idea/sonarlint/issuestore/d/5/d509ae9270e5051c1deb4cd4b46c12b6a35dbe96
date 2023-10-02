@@ -1,0 +1,5 @@
+
+}csharpsquid:S101"aRename class 'playerMovement' to match pascal case naming rules, consider using 'PlayerMovement'.(ëéŠŸ
+Jcsharpsquid:S3903"-Move 'playerMovement' into a named namespace.(ëéŠŸ
+@csharpsquid:S125"Remove this commented out code.( àÚûÿÿÿÿ
+@csharpsquid:S125"Remove this commented out code.(ãÓ€™ûÿÿÿÿ
