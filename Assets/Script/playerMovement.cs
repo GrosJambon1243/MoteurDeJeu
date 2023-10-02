@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
         [SerializeField] private float speed = 1f;
+        private Animator _animator;
         Rigidbody2D theRB;
     
         
     
         private void Start()
         {
-            // animator = Getcomponent<Rigidbody2D>();
+            
             theRB = GetComponent<Rigidbody2D>();
-           
+            _animator = GetComponent<Animator>();
+
         }
 
         private void FixedUpdate()
@@ -21,10 +22,17 @@ public class playerMovement : MonoBehaviour
 
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
-            //animator.SetBool("IsWalking", Mathf.Abs(x)>0 || Mathf.Abs(y) > 0);
+            
             theRB.velocity = new Vector3(x, y, 0f) * speed;
 
-
+            if (theRB.velocity != Vector2.zero)
+            {
+                _animator.SetBool("isWalking", true);
+            }
+            else
+            {
+                _animator.SetBool("isWalking", false);
+            }
             if (x > 0)
             {
                 transform.localScale = new Vector3(1, 1, 1);
