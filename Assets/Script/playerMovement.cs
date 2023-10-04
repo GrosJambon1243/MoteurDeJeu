@@ -5,14 +5,14 @@ public class playerMovement : MonoBehaviour
 {
         [SerializeField] private float speed = 1f;
         private Animator _animator;
-        Rigidbody2D theRB;
+        private Rigidbody2D _theRb;
     
         
     
         private void Start()
         {
             
-            theRB = GetComponent<Rigidbody2D>();
+            _theRb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
 
         }
@@ -23,16 +23,9 @@ public class playerMovement : MonoBehaviour
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
             
-            theRB.velocity = new Vector3(x, y, 0f) * speed;
+            _theRb.velocity = (new Vector3(x, y, 0f).normalized * speed);
 
-            if (theRB.velocity != Vector2.zero)
-            {
-                _animator.SetBool("isWalking", true);
-            }
-            else
-            {
-                _animator.SetBool("isWalking", false);
-            }
+            _animator.SetBool("isWalking", _theRb.velocity != Vector2.zero);
             if (x > 0)
             {
                 transform.localScale = new Vector3(1, 1, 1);
