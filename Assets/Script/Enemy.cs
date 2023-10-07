@@ -1,28 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    GameObject player;
+    private GameObject player;
+    private Rigidbody2D _skeleRigidBody;
     private Vector3 direction;
     [SerializeField]float moveSpeed;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        _skeleRigidBody = GetComponent<Rigidbody2D>();
     }
 
     
-    void Update()
+
+    private void FixedUpdate()
     {
         if (player != null)
         {
             direction = (player.transform.position - transform.position).normalized;
-         
-            transform.Translate(direction * (moveSpeed * Time.deltaTime));
-            
+
+            _skeleRigidBody.velocity = direction * (moveSpeed * Time.fixedDeltaTime);
+
         }
-         
     }
-    
 }

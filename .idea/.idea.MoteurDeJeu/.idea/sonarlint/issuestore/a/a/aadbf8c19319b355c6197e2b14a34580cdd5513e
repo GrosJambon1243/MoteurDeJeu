@@ -1,3 +1,4 @@
 
-@csharpsquid:S3903"$Move 'Enemy' into a named namespace.(àı½}
-csharpsquid:S1450"XRemove the field 'direction' and declare it as a local variable in the relevant methods.(¥³…˜ùÿÿÿÿ8æÅ‹È¯1
+@csharpsquid:S3903"$Move 'Enemy' into a named namespace.(àı½}
+csharpsquid:S1450
+"XRemove the field 'direction' and declare it as a local variable in the relevant methods.(¥³…˜ùÿÿÿÿ8® ®ß°1
