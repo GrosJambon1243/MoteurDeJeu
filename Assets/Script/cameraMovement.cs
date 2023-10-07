@@ -7,6 +7,9 @@ public class cameraMovement : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField]  int zoom = -10;
+    
+
+    
 
     private void LateUpdate()
     {

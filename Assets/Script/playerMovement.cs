@@ -7,7 +7,7 @@ public class playerMovement : MonoBehaviour
         private Animator _animator;
         private Rigidbody2D _theRb;
     
-        
+            
     
         private void Start()
         {
@@ -34,5 +34,13 @@ public class playerMovement : MonoBehaviour
             {
                 transform.localScale = new Vector3(-1, 1, 1);
             }
+
+
+        }
+        
+        private void PunchAttack()
+        {
+            
+            
         }
 }

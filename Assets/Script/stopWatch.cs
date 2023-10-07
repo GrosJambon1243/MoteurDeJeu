@@ -16,6 +16,7 @@ public class stopWatch : MonoBehaviour
         _isRunnig = true;
         
     }
+   
 
     
     void Update()
