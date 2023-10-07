@@ -6,6 +6,7 @@ public class playerMovement : MonoBehaviour
         [SerializeField] private float speed = 1f;
         private Animator _animator;
         private Rigidbody2D _theRb;
+        [SerializeField] private GameObject punchHitBox;
     
             
     
@@ -34,13 +35,27 @@ public class playerMovement : MonoBehaviour
             {
                 transform.localScale = new Vector3(-1, 1, 1);
             }
-
+            PunchAttack();
 
         }
         
         private void PunchAttack()
         {
-            
+            if (Input.GetMouseButton(0))
+            {
+                _animator.SetBool("isPunching",true);
+                
+                
+                Invoke("StopPunching",0.25f);
+            }
             
         }
+
+        void StopPunching()
+        {
+            _animator.SetBool("isPunching",false);
+            
+        }
+        
+    
 }

@@ -11,6 +11,8 @@ public class stopWatch : MonoBehaviour
     [SerializeField] TMP_Text _textStopWatch;
     private float _elapsedTime;
     private bool _isRunnig = false;
+    
+    
     void Start()
     {
         _isRunnig = true;
