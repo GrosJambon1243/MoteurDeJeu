@@ -15,8 +15,10 @@ public class playerMovement : MonoBehaviour
         public float swordRange =0.5f;
         public LayerMask enemyLayers;
         public int swordDamage = 50, maxHealth = 100;
+        public healthBar hpBar;
         [HideInInspector]
         public int currentHealth;
+        
         
     
             
@@ -29,7 +31,8 @@ public class playerMovement : MonoBehaviour
             _sprite = GetComponent<SpriteRenderer>();
             _animator.SetInteger("AnimState",1);
             
-
+            hpBar.SetMaxHealth(maxHealth);
+            hpBar.SetHealth(currentHealth,maxHealth);
         }
 
         private void FixedUpdate()
@@ -69,6 +72,12 @@ public class playerMovement : MonoBehaviour
                     enemy.GetComponent<Enemy>().TakingDmg(swordDamage);
                 }
                 Invoke("SwordCoolDown",swordAtkCoold);
+        }
+
+        public void TakingDmg(int damage)
+        {
+            currentHealth -= damage;
+            hpBar.SetHealth(currentHealth,maxHealth);
         }
         
         public void SwordCoolDown()
