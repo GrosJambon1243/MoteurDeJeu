@@ -32,7 +32,7 @@ public class stopWatch : MonoBehaviour
 
     private void UpdateStopWatch()
     {
-        string formattedTime = string.Format("{0:00}:{1:00}:{2:00}", Mathf.Floor(_elapsedTime / 3600), Mathf.Floor((_elapsedTime / 60) % 60), _elapsedTime % 60);
+        string formattedTime = string.Format("{0:00}:{1:00}" , Mathf.Floor((_elapsedTime / 60) % 60), _elapsedTime % 60);
 
         _textStopWatch.text = formattedTime;
 
