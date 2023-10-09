@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2521620557215478714}
   - component: {fileID: 7323433112124276633}
   - component: {fileID: 1615910254971787204}
+  - component: {fileID: 826397631544082620}
   m_Layer: 6
   m_Name: Enemy Skeleton
   m_TagString: Enemy
@@ -172,3 +173,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
+  maxHealth: 100
+--- !u!95 &826397631544082620
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6299625939727077223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a9926e53ded393e43ba35c5e3816e79e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

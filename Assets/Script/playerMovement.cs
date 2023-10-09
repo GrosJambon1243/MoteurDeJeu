@@ -1,6 +1,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class playerMovement : MonoBehaviour
 {
@@ -13,13 +14,16 @@ public class playerMovement : MonoBehaviour
         public Transform swordSpot;
         public float swordRange =0.5f;
         public LayerMask enemyLayers;
-        public int swordDamage = 50;
+        public int swordDamage = 50, maxHealth = 100;
+        [HideInInspector]
+        public int currentHealth;
         
     
             
     
         private void Start()
         {
+            currentHealth = maxHealth;
             _theRb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _sprite = GetComponent<SpriteRenderer>();
