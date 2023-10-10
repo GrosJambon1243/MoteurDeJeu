@@ -1,0 +1,6 @@
+
+xcsharpsquid:S101"WRename class 'healthBar' to match pascal case naming rules, consider using 'HealthBar'.(òâéÓıÿÿÿÿ
+Jcsharpsquid:S3903"(Move 'healthBar' into a named namespace.(òâéÓıÿÿÿÿ
+acsharpsquid:S1104	"DMake this field 'private' and encapsulate it in a 'public' property.(ÑÅøÎ
+fcsharpsquid:S1104
+"DMake this field 'private' and encapsulate it in a 'public' property.(“»í’ıÿÿÿÿ

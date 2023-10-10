@@ -9,6 +9,7 @@ public class playerMovement : MonoBehaviour
         private Animator _animator;
         private Rigidbody2D _theRb;
         private SpriteRenderer _sprite;
+        private bool isAttacking;
         [SerializeField] private float swordAtkCoold = 0;
         [SerializeField] private bool canSwingSword;
         public Transform swordSpot;
@@ -18,10 +19,33 @@ public class playerMovement : MonoBehaviour
         public healthBar hpBar;
         [HideInInspector]
         public int currentHealth;
-        
-        
-    
+
+
+
+        public void FourFrameSword()
+        {
+            Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemys)
+            {
+                enemy.GetComponent<Enemy>().TakingDmg(swordDamage);
+            }
+            Invoke("SwordCoolDown",swordAtkCoold);
             
+        }
+
+        public void Attacking()
+        {
+            isAttacking = true;
+            _theRb.velocity = Vector2.zero;
+        }
+
+        public void NotAttacking()
+        {
+            isAttacking = false;
+        }
+        
+        
     
         private void Start()
         {
@@ -37,28 +61,29 @@ public class playerMovement : MonoBehaviour
 
         private void FixedUpdate()
         {
-
-            float x = Input.GetAxisRaw("Horizontal");
-            float y = Input.GetAxisRaw("Vertical");
+            if (!isAttacking)
+            {
+                float x = Input.GetAxisRaw("Horizontal");
+                float y = Input.GetAxisRaw("Vertical");
             
-            _theRb.velocity = new Vector3(x, y, 0f).normalized * (speed * Time.fixedDeltaTime);
-            _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
-            if (x < 0)
-            {
-                _sprite.flipX = false;
-            }
-            else if (x > 0)
-            {
-                _sprite.flipX = true;
-            }
+                _theRb.velocity = new Vector3(x, y, 0f).normalized * (speed * Time.fixedDeltaTime);
+                _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
+                if (x < 0)
+                {
+                    _sprite.flipX = false;
+                }
+                else if (x > 0)
+                {
+                    _sprite.flipX = true;
+                }
 
-            if (Input.GetMouseButton(0) && canSwingSword)
-            {
-                SwordAttack();
-            }
-
-            
+                if (Input.GetMouseButton(0) && canSwingSword)
+                {
+                    SwordAttack();
+                }
                 
+                
+            }
 
         }
 
@@ -66,15 +91,6 @@ public class playerMovement : MonoBehaviour
         {
                 _animator.SetTrigger("Attack");
                 canSwingSword = false;
-                // hitEnemys est un array qui store les enemy qui sont hit ; OverlapCircleAll creer un cercle autour d'un point avec un radius;
-                
-                Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
-
-                foreach (Collider2D enemy in hitEnemys)
-                {
-                    enemy.GetComponent<Enemy>().TakingDmg(swordDamage);
-                }
-                Invoke("SwordCoolDown",swordAtkCoold);
         }
 
         public void TakingDmg(int damage)
