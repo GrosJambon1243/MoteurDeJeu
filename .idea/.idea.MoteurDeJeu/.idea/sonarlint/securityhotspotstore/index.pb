@@ -9,3 +9,7 @@ J
 Assets/Script/stopWatch.cs,b\d\bd53b3f46735aa419df764e582490b62bc6c6ba8
 J
 Assets/Script/healthBar.cs,8\7\87dd6c84f083122278b3540248fa449849af0ace
+L
+Assets/Script/enemyDamage.cs,a\1\a1e3ef257576a66d74ed85ebdb1f1914129466eb
+J
+Assets/Script/enemyBlob.cs,e\7\e7d319d597db0cd18cdd5c5d47174431aea19c52

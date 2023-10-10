@@ -1,30 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class Enemy : enemyDamage
+public class enemyBlob : enemyDamage
 {
     private GameObject player;
-    private Rigidbody2D _skeleRigidBody;
-    private BoxCollider2D _boxCollider2D;
+    private Rigidbody2D _blobRigidBody;
+    private BoxCollider2D _blobBoxCollider2D;
     private Vector3 direction;
     [SerializeField]float moveSpeed;
-    public int maxHealth = 100;
-    private int currentHealth;
+    public int blobMaxHealth = 100;
+    private int blobCurrentHealth;
     public Animator animator;
     private SpriteRenderer _spriteRenderer;
-    void Start()
+    public Transform firePoint;
+
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        _skeleRigidBody = GetComponent<Rigidbody2D>();
-        _boxCollider2D = GetComponent<BoxCollider2D>();
+        _blobRigidBody = GetComponent<Rigidbody2D>();
+        _blobBoxCollider2D = GetComponent<BoxCollider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        currentHealth = maxHealth;
+        blobCurrentHealth = blobMaxHealth;
     }
-
-    
 
     private void FixedUpdate()
     {
@@ -32,8 +31,8 @@ public class Enemy : enemyDamage
         {
             direction = (player.transform.position - transform.position).normalized;
 
-            _skeleRigidBody.velocity = direction * (moveSpeed * Time.fixedDeltaTime);
-            animator.SetInteger("isWalking",1);
+            _blobRigidBody.velocity = direction * (moveSpeed * Time.fixedDeltaTime);
+            animator.SetInteger("blobWalking",1);
 
         }
 
@@ -49,22 +48,10 @@ public class Enemy : enemyDamage
 
     public override void TakingDmg(int dmg)
     {
-        currentHealth -= dmg;
-        
-        animator.SetTrigger("isHurt");
-        if (currentHealth <= 0)
+        blobCurrentHealth -= dmg;
+        if (blobCurrentHealth <= 0)
         {
-            animator.SetTrigger("isHurt");
-            SkeletonDeath();
+            Destroy(gameObject);
         }
-    }
-
-    
-
-    void SkeletonDeath()
-    {
-        _boxCollider2D.enabled = false;
-        this.enabled = false;
-        Destroy(gameObject,0);
     }
 }

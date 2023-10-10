@@ -28,8 +28,18 @@ public class playerMovement : MonoBehaviour
 
             foreach (Collider2D enemy in hitEnemys)
             {
-                enemy.GetComponent<Enemy>().TakingDmg(swordDamage);
+                if (enemy.CompareTag("Blob"))
+                {
+                    enemy.GetComponent<enemyBlob>().TakingDmg(swordDamage);
+                }
+                else if (enemy.CompareTag("Skeleton"))
+                {
+                    enemy.GetComponent<Enemy>().TakingDmg(swordDamage);
+                }
+               
+                
             }
+
             Invoke("SwordCoolDown",swordAtkCoold);
             
         }
@@ -70,11 +80,11 @@ public class playerMovement : MonoBehaviour
                 _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
                 if (x < 0)
                 {
-                    _sprite.flipX = false;
+                    transform.localScale = new Vector3(-2, 2, 0);
                 }
                 else if (x > 0)
                 {
-                    _sprite.flipX = true;
+                    transform.localScale = new Vector3(2, 2, 0);
                 }
 
                 if (Input.GetMouseButton(0) && canSwingSword)
