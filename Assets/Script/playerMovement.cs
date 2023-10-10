@@ -57,6 +57,9 @@ public class playerMovement : MonoBehaviour
                 SwordAttack();
             }
 
+            
+                
+
         }
 
         public void SwordAttack()
