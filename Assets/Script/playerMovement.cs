@@ -28,16 +28,7 @@ public class playerMovement : MonoBehaviour
 
             foreach (Collider2D enemy in hitEnemys)
             {
-                if (enemy.CompareTag("Blob"))
-                {
-                    enemy.GetComponent<enemyBlob>().TakingDmg(swordDamage);
-                }
-                else if (enemy.CompareTag("Skeleton"))
-                {
-                    enemy.GetComponent<Enemy>().TakingDmg(swordDamage);
-                }
-               
-                
+                enemy.GetComponent<enemyDamage>().TakingDmg(swordDamage);
             }
 
             Invoke("SwordCoolDown",swordAtkCoold);
