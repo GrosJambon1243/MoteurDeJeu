@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 1255095947}
   - component: {fileID: 1255095946}
   - component: {fileID: 1255095949}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RealPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1426,7 +1426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1447489151}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwordSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1594,7 +1594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1744115904}
   - component: {fileID: 1744115905}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,9 +1808,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 220119548829050969, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 220119548829050969, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2116879176563741136, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 2244014884298443723, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
       propertyPath: m_Name
       value: Enemy Blob
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939982478522710587, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 9085941542724873081, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}
+    - target: {fileID: 3939982478522710587, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
+      propertyPath: playerLayerMask.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 7090330309308484851, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
       propertyPath: m_LocalPosition.x

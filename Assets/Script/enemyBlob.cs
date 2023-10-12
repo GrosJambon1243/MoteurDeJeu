@@ -15,6 +15,8 @@ public class enemyBlob : enemyDamage
     public Animator animator;
     private SpriteRenderer _spriteRenderer;
     public Transform firePoint;
+    [SerializeField] GameObject bullet;
+    public LayerMask playerLayerMask;
 
     private void Start()
     {
@@ -53,5 +55,12 @@ public class enemyBlob : enemyDamage
         {
             Destroy(gameObject);
         }
+    }
+
+    public void FireBullet()
+    {
+        RaycastHit2D rayCastBullet = Physics2D.Raycast(firePoint.position, direction, 50f, playerLayerMask);
+
+        Instantiate(bullet,firePoint, rayCastBullet);
     }
 }
