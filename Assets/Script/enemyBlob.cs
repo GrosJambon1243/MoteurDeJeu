@@ -9,21 +9,22 @@ public class enemyBlob : enemyDamage
     private Rigidbody2D _blobRigidBody;
     private BoxCollider2D _blobBoxCollider2D;
     private Vector3 direction;
-    [SerializeField]float moveSpeed;
+    [SerializeField]float moveSpeed,range;
     public int blobMaxHealth = 100;
     private int blobCurrentHealth;
     public Animator animator;
-    private SpriteRenderer _spriteRenderer;
+    
     public Transform firePoint;
-    [SerializeField] GameObject bullet;
-    public LayerMask playerLayerMask;
+    [SerializeField] GameObject bullet,currency,experience;
+   
+    
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         _blobRigidBody = GetComponent<Rigidbody2D>();
         _blobBoxCollider2D = GetComponent<BoxCollider2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+       
         blobCurrentHealth = blobMaxHealth;
     }
 
@@ -40,12 +41,18 @@ public class enemyBlob : enemyDamage
 
         if (direction.x < 0)
         {
-            _spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1, 1, 0);
         }
         else if(direction.x > 0)
         {
-            _spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 0);
         }
+
+        if (Input.GetKey(KeyCode.C))
+        {
+            ShootBullet();
+        }
+        
     }
 
     public override void TakingDmg(int dmg)
@@ -53,14 +60,20 @@ public class enemyBlob : enemyDamage
         blobCurrentHealth -= dmg;
         if (blobCurrentHealth <= 0)
         {
-            Destroy(gameObject);
+            DeathAnim(currency,experience);
         }
     }
 
-    public void FireBullet()
+    public void ShootBullet()
     {
-        RaycastHit2D rayCastBullet = Physics2D.Raycast(firePoint.position, direction, 50f, playerLayerMask);
+        Instantiate(bullet, firePoint.position, firePoint.rotation);
+    }
 
-        Instantiate(bullet,firePoint, rayCastBullet);
+    public override void DeathAnim(GameObject coin, GameObject expCrystal)
+    {
+        Instantiate(experience);
+        _blobBoxCollider2D.enabled = false;
+        this.enabled = false;
+        Destroy(gameObject,0);
     }
 }

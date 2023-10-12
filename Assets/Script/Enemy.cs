@@ -14,13 +14,14 @@ public class Enemy : enemyDamage
     public int maxHealth = 100;
     private int currentHealth;
     public Animator animator;
-    private SpriteRenderer _spriteRenderer;
+   
+    [SerializeField] GameObject currency, experience;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         _skeleRigidBody = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        
         currentHealth = maxHealth;
     }
 
@@ -39,11 +40,11 @@ public class Enemy : enemyDamage
 
         if (direction.x < 0)
         {
-            _spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1, 1, 0);
         }
         else if(direction.x > 0)
         {
-            _spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 0);
         }
     }
 
@@ -55,16 +56,18 @@ public class Enemy : enemyDamage
         if (currentHealth <= 0)
         {
             animator.SetTrigger("isHurt");
-            SkeletonDeath();
+            DeathAnim(currency,experience);
         }
     }
 
-    
 
-    void SkeletonDeath()
+    public override void DeathAnim(GameObject coin, GameObject expCrystal)
     {
+        Instantiate(experience);
         _boxCollider2D.enabled = false;
         this.enabled = false;
         Destroy(gameObject,0);
     }
+
+  
 }

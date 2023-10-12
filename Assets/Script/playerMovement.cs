@@ -98,6 +98,10 @@ public class playerMovement : MonoBehaviour
         {
             currentHealth -= damage;
             hpBar.SetHealth(currentHealth,maxHealth);
+            if (currentHealth<= 0)
+            {
+                hpBar.SetHealth(0,maxHealth);
+            }
         }
         
         public void SwordCoolDown()
