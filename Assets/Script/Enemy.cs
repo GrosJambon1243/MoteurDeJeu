@@ -10,22 +10,23 @@ public class Enemy : enemyDamage
     private Rigidbody2D _skeleRigidBody;
     private BoxCollider2D _boxCollider2D;
     private Vector3 direction;
-    [SerializeField]float moveSpeed;
-    public int maxHealth = 100;
+    [SerializeField] float moveSpeed;
+    public int maxHealth = 100, damageDone;
     private int currentHealth;
     public Animator animator;
-   
+
     [SerializeField] GameObject currency, experience;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         _skeleRigidBody = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
-        
+
         currentHealth = maxHealth;
     }
 
-    
+
 
     private void FixedUpdate()
     {
@@ -34,7 +35,7 @@ public class Enemy : enemyDamage
             direction = (player.transform.position - transform.position).normalized;
 
             _skeleRigidBody.velocity = direction * (moveSpeed * Time.fixedDeltaTime);
-            animator.SetInteger("isWalking",1);
+            animator.SetInteger("isWalking", 1);
 
         }
 
@@ -42,7 +43,7 @@ public class Enemy : enemyDamage
         {
             transform.localScale = new Vector3(1, 1, 0);
         }
-        else if(direction.x > 0)
+        else if (direction.x > 0)
         {
             transform.localScale = new Vector3(-1, 1, 0);
         }
@@ -51,12 +52,12 @@ public class Enemy : enemyDamage
     public override void TakingDmg(int dmg)
     {
         currentHealth -= dmg;
-        
+
         animator.SetTrigger("isHurt");
         if (currentHealth <= 0)
         {
             animator.SetTrigger("isHurt");
-            DeathAnim(currency,experience);
+            DeathAnim(currency, experience);
         }
     }
 
@@ -66,8 +67,15 @@ public class Enemy : enemyDamage
         Instantiate(experience);
         _boxCollider2D.enabled = false;
         this.enabled = false;
-        Destroy(gameObject,0);
+        Destroy(gameObject, 0);
     }
 
   
+
+    private void OnCollisionEnter2D(Collision2D hitInfo)
+    {
+        player.GetComponent<playerMovement>().TakingDmg(damageDone);
+
+       
+    }
 }

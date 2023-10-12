@@ -113,7 +113,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &7323433112124276633
 BoxCollider2D:
@@ -174,7 +174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 50
   maxHealth: 100
+  damageDone: 20
   animator: {fileID: 826397631544082620}
+  currency: {fileID: 0}
+  experience: {fileID: 0}
 --- !u!95 &826397631544082620
 Animator:
   serializedVersion: 5
