@@ -36,7 +36,7 @@ public class enemyBlob : enemyDamage
             direction = (player.transform.position - transform.position).normalized;
 
             _blobRigidBody.velocity = direction * (moveSpeed * Time.fixedDeltaTime);
-            animator.SetInteger("blobWalking",1);
+            
 
         }
 
@@ -59,8 +59,10 @@ public class enemyBlob : enemyDamage
     public override void TakingDmg(int dmg)
     {
         blobCurrentHealth -= dmg;
+        animator.SetTrigger("isHurt");
         if (blobCurrentHealth <= 0)
         {
+           
             DeathAnim(currency,experience);
         }
     }
