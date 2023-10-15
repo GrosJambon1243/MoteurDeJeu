@@ -14,6 +14,7 @@ public class Enemy : enemyDamage
     public int maxHealth = 100, damageDone;
     private int currentHealth;
     public Animator animator;
+    
 
     [SerializeField] GameObject currency, experience;
 
@@ -74,8 +75,9 @@ public class Enemy : enemyDamage
 
     private void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        player.GetComponent<playerMovement>().TakingDmg(damageDone);
-
-       
+        if (hitInfo.collider.gameObject.CompareTag("Player") )
+        {
+            player.GetComponent<playerMovement>().TakingDmg(damageDone);
+        }
     }
 }

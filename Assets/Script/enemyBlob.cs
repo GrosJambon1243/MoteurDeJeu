@@ -14,6 +14,7 @@ public class enemyBlob : enemyDamage
     private int blobCurrentHealth;
     public Animator animator;
     
+    
     public Transform firePoint;
     [SerializeField] GameObject bullet,currency,experience;
    
@@ -64,7 +65,7 @@ public class enemyBlob : enemyDamage
         }
     }
 
-    public void ShootBullet()
+    private void ShootBullet()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
     }

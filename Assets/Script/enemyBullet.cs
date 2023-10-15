@@ -20,6 +20,11 @@ public class enemyBullet : MonoBehaviour
         rb.velocity =  (playerPosition.transform.position - transform.position)* bulletSpeed;
     }
 
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         var thePlayer = hitInfo.GetComponent<playerMovement>();
@@ -27,6 +32,7 @@ public class enemyBullet : MonoBehaviour
         if (thePlayer != null)
         {
             thePlayer.TakingDmg(bulletDmg);
+            Destroy(gameObject);
         }
     }
 }

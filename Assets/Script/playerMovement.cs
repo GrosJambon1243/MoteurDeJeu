@@ -20,7 +20,7 @@ public class playerMovement : MonoBehaviour
         [HideInInspector]
         public int currentHealth;
 
-
+      
 
         public void FourFrameSword()
         {
@@ -81,12 +81,15 @@ public class playerMovement : MonoBehaviour
                 if (Input.GetMouseButton(0) && canSwingSword)
                 {
                     SwordAttack();
+                   
                 }
                 
                 
             }
 
         }
+
+      
 
         public void SwordAttack()
         {
@@ -103,6 +106,9 @@ public class playerMovement : MonoBehaviour
                 hpBar.SetHealth(0,maxHealth);
             }
         }
+
+       
+        
         
         public void SwordCoolDown()
         {

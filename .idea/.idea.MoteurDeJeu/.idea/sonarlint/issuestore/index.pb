@@ -15,3 +15,5 @@ J
 Assets/Script/enemyBlob.cs,e\7\e7d319d597db0cd18cdd5c5d47174431aea19c52
 L
 Assets/Script/enemyBullet.cs,e\2\e2185f964384d3f21c5f617734071596d7f16fe3
+L
+Assets/Script/gameManager.cs,c\4\c4d1820513dcb071688fad24a05294ef9d912ff9

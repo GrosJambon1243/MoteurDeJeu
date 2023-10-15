@@ -210,11 +210,8 @@ MonoBehaviour:
   animator: {fileID: 5907782460201973671}
   firePoint: {fileID: 220119548829050969}
   bullet: {fileID: 9085941542724873081, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}
-  currency: {fileID: 0}
-  experience: {fileID: 0}
-  playerLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
+  currency: {fileID: 7506878047627194280, guid: 67bec4e19bf40cd41b103be42bcdd44f, type: 3}
+  experience: {fileID: 3600915012673053252, guid: be93360cae5f04b4a952d22a8fd49da7, type: 3}
 --- !u!95 &5907782460201973671
 Animator:
   serializedVersion: 5
