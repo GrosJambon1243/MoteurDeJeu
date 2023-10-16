@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
+    
     [SerializeField] private Transform[] spawPoints;
     [SerializeField] private GameObject skeleton, blob;
     [SerializeField] private experienceBar experienceBar;
@@ -40,7 +42,9 @@ public class gameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         SpawnEnemies();
+        
     }
 
     public void SpawnEnemies()
@@ -50,7 +54,8 @@ public class gameManager : MonoBehaviour
             spawnTimer -= Time.deltaTime;
             if (spawnTimer<= 0)
             {
-                Instantiate(skeleton, spawPoints[0].transform.position,spawPoints[0].transform.rotation);
+                Instantiate(skeleton, spawPoints[0].transform.position,quaternion.identity);
+                
                 spawnTimer = timeUntilSpawn;
             }
         }
