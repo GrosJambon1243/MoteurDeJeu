@@ -393,15 +393,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2244014884298443723, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939982478522710587, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
+      propertyPath: attackCd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939982478522710587, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
+      propertyPath: attackTimer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7090330309308484851, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.29
+      value: 3.07
       objectReference: {fileID: 0}
     - target: {fileID: 7090330309308484851, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.9
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7090330309308484851, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
       propertyPath: m_LocalPosition.z

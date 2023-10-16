@@ -9,7 +9,9 @@ public class enemyBlob : enemyDamage
     private Rigidbody2D _blobRigidBody;
     private BoxCollider2D _blobBoxCollider2D;
     private Vector3 direction;
-    [SerializeField]float moveSpeed,range;
+    [SerializeField]float moveSpeed,attackTimer;
+    private float attackCd;
+    private bool canShoot = true;
     public int blobMaxHealth = 100;
     private int blobCurrentHealth;
     public Animator animator;
@@ -22,6 +24,7 @@ public class enemyBlob : enemyDamage
 
     private void Start()
     {
+        attackCd = attackTimer;
         player = GameObject.FindGameObjectWithTag("Player");
         _blobRigidBody = GetComponent<Rigidbody2D>();
         _blobBoxCollider2D = GetComponent<BoxCollider2D>();
@@ -48,11 +51,10 @@ public class enemyBlob : enemyDamage
         {
             transform.localScale = new Vector3(-1, 1, 0);
         }
-
-        if (Input.GetKey(KeyCode.C))
-        {
-            ShootBullet();
-        }
+        
+        ShootBullet();
+            
+        
         
     }
 
@@ -68,7 +70,18 @@ public class enemyBlob : enemyDamage
 
     private void ShootBullet()
     {
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
+        
+        if (attackCd > 0 )
+        {
+            attackCd -= Time.deltaTime;
+            if (attackCd <= 0)
+            {
+                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                attackCd = attackTimer;
+
+            }
+        }
+       
     }
 
     public override void DeathAnim(GameObject coin, GameObject expCrystal)

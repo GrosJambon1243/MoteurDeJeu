@@ -17,7 +17,7 @@ public class enemyBullet : MonoBehaviour
 
     private void Start()
     {
-        rb.velocity =  (playerPosition.transform.position - transform.position)* bulletSpeed;
+        rb.velocity =  (playerPosition.transform.position - transform.position).normalized * bulletSpeed;
     }
 
     private void OnBecameInvisible()
