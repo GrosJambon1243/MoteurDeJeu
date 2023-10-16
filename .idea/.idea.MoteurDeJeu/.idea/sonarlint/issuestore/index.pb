@@ -21,3 +21,5 @@ R
 "Assets/Script/experienceDiamond.cs,9\2\92752421f0cd99614bb429462468d6a3bda7ee68
 N
 Assets/Script/experienceBar.cs,f\6\f6070c7a13c230fb1d2ee57b150c07cca047a7c0
+I
+Assets/Script/mainMenu.cs,d\6\d6ec29fba3a73447b0991f798c38c3350d28230c

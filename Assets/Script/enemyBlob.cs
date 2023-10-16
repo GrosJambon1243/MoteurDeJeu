@@ -11,7 +11,7 @@ public class enemyBlob : enemyDamage
     private Vector3 direction;
     [SerializeField]float moveSpeed,attackTimer;
     private float attackCd;
-    private bool canShoot = true;
+    
     public int blobMaxHealth = 100;
     private int blobCurrentHealth;
     public Animator animator;
