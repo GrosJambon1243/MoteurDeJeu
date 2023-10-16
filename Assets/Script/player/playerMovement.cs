@@ -134,5 +134,12 @@ public class playerMovement : MonoBehaviour
         {
             isInvincible = false;
         }
+
+        public void HealingPlayer(int healing)
+        {
+
+            currentHealth += healing;
+            hpBar.SetHealth(currentHealth,maxHealth);
+        }
       
 }

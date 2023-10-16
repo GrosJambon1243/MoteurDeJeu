@@ -1,0 +1,9 @@
+
+}csharpsquid:S101"aRename class 'playerMovement' to match pascal case naming rules, consider using 'PlayerMovement'.(ëéŠŸ
+Jcsharpsquid:S3903"-Move 'playerMovement' into a named namespace.(ëéŠŸ
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¸ßÏëùÿÿÿÿ
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ş“†¼úÿÿÿÿ
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(²šÆ¯
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¢Ó…£
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(è®÷
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¯ØËå
