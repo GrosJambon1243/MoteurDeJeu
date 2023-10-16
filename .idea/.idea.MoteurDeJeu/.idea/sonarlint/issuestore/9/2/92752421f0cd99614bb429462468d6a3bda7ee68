@@ -1,0 +1,4 @@
+
+ƒcsharpsquid:S101"gRename class 'experienceDiamond' to match pascal case naming rules, consider using 'ExperienceDiamond'.(ãõÓ­
+Mcsharpsquid:S3903"0Move 'experienceDiamond' into a named namespace.(ãõÓ­
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ÙÖ‰Ãüÿÿÿÿ8‚‘®³1

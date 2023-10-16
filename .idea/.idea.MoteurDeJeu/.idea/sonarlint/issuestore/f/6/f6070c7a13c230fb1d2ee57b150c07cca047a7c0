@@ -1,0 +1,7 @@
+
+€csharpsquid:S101"_Rename class 'experienceBar' to match pascal case naming rules, consider using 'ExperienceBar'.( óßµúÿÿÿÿ
+Ncsharpsquid:S3903",Move 'experienceBar' into a named namespace.( óßµúÿÿÿÿ
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ÑÅøÎ
+fcsharpsquid:S1104
+"DMake this field 'private' and encapsulate it in a 'public' property.(ˆ¸‡ôÿÿÿÿÿ
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(—Á ¡üÿÿÿÿ

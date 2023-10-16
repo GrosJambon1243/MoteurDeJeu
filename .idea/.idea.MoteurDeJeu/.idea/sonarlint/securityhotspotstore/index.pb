@@ -17,3 +17,7 @@ L
 Assets/Script/enemyBullet.cs,e\2\e2185f964384d3f21c5f617734071596d7f16fe3
 L
 Assets/Script/gameManager.cs,c\4\c4d1820513dcb071688fad24a05294ef9d912ff9
+N
+Assets/Script/experienceBar.cs,f\6\f6070c7a13c230fb1d2ee57b150c07cca047a7c0
+R
+"Assets/Script/experienceDiamond.cs,9\2\92752421f0cd99614bb429462468d6a3bda7ee68

@@ -1,3 +1,5 @@
 
-wcsharpsquid:S101"[Rename class 'gameManager' to match pascal case naming rules, consider using 'GameManager'.(Çúñê
-Gcsharpsquid:S3903"*Move 'gameManager' into a named namespace.(Çúñê
+wcsharpsquid:S101"[Rename class 'gameManager' to match pascal case naming rules, consider using 'GameManager'.(Çúñê
+Gcsharpsquid:S3903"*Move 'gameManager' into a named namespace.(Çúñê
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Õ¿Ãøÿÿÿÿ8èİ®³1
+gcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(İß§8Êé°³1

@@ -12,6 +12,8 @@ public class playerMovement : MonoBehaviour
         private bool isAttacking,isInvincible;
         [SerializeField] private float swordAtkCoold = 0;
         [SerializeField] private bool canSwingSword;
+        private float swordTimer,attackTimer;
+       
         public Transform swordSpot;
         public float swordRange =0.5f;
         public LayerMask enemyLayers;
@@ -30,26 +32,11 @@ public class playerMovement : MonoBehaviour
             {
                 enemy.GetComponent<enemyDamage>().TakingDmg(swordDamage);
             }
-
-            Invoke("SwordCoolDown",swordAtkCoold);
             
         }
-
-        public void Attacking()
-        {
-            isAttacking = true;
-            _theRb.velocity = Vector2.zero;
-        }
-
-        public void NotAttacking()
-        {
-            isAttacking = false;
-        }
-        
-        
-    
         private void Start()
         {
+            
             isInvincible = false;
             currentHealth = maxHealth;
             _theRb = GetComponent<Rigidbody2D>();
@@ -79,23 +66,42 @@ public class playerMovement : MonoBehaviour
                     transform.localScale = new Vector3(2, 2, 0);
                 }
 
-                if (Input.GetMouseButton(0) && canSwingSword)
-                {
-                    SwordAttack();
-                   
-                }
-                
                 
             }
+            SwordAttack();
 
         }
-
-      
-
         private void SwordAttack()
         {
+            if (swordTimer > 0)
+            {
+                swordTimer -= Time.deltaTime;
+                if (swordTimer <=0)
+                {
+                    canSwingSword = true;
+                }
+            }
+            if (attackTimer > 0)
+            {
+                attackTimer -= Time.deltaTime;
+                if (attackTimer <=0)
+                {
+                    isAttacking = false;
+                }
+            }
+            
+            if (Input.GetMouseButton(0) && canSwingSword)
+            {
+               
                 _animator.SetTrigger("Attack");
+                attackTimer = 0.8f;
                 canSwingSword = false;
+                isAttacking = true;
+                swordTimer = swordAtkCoold;
+                _theRb.velocity = Vector2.zero;
+
+            }
+               
         }
 
         public void TakingDmg(int damage)
@@ -104,20 +110,16 @@ public class playerMovement : MonoBehaviour
             {
                 currentHealth -= damage;
                 hpBar.SetHealth(currentHealth,maxHealth);
+                isInvincible = true;
+                isAttacking = false;
+                _animator.SetTrigger("Hurt");
+                Invoke("PlayerInvinsible",1);
             }
            
             if (currentHealth<= 0)
             {
                 hpBar.SetHealth(0,maxHealth);
             }
-        }
-
-       
-        
-        
-        public void SwordCoolDown()
-        {
-            canSwingSword = true;
         }
         
         //Permet de voir le range du sword attack
@@ -127,7 +129,10 @@ public class playerMovement : MonoBehaviour
                 return;
             Gizmos.DrawWireSphere(swordSpot.position,swordRange);
         }
-        
-        private void 
+
+        private void PlayerInvinsible()
+        {
+            isInvincible = false;
+        }
       
 }

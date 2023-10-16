@@ -14,12 +14,14 @@ public class Enemy : enemyDamage
     public int maxHealth = 100, damageDone;
     private int currentHealth;
     public Animator animator;
+    private bool isKnockBack = false;
     
 
     [SerializeField] GameObject currency, experience;
 
     void Start()
     {
+        
         player = GameObject.FindGameObjectWithTag("Player");
         _skeleRigidBody = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
@@ -31,11 +33,11 @@ public class Enemy : enemyDamage
 
     private void FixedUpdate()
     {
-        if (player != null)
+        if (player != null && !isKnockBack)
         {
             direction = (player.transform.position - transform.position).normalized;
 
-            _skeleRigidBody.velocity = direction * (moveSpeed * Time.fixedDeltaTime);
+           _skeleRigidBody.velocity = direction * (moveSpeed * Time.fixedDeltaTime);
             animator.SetInteger("isWalking", 1);
 
         }
@@ -78,6 +80,24 @@ public class Enemy : enemyDamage
         if (hitInfo.collider.gameObject.CompareTag("Player") )
         {
             player.GetComponent<playerMovement>().TakingDmg(damageDone);
+            StartCoroutine(KnockBack());
         }
+    }
+
+    private IEnumerator KnockBack()
+    {
+        isKnockBack = true;
+        animator.SetInteger("isWalking", 0);
+        _skeleRigidBody.velocity = new Vector2((transform.position.x - player.transform.position.x),
+            (transform.position.y - player.transform.position.y)).normalized * 10;
+        yield return new WaitForSeconds(0.1f);
+        _skeleRigidBody.velocity = new Vector2((transform.position.x - player.transform.position.x),
+            (transform.position.y - player.transform.position.y)).normalized * 5;
+        yield return new WaitForSeconds(0.2f);
+        _skeleRigidBody.velocity = new Vector2((transform.position.x - player.transform.position.x),
+            (transform.position.y - player.transform.position.y)).normalized * 2;
+        yield return new WaitForSeconds(0.2f);
+        isKnockBack = false;
+       
     }
 }
