@@ -62,7 +62,6 @@ public class enemyBlob : enemyDamage
         animator.SetTrigger("isHurt");
         if (blobCurrentHealth <= 0)
         {
-           
             DeathAnim(currency,experience);
         }
     }
@@ -74,9 +73,9 @@ public class enemyBlob : enemyDamage
 
     public override void DeathAnim(GameObject coin, GameObject expCrystal)
     {
-        Instantiate(experience);
         _blobBoxCollider2D.enabled = false;
         this.enabled = false;
+        Instantiate(expCrystal,transform.position,transform.rotation);
         Destroy(gameObject,0);
     }
 }

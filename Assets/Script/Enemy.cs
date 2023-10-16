@@ -65,9 +65,9 @@ public class Enemy : enemyDamage
 
     public override void DeathAnim(GameObject coin, GameObject expCrystal)
     {
-        Instantiate(experience);
         _boxCollider2D.enabled = false;
         this.enabled = false;
+        Instantiate(expCrystal,transform.position,transform.rotation);
         Destroy(gameObject, 0);
     }
 

@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
         private Animator _animator;
         private Rigidbody2D _theRb;
         private SpriteRenderer _sprite;
-        private bool isAttacking;
+        private bool isAttacking,isInvincible;
         [SerializeField] private float swordAtkCoold = 0;
         [SerializeField] private bool canSwingSword;
         public Transform swordSpot;
@@ -50,6 +50,7 @@ public class playerMovement : MonoBehaviour
     
         private void Start()
         {
+            isInvincible = false;
             currentHealth = maxHealth;
             _theRb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
@@ -91,7 +92,7 @@ public class playerMovement : MonoBehaviour
 
       
 
-        public void SwordAttack()
+        private void SwordAttack()
         {
                 _animator.SetTrigger("Attack");
                 canSwingSword = false;
@@ -99,8 +100,12 @@ public class playerMovement : MonoBehaviour
 
         public void TakingDmg(int damage)
         {
-            currentHealth -= damage;
-            hpBar.SetHealth(currentHealth,maxHealth);
+            if (!isInvincible)
+            {
+                currentHealth -= damage;
+                hpBar.SetHealth(currentHealth,maxHealth);
+            }
+           
             if (currentHealth<= 0)
             {
                 hpBar.SetHealth(0,maxHealth);
@@ -122,4 +127,7 @@ public class playerMovement : MonoBehaviour
                 return;
             Gizmos.DrawWireSphere(swordSpot.position,swordRange);
         }
+        
+        private void 
+      
 }
