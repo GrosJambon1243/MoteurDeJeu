@@ -8,12 +8,14 @@ public class gameManager : MonoBehaviour
     [SerializeField] private Transform[] spawPoints;
     [SerializeField] private GameObject skeleton, blob;
     [SerializeField] private experienceBar experienceBar;
+    private float timeUntilSpawn = 5f, spawnTimer;
     
     public float  expMax = 100, currentExp, expAddition = 100, expLevel;
     public AudioSource lvlUpSound;
 
     private void Start()
     {
+        spawnTimer = timeUntilSpawn;
         experienceBar.SetMaxExperience(expMax);
         experienceBar.SetExperience(0);
     }
@@ -33,6 +35,24 @@ public class gameManager : MonoBehaviour
             experienceBar.SetMaxExperience(expMax);
             
 
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        SpawnEnemies();
+    }
+
+    public void SpawnEnemies()
+    {
+        if (spawnTimer > 0)
+        {
+            spawnTimer -= Time.deltaTime;
+            if (spawnTimer<= 0)
+            {
+                Instantiate(skeleton, spawPoints[0].transform.position,spawPoints[0].transform.rotation);
+                spawnTimer = timeUntilSpawn;
+            }
         }
     }
 }

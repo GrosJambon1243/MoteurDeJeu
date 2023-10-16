@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  range: 50
+  attackTimer: 2
   blobMaxHealth: 150
   animator: {fileID: 5907782460201973671}
   firePoint: {fileID: 220119548829050969}

@@ -1,4 +1,0 @@
-
-scsharpsquid:S101	"WRename class 'stopWatch' to match pascal case naming rules, consider using 'StopWatch'.(Î”Õ‰
-Ecsharpsquid:S3903	"(Move 'stopWatch' into a named namespace.(Î”Õ‰
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¡ÿ½…8£ò¯‹³1

@@ -9,14 +9,14 @@ using UnityEngine.UI;
 public class stopWatch : MonoBehaviour
 {
     [SerializeField] TMP_Text _textStopWatch;
-    [HideInInspector]
-    public float _elapsedTime;
-    private bool _isRunnig = false;
+
+     private float ElapsedTime { get; set; }
+    private bool _isRuning = false;
     
     
     void Start()
     {
-        _isRunnig = true;
+        _isRuning = true;
         
     }
    
@@ -24,16 +24,16 @@ public class stopWatch : MonoBehaviour
     
     void Update()
     {
-        if (_isRunnig)
+        if (_isRuning)
         {
-            _elapsedTime += Time.deltaTime;
+            ElapsedTime += Time.deltaTime;
             UpdateStopWatch();
         }
     }
 
     private void UpdateStopWatch()
     {
-        string formattedTime = string.Format("{0:00}:{1:00}" , Mathf.Floor((_elapsedTime / 60) % 60), _elapsedTime % 60);
+        string formattedTime = string.Format("{0:00}:{1:00}" , Mathf.Floor((ElapsedTime / 60) % 60), ElapsedTime % 60);
 
         _textStopWatch.text = formattedTime;
 
