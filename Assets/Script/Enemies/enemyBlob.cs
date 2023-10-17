@@ -78,7 +78,6 @@ public class enemyBlob : enemyDamage
             {
                 Instantiate(bullet, firePoint.position, firePoint.rotation);
                 attackCd = attackTimer;
-
             }
         }
        

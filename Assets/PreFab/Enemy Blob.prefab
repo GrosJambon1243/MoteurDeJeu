@@ -204,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98df9443d41fc664a8c48c0bce3b2a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
-  attackTimer: 2
+  moveSpeed: 40
+  attackTimer: 5
   blobMaxHealth: 150
   animator: {fileID: 5907782460201973671}
   firePoint: {fileID: 220119548829050969}

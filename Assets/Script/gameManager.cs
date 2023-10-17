@@ -55,6 +55,8 @@ public class gameManager : MonoBehaviour
             if (spawnTimer<= 0)
             {
                 Instantiate(skeleton, spawPoints[0].transform.position,quaternion.identity);
+                Instantiate(skeleton, spawPoints[1].transform.position,quaternion.identity);
+                Instantiate(blob, spawPoints[2].transform.position,quaternion.identity);
                 
                 spawnTimer = timeUntilSpawn;
             }

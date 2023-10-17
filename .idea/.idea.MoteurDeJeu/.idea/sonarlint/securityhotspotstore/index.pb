@@ -13,3 +13,9 @@ T
 $Assets/Script/Enemies/enemyBullet.cs,0\4\04f6138e8161804891bb242324bd7a2c7a9d200e
 W
 'Assets/Script/Pickable/HealingPotion.cs,f\e\fe783250e78eb949a77b3622d80ec049e91ce173
+Q
+!Assets/Script/Ui Bar/stopWatch.cs,4\8\4893d6a00e00090d0d39cf96386b1d2e1366229f
+N
+Assets/Script/Enemies/Enemy.cs,b\7\b7f17b65b09d91ec1a2c9dd31f4a542840ad15e7
+R
+"Assets/Script/Enemies/enemyBlob.cs,f\1\f187dc51f32c98285dacf762075ae495b94bb32c
