@@ -19,3 +19,7 @@ N
 Assets/Script/Enemies/Enemy.cs,b\7\b7f17b65b09d91ec1a2c9dd31f4a542840ad15e7
 R
 "Assets/Script/Enemies/enemyBlob.cs,f\1\f187dc51f32c98285dacf762075ae495b94bb32c
+U
+%Assets/Script/player/WeaponManager.cs,6\9\6978e1d2f90fe9b87237a33513253959c93caa8e
+P
+ Assets/Script/player/FireBall.cs,5\2\521493c3c2db4399d6752b71b7fbc020909a41c9

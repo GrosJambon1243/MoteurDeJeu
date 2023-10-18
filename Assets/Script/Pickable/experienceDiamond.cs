@@ -18,7 +18,6 @@ public class experienceDiamond : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") )
         {
-            Debug.Log("lol");
             _gameManager.GainExperience(expGain);
             Destroy(gameObject);
         }

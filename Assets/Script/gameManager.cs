@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] private Transform[] spawPoints;
     [SerializeField] private GameObject skeleton, blob;
     [SerializeField] private experienceBar experienceBar;
+    [SerializeField] private GameObject levelUpCanvas;
     private float timeUntilSpawn = 5f, spawnTimer;
     private int currentLevel = 1;
     
@@ -30,15 +32,7 @@ public class gameManager : MonoBehaviour
         experienceBar.SetExperience(currentExp);
         if (currentExp == expMax)
         {
-            currentLevel += 1;
-            lvlUpSound.Play();
-            currentExp = 0;
-            experienceBar.SetExperience(0);
-            expLevel = expMax + expAddition;
-            expMax = expLevel;
-            experienceBar.SetMaxExperience(expMax);
-            
-
+           LevelUp();
         }
     }
 
@@ -63,5 +57,18 @@ public class gameManager : MonoBehaviour
                 spawnTimer = timeUntilSpawn;
             }
         }
+    }
+
+    public void LevelUp()
+    {
+        currentLevel += 1;
+        lvlUpSound.Play();
+        currentExp = 0;
+        experienceBar.SetExperience(0);
+        expLevel = expMax + expAddition;
+        expMax = expLevel;
+        experienceBar.SetMaxExperience(expMax);
+        levelUpCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 }

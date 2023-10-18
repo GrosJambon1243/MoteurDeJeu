@@ -1,17 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class Axe : MonoBehaviour
 {
-    [SerializeField] private int fireBallDmg = 50;
-    [SerializeField] float fireBallSpeed = 20f;
+    [SerializeField] private int axeDmg = 100;
+    [SerializeField] float axeSpeed = 20f;
     [SerializeField] private Rigidbody2D theRb;
     private void Start()
     {
 
-        theRb.velocity = transform.right * fireBallSpeed;
+        theRb.velocity = Vector2.up * axeSpeed;
 
     }
     private void OnBecameInvisible()
@@ -24,7 +23,7 @@ public class FireBall : MonoBehaviour
 
         if (theEnemies != null)
         {
-            theEnemies.TakingDmg(fireBallDmg);
+            theEnemies.TakingDmg(axeDmg);
             Destroy(gameObject);
         }
     }

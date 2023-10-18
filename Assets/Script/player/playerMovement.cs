@@ -63,6 +63,7 @@ public class playerMovement : MonoBehaviour
                 _theRb.velocity = new Vector3(x, y, 0f).normalized * (speed * Time.fixedDeltaTime);
                 _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
                 Flip();
+                
                
             }
             SwordAttack();
@@ -76,7 +77,6 @@ public class playerMovement : MonoBehaviour
                 _isFacingRight = !_isFacingRight;
                 transform.Rotate(0f,180f,0f);
             }
-          
         }
         
         

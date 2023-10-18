@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] private GameObject fireBall;
-    [SerializeField] private Transform fireBallSpot1,fireBallSpot2;
+    [SerializeField] private GameObject fireBall,axe;
+    [SerializeField] private Transform fireBallSpot1,axeSpot;
     [SerializeField] private float fireBallCd,fireBallTimer;
+    public bool asFireBall = false;
 
     private void Start()
     {
@@ -16,8 +17,11 @@ public class WeaponManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (asFireBall)
+        {
+            ShootFireBall();
+        }
         
-        ShootFireBall();
     }
 
     private void ShootFireBall()
@@ -28,9 +32,14 @@ public class WeaponManager : MonoBehaviour
             if (fireBallCd <= 0)
             {
                 Instantiate(fireBall, fireBallSpot1.position,fireBallSpot1.rotation);
-                
                 fireBallCd = fireBallTimer;
             }
         }
     }
+
+    public void UnlockFireBall()
+    {
+        asFireBall = true;
+    }
+    
 }
