@@ -11,6 +11,7 @@ public class gameManager : MonoBehaviour
     [SerializeField] private GameObject skeleton, blob;
     [SerializeField] private experienceBar experienceBar;
     private float timeUntilSpawn = 5f, spawnTimer;
+    private int currentLevel = 1;
     
     public float  expMax = 100, currentExp, expAddition = 100, expLevel;
     public AudioSource lvlUpSound;
@@ -29,6 +30,7 @@ public class gameManager : MonoBehaviour
         experienceBar.SetExperience(currentExp);
         if (currentExp == expMax)
         {
+            currentLevel += 1;
             lvlUpSound.Play();
             currentExp = 0;
             experienceBar.SetExperience(0);

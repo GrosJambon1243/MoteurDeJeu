@@ -1,32 +1,36 @@
 
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Timeline;
 
 public class playerMovement : MonoBehaviour
 {
+        [SerializeField] private AudioSource swordSoundEffect, hurtSoundEffect;
         [SerializeField] private float speed = 1f;
         private Animator _animator;
         private Rigidbody2D _theRb;
         private SpriteRenderer _sprite;
-        private bool isAttacking,isInvincible;
+        private bool isAttacking,isInvincible,_isFacingRight = true;
         [SerializeField] private float swordAtkCoold = 0;
         [SerializeField] private bool canSwingSword;
-        private float swordTimer,attackTimer;
+        private float swordTimer,attackTimer,x,y;
        
-        public Transform swordSpot;
+        public Transform swordSpot,fireBallSpot1;
+        
         public float swordRange =0.5f;
         public LayerMask enemyLayers;
         public int swordDamage = 50, maxHealth = 100;
         public healthBar hpBar;
         [HideInInspector]
         public int currentHealth;
-
+      
       
 
         public void FourFrameSword()
         {
             Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
+            
 
             foreach (Collider2D enemy in hitEnemys)
             {
@@ -36,6 +40,7 @@ public class playerMovement : MonoBehaviour
         }
         private void Start()
         {
+            
             
             isInvincible = false;
             currentHealth = maxHealth;
@@ -47,30 +52,34 @@ public class playerMovement : MonoBehaviour
             hpBar.SetMaxHealth(maxHealth);
             hpBar.SetHealth(currentHealth,maxHealth);
         }
+        
 
         private void FixedUpdate()
         {
+            x = Input.GetAxisRaw("Horizontal");
+            y = Input.GetAxisRaw("Vertical");
             if (!isAttacking)
             {
-                float x = Input.GetAxisRaw("Horizontal");
-                float y = Input.GetAxisRaw("Vertical");
-            
                 _theRb.velocity = new Vector3(x, y, 0f).normalized * (speed * Time.fixedDeltaTime);
                 _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
-                if (x < 0)
-                {
-                    transform.localScale = new Vector3(-2, 2, 0);
-                }
-                else if (x > 0)
-                {
-                    transform.localScale = new Vector3(2, 2, 0);
-                }
-
-                
+                Flip();
+               
             }
             SwordAttack();
 
         }
+
+        private void Flip()
+        {
+            if ((x < 0 && _isFacingRight) ||(x > 0 && !_isFacingRight))
+            {
+                _isFacingRight = !_isFacingRight;
+                transform.Rotate(0f,180f,0f);
+            }
+          
+        }
+        
+        
         private void SwordAttack()
         {
             if (swordTimer > 0)
@@ -92,7 +101,7 @@ public class playerMovement : MonoBehaviour
             
             if (Input.GetMouseButton(0) && canSwingSword)
             {
-               
+                swordSoundEffect.PlayDelayed(0.2f);
                 _animator.SetTrigger("Attack");
                 attackTimer = 0.8f;
                 canSwingSword = false;
@@ -113,12 +122,14 @@ public class playerMovement : MonoBehaviour
                 isInvincible = true;
                 isAttacking = false;
                 _animator.SetTrigger("Hurt");
+                hurtSoundEffect.Play();
                 Invoke("PlayerInvinsible",1);
             }
            
             if (currentHealth<= 0)
             {
                 hpBar.SetHealth(0,maxHealth);
+                Destroy(gameObject);
             }
         }
         
