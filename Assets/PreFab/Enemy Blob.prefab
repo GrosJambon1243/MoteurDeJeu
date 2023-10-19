@@ -190,7 +190,7 @@ Rigidbody2D:
     m_Bits: 2048
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3939982478522710587
 MonoBehaviour:
@@ -207,6 +207,7 @@ MonoBehaviour:
   moveSpeed: 40
   attackTimer: 5
   blobMaxHealth: 150
+  damageOnContact: 10
   animator: {fileID: 5907782460201973671}
   firePoint: {fileID: 220119548829050969}
   bullet: {fileID: 9085941542724873081, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}

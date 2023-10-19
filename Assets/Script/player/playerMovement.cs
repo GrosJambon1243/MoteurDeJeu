@@ -3,6 +3,8 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Timeline;
+using Random = UnityEngine.Random;
+
 
 public class playerMovement : MonoBehaviour
 {
@@ -30,7 +32,7 @@ public class playerMovement : MonoBehaviour
         public void FourFrameSword()
         {
             Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
-            
+            swordSoundEffect.Play();
 
             foreach (Collider2D enemy in hitEnemys)
             {
@@ -63,8 +65,6 @@ public class playerMovement : MonoBehaviour
                 _theRb.velocity = new Vector3(x, y, 0f).normalized * (speed * Time.fixedDeltaTime);
                 _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
                 Flip();
-                
-               
             }
             SwordAttack();
 
@@ -101,7 +101,7 @@ public class playerMovement : MonoBehaviour
             
             if (Input.GetMouseButton(0) && canSwingSword)
             {
-                swordSoundEffect.PlayDelayed(0.2f);
+                
                 _animator.SetTrigger("Attack");
                 attackTimer = 0.8f;
                 canSwingSword = false;

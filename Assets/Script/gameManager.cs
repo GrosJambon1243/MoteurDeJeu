@@ -11,11 +11,12 @@ public class gameManager : MonoBehaviour
     [SerializeField] private Transform[] spawPoints;
     [SerializeField] private GameObject skeleton, blob;
     [SerializeField] private experienceBar experienceBar;
+    [SerializeField] private CurrencyBar _currencyBar;
     [SerializeField] private GameObject levelUpCanvas;
     private float timeUntilSpawn = 5f, spawnTimer;
-    private int currentLevel = 1;
+    private int _currentLevel = 1;
     
-    public float  expMax = 100, currentExp, expAddition = 100, expLevel;
+    public float  expMax = 100, currentExp, expAddition = 100, expLevel,totalCurrency;
     public AudioSource lvlUpSound;
 
     private void Start()
@@ -30,17 +31,21 @@ public class gameManager : MonoBehaviour
     {
         currentExp += expGain;
         experienceBar.SetExperience(currentExp);
-        if (currentExp == expMax)
+        if (currentExp >= expMax)
         {
            LevelUp();
         }
     }
 
+    public void GainCurrency(float currencyGain)
+    {
+        totalCurrency += currencyGain;
+        _currencyBar.SetCurrency(totalCurrency);
+    }
+
     private void FixedUpdate()
     {
-        
         SpawnEnemies();
-        
     }
 
     public void SpawnEnemies()
@@ -61,7 +66,7 @@ public class gameManager : MonoBehaviour
 
     public void LevelUp()
     {
-        currentLevel += 1;
+        _currentLevel += 1;
         lvlUpSound.Play();
         currentExp = 0;
         experienceBar.SetExperience(0);

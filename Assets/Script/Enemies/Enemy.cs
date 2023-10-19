@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : enemyDamage
 {
@@ -12,9 +13,9 @@ public class Enemy : enemyDamage
     private Vector3 direction;
     [SerializeField] float moveSpeed;
     public int maxHealth = 100, damageDone;
-    private int currentHealth;
+    private int currentHealth,_range;
     public Animator animator;
-    private bool isKnockBack = false;
+    private bool isKnockBack;
     
 
     [SerializeField] GameObject currency, experience;
@@ -60,16 +61,22 @@ public class Enemy : enemyDamage
         if (currentHealth <= 0)
         {
             animator.SetTrigger("isHurt");
-            DeathAnim(currency, experience);
+            DeathAnim(currency, experience,transform.position,_range);
         }
     }
 
 
-    public override void DeathAnim(GameObject coin, GameObject expCrystal)
+    public override void DeathAnim(GameObject coin, GameObject expCrystal,Vector3 position, int range)
     {
+        position = transform.position;
+        range = Random.Range(0, 4);
         _boxCollider2D.enabled = false;
         this.enabled = false;
-        Instantiate(expCrystal,transform.position,transform.rotation);
+        Instantiate(expCrystal,position,Quaternion.identity);
+        if (range == 2)
+        {
+            Instantiate(coin,position + new Vector3(0.7f,0),Quaternion.identity);
+        }
         Destroy(gameObject, 0);
     }
 

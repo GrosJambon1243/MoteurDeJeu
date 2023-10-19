@@ -1,10 +1,10 @@
 
-}csharpsquid:S101"aRename class 'playerMovement' to match pascal case naming rules, consider using 'PlayerMovement'.(ëéŠŸ
-Jcsharpsquid:S3903"-Move 'playerMovement' into a named namespace.(ëéŠŸ
-acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¦í–­
-fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ş“†¼úÿÿÿÿ
-acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(²šÆ¯
-acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¢Ó…£
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(è®÷8ıøµ‡´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¯ØËå8ıøµ‡´1
-ycsharpsquid:S1450"PRemove the field 'y' and declare it as a local variable in the relevant methods.(şÊ§Üüÿÿÿÿ8úÎÒ‹´1
+„csharpsquid:S101	"aRename class 'playerMovement' to match pascal case naming rules, consider using 'PlayerMovement'.(ëéŠŸ8Îı¦°´1
+Qcsharpsquid:S3903	"-Move 'playerMovement' into a named namespace.(ëéŠŸ8Îı¦°´1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¦í–­8Îı¦°´1
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ş“†¼úÿÿÿÿ
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(²šÆ¯
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¢Ó…£
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(è®÷8Ïı¦°´1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¯ØËå8Ïı¦°´1
+ycsharpsquid:S1450"PRemove the field 'y' and declare it as a local variable in the relevant methods.(şÊ§Üüÿÿÿÿ8Ğı¦°´1

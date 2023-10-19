@@ -23,3 +23,15 @@ U
 %Assets/Script/player/WeaponManager.cs,6\9\6978e1d2f90fe9b87237a33513253959c93caa8e
 P
  Assets/Script/player/FireBall.cs,5\2\521493c3c2db4399d6752b71b7fbc020909a41c9
+T
+$Assets/Script/Enemies/enemyDamage.cs,c\d\cd129868d9f2e3066766812f8a27c66d801225e6
+K
+Assets/Script/player/Axe.cs,8\3\83f26054047460dab187b122277cc137cd637c24
+P
+ Assets/Script/Ui Bar/ButtonUi.cs,f\4\f4e63ac68a04eb6ca8d6bd1dab0f5313033f1443
+Q
+!Assets/Script/Ui Bar/healthBar.cs,e\6\e681a53afa647fa1a9f0f1a4baa028b24049baf8
+R
+"Assets/Script/Pickable/Currency.cs,3\5\35b154ac14d90f2fd1c4b24d891faeb56e9e7a93
+S
+#Assets/Script/Ui Bar/CurrencyBar.cs,a\7\a7e803adf7835f3ecf7b5add7c0b3147d112535f
