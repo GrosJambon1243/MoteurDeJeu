@@ -10,8 +10,16 @@ public class ButtonUi : MonoBehaviour
 
     public void FireBallButton()
     {
-        _weaponManager = GameObject.FindObjectOfType<WeaponManager>();
+        _weaponManager = FindObjectOfType<WeaponManager>();
         _weaponManager.UnlockFireBall();
+        gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void AxeButton()
+    {
+        _weaponManager = FindObjectOfType<WeaponManager>();
+        _weaponManager.UnlockAxe();
         gameObject.SetActive(false);
         Time.timeScale = 1;
     }

@@ -24,7 +24,6 @@ public class Axe : MonoBehaviour
         if (theEnemies != null)
         {
             theEnemies.TakingDmg(axeDmg);
-            Destroy(gameObject);
         }
     }
 }

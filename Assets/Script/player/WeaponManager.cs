@@ -7,12 +7,13 @@ public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private GameObject fireBall,axe;
     [SerializeField] private Transform fireBallSpot1,axeSpot;
-    [SerializeField] private float fireBallCd,fireBallTimer;
-    public bool asFireBall = false;
+    [SerializeField] private float fireBallCd,fireBallTimer,axeCd,axeTimer;
+    public bool asFireBall,asAxe;
 
     private void Start()
     {
         fireBallCd = fireBallTimer;
+        axeCd = axeTimer;
     }
 
     private void FixedUpdate()
@@ -20,6 +21,11 @@ public class WeaponManager : MonoBehaviour
         if (asFireBall)
         {
             ShootFireBall();
+        }
+
+        if (asAxe)
+        {
+            ShootAxe();
         }
         
     }
@@ -37,9 +43,27 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
+    private void ShootAxe()
+    {
+        if (axeCd >= 0)
+        {
+            axeCd -= Time.deltaTime;
+            if (axeCd <= 0)
+            {
+                Instantiate(axe, axeSpot.position,Quaternion.identity);
+                axeCd = axeTimer;
+            }
+        }
+    }
+
     public void UnlockFireBall()
     {
         asFireBall = true;
+    }
+
+    public void UnlockAxe()
+    {
+        asAxe = true;
     }
     
 }
