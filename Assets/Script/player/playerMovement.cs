@@ -152,5 +152,10 @@ public class playerMovement : MonoBehaviour
             currentHealth += healing;
             hpBar.SetHealth(currentHealth,maxHealth);
         }
+
+        public void IncreaseSwordDmg()
+        {
+            swordDamage += 50;
+        }
       
 }

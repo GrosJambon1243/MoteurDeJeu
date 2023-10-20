@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class experienceDiamond : MonoBehaviour
 {
-    public float expGain = 10;
+    public float expGain = 20;
     private Vector3 _direction;
     private gameManager _gameManager;
 

@@ -16,7 +16,7 @@ public class gameManager : MonoBehaviour
     private float timeUntilSpawn = 5f, spawnTimer;
     private int _currentLevel = 1;
     
-    public float  expMax = 100, currentExp, expAddition = 100, expLevel,totalCurrency;
+    public float  expMax = 100, currentExp, expAddition = 50, expLevel,totalCurrency;
     public AudioSource lvlUpSound;
 
     private void Start()
