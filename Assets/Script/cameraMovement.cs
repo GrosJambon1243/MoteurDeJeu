@@ -13,7 +13,10 @@ public class cameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        
+        if (player == null)
+        {
+            return;
+        }
         Vector3 position = player.transform.position;
         position.z = zoom;
         transform.position = position;

@@ -8,27 +8,29 @@ using Random = UnityEngine.Random;
 
 public class playerMovement : MonoBehaviour
 {
-        [SerializeField] private AudioSource swordSoundEffect, hurtSoundEffect;
-        [SerializeField] private float speed = 1f;
-        private Animator _animator;
-        private Rigidbody2D _theRb;
-        private SpriteRenderer _sprite;
-        private bool isAttacking,isInvincible,_isFacingRight = true;
-        [SerializeField] private float swordAtkCoold = 0;
-        [SerializeField] private bool canSwingSword;
-        private float swordTimer,attackTimer,x,y;
+    #region variable
+    [SerializeField] private AudioSource swordSoundEffect, hurtSoundEffect;
+    [SerializeField] private float speed = 1f;
+    [SerializeField] private GameObject gameOverCanvas;
+    private Animator _animator;
+    private Rigidbody2D _theRb;
+    private SpriteRenderer _sprite;
+    private bool isAttacking,isInvincible,_isFacingRight = true;
+    [SerializeField] private float swordAtkCoold = 0;
+    [SerializeField] private bool canSwingSword;
+    private float swordTimer,attackTimer,x,y;
        
-        public Transform swordSpot,fireBallSpot1;
+    public Transform swordSpot,fireBallSpot1;
         
-        public float swordRange =0.5f;
-        public LayerMask enemyLayers;
-        public int swordDamage = 50, maxHealth = 100;
-        public healthBar hpBar;
-        [HideInInspector]
-        public int currentHealth;
-      
-      
+    public float swordRange =0.5f;
+    public LayerMask enemyLayers;
+    public int swordDamage = 50, maxHealth = 100;
+    public healthBar hpBar;
+    [HideInInspector]
+    public int currentHealth;
+    
 
+    #endregion
         public void FourFrameSword()
         {
             Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
@@ -129,7 +131,10 @@ public class playerMovement : MonoBehaviour
             if (currentHealth<= 0)
             {
                 hpBar.SetHealth(0,maxHealth);
-                Destroy(gameObject);
+                _animator.SetTrigger("Death");
+                gameOverCanvas.SetActive(true);
+                Time.timeScale = 0;
+                gameObject.SetActive(false);
             }
         }
         
@@ -140,6 +145,7 @@ public class playerMovement : MonoBehaviour
                 return;
             Gizmos.DrawWireSphere(swordSpot.position,swordRange);
         }
+        
 
         private void PlayerInvinsible()
         {
