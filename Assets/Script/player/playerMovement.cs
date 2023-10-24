@@ -14,13 +14,13 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private GameObject gameOverCanvas;
     private Animator _animator;
     private Rigidbody2D _theRb;
-    private SpriteRenderer _sprite;
+ 
     private bool isAttacking,isInvincible,_isFacingRight = true;
     [SerializeField] private float swordAtkCoold = 0;
     [SerializeField] private bool canSwingSword;
     private float swordTimer,attackTimer,x,y;
-       
-    public Transform swordSpot,fireBallSpot1;
+
+    public Transform swordSpot;
         
     public float swordRange =0.5f;
     public LayerMask enemyLayers;
@@ -35,7 +35,7 @@ public class playerMovement : MonoBehaviour
         {
             Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
             swordSoundEffect.Play();
-
+            
             foreach (Collider2D enemy in hitEnemys)
             {
                 enemy.GetComponent<enemyDamage>().TakingDmg(swordDamage);
@@ -44,13 +44,10 @@ public class playerMovement : MonoBehaviour
         }
         private void Start()
         {
-            
-            
             isInvincible = false;
             currentHealth = maxHealth;
             _theRb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _sprite = GetComponent<SpriteRenderer>();
             _animator.SetInteger("AnimState",1);
             
             hpBar.SetMaxHealth(maxHealth);
@@ -110,9 +107,7 @@ public class playerMovement : MonoBehaviour
                 isAttacking = true;
                 swordTimer = swordAtkCoold;
                 _theRb.velocity = Vector2.zero;
-
             }
-               
         }
 
         public void TakingDmg(int damage)
@@ -145,20 +140,15 @@ public class playerMovement : MonoBehaviour
                 return;
             Gizmos.DrawWireSphere(swordSpot.position,swordRange);
         }
-        
-
         private void PlayerInvinsible()
         {
             isInvincible = false;
         }
-
         public void HealingPlayer(int healing)
         {
-
             currentHealth += healing;
             hpBar.SetHealth(currentHealth,maxHealth);
         }
-
         public void IncreaseSwordDmg()
         {
             swordDamage += 50;

@@ -1,7 +1,7 @@
 
 „csharpsquid:S101	"aRename class 'playerMovement' to match pascal case naming rules, consider using 'PlayerMovement'.(ëéŠŸ8Îý¦°´1
 Qcsharpsquid:S3903	"-Move 'playerMovement' into a named namespace.(ëéŠŸ8Îý¦°´1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¦í–­8Îý¦°´1
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¸ßÏëùÿÿÿÿ8Îý¦°´1
 fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(þ“†¼úÿÿÿÿ
 acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(²šÆ¯
 acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¢Ó…£

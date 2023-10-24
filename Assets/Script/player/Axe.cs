@@ -5,7 +5,7 @@ using UnityEngine;
 public class Axe : MonoBehaviour
 {
     [SerializeField] private int axeDmg = 100;
-    [SerializeField] float axeSpeed = 20f;
+    [SerializeField] private float axeSpeed = 20f;
     [SerializeField] private Rigidbody2D theRb;
     private void Start()
     {

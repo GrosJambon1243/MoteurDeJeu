@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] private GameObject fireBall,axe;
-    [SerializeField] private Transform fireBallSpot1,axeSpot;
-    [SerializeField] private float fireBallCd,fireBallTimer,axeCd,axeTimer;
+    [SerializeField] private GameObject fireBall,axe,bible;
+    [SerializeField] private Transform fireBallSpot1,axeSpot,bibleSpot;
+    [SerializeField] private float fireBallCd,fireBallTimer,axeCd,axeTimer,bibleCd,bibleTimer;
     public bool asFireBall,asAxe;
 
     private void Start()
     {
         fireBallCd = fireBallTimer;
         axeCd = axeTimer;
+        bibleCd = bibleTimer;
+        
+
     }
 
     private void FixedUpdate()
@@ -22,12 +25,16 @@ public class WeaponManager : MonoBehaviour
         {
             ShootFireBall();
         }
-
         if (asAxe)
         {
             ShootAxe();
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            
+         Instantiate(bible, bibleSpot.position + new Vector3(2,0), bibleSpot.rotation);
+        }
     }
 
     private void ShootFireBall()
@@ -55,6 +62,19 @@ public class WeaponManager : MonoBehaviour
             }
         }
     }
+    public void RotateBible()
+    {
+        if (bibleCd >= 0)
+        {
+            bibleCd -= Time.deltaTime;
+            if (bibleCd <= 0)
+            {
+
+                bibleCd = bibleTimer;
+            }
+
+        }
+    }
 
     public void UnlockFireBall()
     {
@@ -65,5 +85,5 @@ public class WeaponManager : MonoBehaviour
     {
         asAxe = true;
     }
-    
+
 }

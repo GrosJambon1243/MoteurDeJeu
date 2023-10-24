@@ -35,3 +35,5 @@ R
 "Assets/Script/Pickable/Currency.cs,3\5\35b154ac14d90f2fd1c4b24d891faeb56e9e7a93
 S
 #Assets/Script/Ui Bar/CurrencyBar.cs,a\7\a7e803adf7835f3ecf7b5add7c0b3147d112535f
+M
+Assets/Script/player/Bible.cs,6\7\679a2951a1444eb46733477574989b1ec6ef0a39
