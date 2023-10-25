@@ -14,19 +14,18 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private GameObject gameOverCanvas;
     private Animator _animator;
     private Rigidbody2D _theRb;
- 
-    private bool isAttacking,isInvincible,_isFacingRight = true;
+    [SerializeField] private Transform getsugaSpot;
+    [SerializeField] private GameObject getsuga;
     [SerializeField] private float swordAtkCoold = 0;
-    [SerializeField] private bool canSwingSword;
     private float swordTimer,attackTimer,x,y;
-
-    public Transform swordSpot;
-        
     public float swordRange =0.5f;
-    public LayerMask enemyLayers;
     public int swordDamage = 50, maxHealth = 100;
-    public healthBar hpBar;
     [HideInInspector]
+    [SerializeField] private bool canSwingSword;
+    private bool isAttacking,isInvincible,_isFacingRight = true;
+    public Transform swordSpot;
+    public LayerMask enemyLayers;
+    public healthBar hpBar;
     public int currentHealth;
     
 
@@ -35,6 +34,7 @@ public class playerMovement : MonoBehaviour
         {
             Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
             swordSoundEffect.Play();
+            Instantiate(getsuga, getsugaSpot.transform.position, getsugaSpot.rotation);
             
             foreach (Collider2D enemy in hitEnemys)
             {

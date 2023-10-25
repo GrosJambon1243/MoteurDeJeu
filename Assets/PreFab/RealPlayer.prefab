@@ -430,6 +430,7 @@ Transform:
   - {fileID: 8008997950368873602}
   - {fileID: 9027310074979640553}
   - {fileID: 1856426671623303238}
+  - {fileID: 1639542784872850670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7035023587186242978
@@ -572,16 +573,17 @@ MonoBehaviour:
   hurtSoundEffect: {fileID: 0}
   speed: 300
   gameOverCanvas: {fileID: 0}
+  getsugaSpot: {fileID: 1639542784872850670}
+  getsuga: {fileID: 819077197958241975, guid: c32c10ffc56404542b0b1102168eb1f2, type: 3}
   swordAtkCoold: 0.8
+  swordRange: 1.8
+  swordDamage: 50
+  maxHealth: 300
   canSwingSword: 1
   swordSpot: {fileID: 2417216455745016137}
-  fireBallSpot1: {fileID: 0}
-  swordRange: 1.8
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
-  swordDamage: 50
-  maxHealth: 300
   hpBar: {fileID: 0}
   currentHealth: 0
 --- !u!95 &4286654785050242131
@@ -658,6 +660,37 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -13, y: -2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5656696293238094291}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8516404673672389005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639542784872850670}
+  m_Layer: 10
+  m_Name: GetsugaSpot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1639542784872850670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516404673672389005}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.55, y: 0.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5656696293238094291}

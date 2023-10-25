@@ -37,3 +37,5 @@ S
 #Assets/Script/Ui Bar/CurrencyBar.cs,a\7\a7e803adf7835f3ecf7b5add7c0b3147d112535f
 M
 Assets/Script/player/Bible.cs,6\7\679a2951a1444eb46733477574989b1ec6ef0a39
+O
+Assets/Script/player/Getsuga.cs,9\8\98878fc545b6f06abb0a71704f270b1b4393cada

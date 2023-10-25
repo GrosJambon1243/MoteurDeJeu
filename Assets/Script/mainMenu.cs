@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class mainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject levelCanvas, upgradeCanvas;
     public void OnStartClick()
     {
-        SceneManager.LoadScene("FirstLevel", LoadSceneMode.Single);
+        gameObject.SetActive(false);
+        levelCanvas.SetActive(true);
     }
 }

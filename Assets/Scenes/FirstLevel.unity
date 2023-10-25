@@ -373,24 +373,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &624096840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1729750937221366557, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-  m_PrefabInstance: {fileID: 545407298428483395}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &624096841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624096840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 414ed26f9abe39d4fa862d9cab88fc58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healingAmount: 50
 --- !u!1 &659804091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 368943426016243311, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
@@ -708,17 +690,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3701746997015588954, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1729750937221366557, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 624096841}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
 --- !u!1001 &2100283814875241646
 PrefabInstance:
@@ -829,6 +804,10 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 1711837912}
+    - target: {fileID: 2830970926125684695, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
+      propertyPath: swordAtkCoold
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2830970926125684695, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
       propertyPath: gameOverCanvas
       value: 
