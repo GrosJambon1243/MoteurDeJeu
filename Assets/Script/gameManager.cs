@@ -19,8 +19,11 @@ public class gameManager : MonoBehaviour
     public float  expMax = 100, currentExp, expAddition = 50, expLevel,totalCurrency;
     public AudioSource lvlUpSound;
 
+    
     private void Start()
     {
+        LoadCoin();
+        _currencyBar.SetCurrency(totalCurrency);
         spawnTimer = timeUntilSpawn;
         experienceBar.SetMaxExperience(expMax);
         experienceBar.SetExperience(0);
@@ -36,12 +39,12 @@ public class gameManager : MonoBehaviour
            LevelUp();
         }
     }
-
     public void GainCurrency(float currencyGain)
     {
         totalCurrency += currencyGain;
         _currencyBar.SetCurrency(totalCurrency);
     }
+    
 
     private void FixedUpdate()
     {
@@ -50,6 +53,7 @@ public class gameManager : MonoBehaviour
 
     public void SpawnEnemies()
     {
+        
         if (spawnTimer > 0)
         {
             spawnTimer -= Time.deltaTime;
@@ -66,6 +70,7 @@ public class gameManager : MonoBehaviour
 
     public void LevelUp()
     {
+        SaveCoin();
         _currentLevel += 1;
         lvlUpSound.Play();
         currentExp = 0;
@@ -75,5 +80,17 @@ public class gameManager : MonoBehaviour
         experienceBar.SetMaxExperience(expMax);
         levelUpCanvas.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public void SaveCoin()
+    {
+        SaveSystem.SaveCoin(this);
+    }
+
+    public void LoadCoin()
+    {
+        SavingData data = SaveSystem.LoadData();
+
+         totalCurrency= data.goldCoin;
     }
 }
