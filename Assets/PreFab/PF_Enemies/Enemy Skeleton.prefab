@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 75
-  maxHealth: 100
+  maxHealth: 50
   damageDone: 20
   animator: {fileID: 826397631544082620}
   currency: {fileID: 7506878047627194280, guid: 67bec4e19bf40cd41b103be42bcdd44f, type: 3}

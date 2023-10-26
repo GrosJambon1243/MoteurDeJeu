@@ -271,7 +271,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5656696293238094291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6273233192035578612
+--- !u!1 &6424935678326171459
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,29 +279,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1856426671623303238}
+  - component: {fileID: 4301050323077480291}
   m_Layer: 10
-  m_Name: BibleSpot
+  m_Name: FireBallSpot2
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1856426671623303238
+--- !u!4 &4301050323077480291
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6273233192035578612}
+  m_GameObject: {fileID: 6424935678326171459}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.76, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.3, y: 0.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5656696293238094291}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &7330559441679279280
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,8 +429,8 @@ Transform:
   - {fileID: 5926273050354727180}
   - {fileID: 8008997950368873602}
   - {fileID: 9027310074979640553}
-  - {fileID: 1856426671623303238}
   - {fileID: 1639542784872850670}
+  - {fileID: 4301050323077480291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7035023587186242978
@@ -571,11 +571,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordSoundEffect: {fileID: 0}
   hurtSoundEffect: {fileID: 0}
-  speed: 300
+  speed: 400
   gameOverCanvas: {fileID: 0}
   getsugaSpot: {fileID: 1639542784872850670}
   getsuga: {fileID: 819077197958241975, guid: c32c10ffc56404542b0b1102168eb1f2, type: 3}
-  swordAtkCoold: 0.8
+  swordAtkCoold: 1.2
   swordRange: 1.8
   swordDamage: 50
   maxHealth: 300
@@ -624,7 +624,8 @@ MonoBehaviour:
   bible: {fileID: 7717046313804471193, guid: 2b2976ac0fc041040adca16d65436d40, type: 3}
   fireBallSpot1: {fileID: 8008997950368873602}
   axeSpot: {fileID: 9027310074979640553}
-  bibleSpot: {fileID: 1856426671623303238}
+  bibleSpot: {fileID: 0}
+  fireBallSpot2: {fileID: 4301050323077480291}
   fireBallCd: 0
   fireBallTimer: 2
   axeCd: 0

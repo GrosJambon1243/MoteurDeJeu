@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private GameObject fireBall,axe,bible;
-    [SerializeField] private Transform fireBallSpot1,axeSpot,bibleSpot;
+    [SerializeField] private Transform fireBallSpot1,axeSpot,bibleSpot,fireBallSpot2;
     [SerializeField] private float fireBallCd,fireBallTimer,axeCd,axeTimer,bibleCd,bibleTimer;
     public bool asFireBall,asAxe;
 
@@ -44,7 +45,9 @@ public class WeaponManager : MonoBehaviour
             fireBallCd -= Time.deltaTime;
             if (fireBallCd <= 0)
             {
-                Instantiate(fireBall, fireBallSpot1.position,fireBallSpot1.rotation);
+                var position = fireBallSpot1.position;
+                Instantiate(fireBall, position,fireBallSpot1.rotation);
+                Instantiate(fireBall,fireBallSpot2.transform.position,fireBallSpot2.rotation);
                 fireBallCd = fireBallTimer;
             }
         }

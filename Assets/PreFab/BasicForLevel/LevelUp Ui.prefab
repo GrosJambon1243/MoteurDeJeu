@@ -351,7 +351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -426848042, guid: b3ab57ecb7f507a4d8c50c5cbdaa8843, type: 3}
+  m_Sprite: {fileID: -223478251, guid: 977e3c282c1650c4497afb946413fb32, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shield
+  m_text: Bow
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 246e9afe3e04d6f468d57ac52c60e29d, type: 2}
   m_sharedMaterial: {fileID: -2995639340956116499, guid: 246e9afe3e04d6f468d57ac52c60e29d, type: 2}
@@ -1454,7 +1454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3998014721451324953
 RectTransform:
   m_ObjectHideFlags: 0
