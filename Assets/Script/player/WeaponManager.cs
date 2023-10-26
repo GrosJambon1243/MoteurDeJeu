@@ -6,17 +6,18 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] private GameObject fireBall,axe,bible;
-    [SerializeField] private Transform fireBallSpot1,axeSpot,bibleSpot,fireBallSpot2;
-    [SerializeField] private float fireBallCd,fireBallTimer,axeCd,axeTimer,bibleCd,bibleTimer;
-    public bool asFireBall,asAxe;
+    [SerializeField] private GameObject fireBall,axe,arrow;
+    [SerializeField] private Transform fireBallSpot1,axeSpot,fireBallSpot2;
+    [SerializeField] private float fireBallTimer,axeTimer,arrowTimer;
+    private float fireBallCd, axeCd, arrowCd;
+    private bool asFireBall,asAxe;
+    private bool asArrow;
 
     private void Start()
     {
         fireBallCd = fireBallTimer;
         axeCd = axeTimer;
-        bibleCd = bibleTimer;
-        
+        arrowCd = arrowTimer;
 
     }
 
@@ -31,11 +32,11 @@ public class WeaponManager : MonoBehaviour
             ShootAxe();
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (asArrow)
         {
-            
-         Instantiate(bible, bibleSpot.position + new Vector3(2,0), bibleSpot.rotation);
+            ShootArrow();
         }
+
     }
 
     private void ShootFireBall()
@@ -65,19 +66,22 @@ public class WeaponManager : MonoBehaviour
             }
         }
     }
-    public void RotateBible()
+
+    private void ShootArrow()
     {
-        if (bibleCd >= 0)
+        if (arrowCd>=0)
         {
-            bibleCd -= Time.deltaTime;
-            if (bibleCd <= 0)
+            arrowCd -= Time.deltaTime;
+            if (arrowCd <= 0 )
             {
-
-                bibleCd = bibleTimer;
+                Instantiate(arrow, fireBallSpot1.transform.position,fireBallSpot1.rotation); 
+                Instantiate(arrow, new Vector3(0f,1f)+ fireBallSpot1.transform.position,fireBallSpot1.rotation);
+                Instantiate(arrow, new Vector3(0f,-1f)+ fireBallSpot1.transform.position,fireBallSpot1.rotation);
+                arrowCd = arrowTimer;
             }
-
         }
     }
+   
 
     public void UnlockFireBall()
     {
@@ -87,6 +91,11 @@ public class WeaponManager : MonoBehaviour
     public void UnlockAxe()
     {
         asAxe = true;
+    }
+
+    public void UnlockArrow()
+    {
+        asArrow = true;
     }
 
 }

@@ -32,4 +32,12 @@ public class ButtonUi : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 1;
     }
+
+    public void ArrowButton()
+    {
+        _weaponManager = FindObjectOfType<WeaponManager>();
+        _weaponManager.UnlockArrow();
+        gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
 }

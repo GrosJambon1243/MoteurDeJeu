@@ -39,3 +39,5 @@ M
 Assets/Script/player/Bible.cs,6\7\679a2951a1444eb46733477574989b1ec6ef0a39
 O
 Assets/Script/player/Getsuga.cs,9\8\98878fc545b6f06abb0a71704f270b1b4393cada
+M
+Assets/Script/player/Arrow.cs,7\3\736531e1780ef71fd15974882b9c029cad657d42

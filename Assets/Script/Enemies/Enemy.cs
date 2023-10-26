@@ -11,6 +11,7 @@ public class Enemy : enemyDamage
     private Rigidbody2D _skeleRigidBody;
     private BoxCollider2D _boxCollider2D;
     private Vector3 direction;
+    private int deathCount;
     [SerializeField] float moveSpeed;
     public int maxHealth = 100, damageDone;
     private int currentHealth,_range;
@@ -26,7 +27,7 @@ public class Enemy : enemyDamage
         player = GameObject.FindGameObjectWithTag("Player");
         _skeleRigidBody = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
-
+        
         currentHealth = maxHealth;
     }
 
@@ -77,7 +78,10 @@ public class Enemy : enemyDamage
         {
             Instantiate(coin,position + new Vector3(0.7f,0),Quaternion.identity);
         }
+
+        
         Destroy(gameObject, 0);
+        
     }
 
   
