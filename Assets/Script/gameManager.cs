@@ -9,7 +9,7 @@ public class gameManager : MonoBehaviour
 {
     
     [SerializeField] private Transform[] spawPoints;
-    [SerializeField] private GameObject skeleton, blob;
+    [SerializeField] private GameObject skeleton, blob,cimetireSkeleton;
     [SerializeField] private experienceBar experienceBar;
     [SerializeField] private CurrencyBar _currencyBar;
     [SerializeField] private GameObject levelUpCanvas;
@@ -62,6 +62,7 @@ public class gameManager : MonoBehaviour
                 Instantiate(skeleton, spawPoints[0].transform.position,quaternion.identity);
                 Instantiate(skeleton, spawPoints[1].transform.position,quaternion.identity);
                 Instantiate(blob, spawPoints[2].transform.position,quaternion.identity);
+                Instantiate(cimetireSkeleton, spawPoints[3].transform.position,quaternion.identity);
                 
                 spawnTimer = timeUntilSpawn;
             }

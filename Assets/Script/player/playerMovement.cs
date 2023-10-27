@@ -128,8 +128,8 @@ public class playerMovement : MonoBehaviour
                 hpBar.SetHealth(0,maxHealth);
                 _animator.SetTrigger("Death");
                 gameOverCanvas.SetActive(true);
-                Time.timeScale = 0;
                 gameObject.SetActive(false);
+                Time.timeScale = 0;
             }
         }
         

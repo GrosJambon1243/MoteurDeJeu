@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileDmg: 25
-  projectileSpeed: 20
+  projectileSpeed: 25
   theRb: {fileID: 2406693458968829976}
 --- !u!50 &2406693458968829976
 Rigidbody2D:

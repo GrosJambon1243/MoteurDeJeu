@@ -39,3 +39,9 @@ O
 Assets/Script/player/Getsuga.cs,9\8\98878fc545b6f06abb0a71704f270b1b4393cada
 M
 Assets/Script/player/Arrow.cs,7\3\736531e1780ef71fd15974882b9c029cad657d42
+K
+Assets/Script/SavingData.cs,c\0\c0b691a7cc157a3b6a04015732fb26863dae1b93
+K
+Assets/Script/SaveSystem.cs,8\4\8438f42e8e2fc7ed407e55f5b64ca0b17563dbbf
+R
+"Assets/Script/Ui Bar/ExitScript.cs,0\e\0e067e91a453beffe826dd20c2241436294bae71
