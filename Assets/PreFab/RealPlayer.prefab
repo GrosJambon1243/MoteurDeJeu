@@ -586,6 +586,7 @@ MonoBehaviour:
     m_Bits: 64
   hpBar: {fileID: 0}
   currentHealth: 0
+  exitCanvas: {fileID: 7260658334945749274, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
 --- !u!95 &4286654785050242131
 Animator:
   serializedVersion: 5

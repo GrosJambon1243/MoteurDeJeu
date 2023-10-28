@@ -22,12 +22,12 @@ public class playerMovement : MonoBehaviour
     public int swordDamage = 50, maxHealth = 100;
     [HideInInspector]
     [SerializeField] private bool canSwingSword;
-    private bool isAttacking,isInvincible,_isFacingRight = true;
+    private bool isAttacking,isInvincible,_isFacingRight = true,boolExitCanvas;
     public Transform swordSpot;
     public LayerMask enemyLayers;
     public healthBar hpBar;
     public int currentHealth;
-    
+    [SerializeField] private GameObject exitCanvas;
 
     #endregion
         public void FourFrameSword()
@@ -53,7 +53,12 @@ public class playerMovement : MonoBehaviour
             hpBar.SetMaxHealth(maxHealth);
             hpBar.SetHealth(currentHealth,maxHealth);
         }
-        
+
+        private void Update()
+        {
+            ExitButton();
+        }
+
 
         private void FixedUpdate()
         {
@@ -132,14 +137,6 @@ public class playerMovement : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
-        
-        //Permet de voir le range du sword attack
-        void OnDrawGizmosSelected()
-        {
-            if (swordSpot == null)
-                return;
-            Gizmos.DrawWireSphere(swordSpot.position,swordRange);
-        }
         private void PlayerInvinsible()
         {
             isInvincible = false;
@@ -153,5 +150,16 @@ public class playerMovement : MonoBehaviour
         {
             swordDamage += 50;
         }
-      
+
+        private void ExitButton()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                boolExitCanvas = !boolExitCanvas;
+                exitCanvas.SetActive(boolExitCanvas);
+                Time.timeScale = boolExitCanvas ? 0 : 1; // Freeze game when exit panel is active.
+            }
+           
+           
+        }
 }

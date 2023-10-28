@@ -27,16 +27,16 @@ public class mainMenu : MonoBehaviour
 
     public void LevelOne()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void LevelTwo()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadSceneAsync(2);
     }
 
     public void LevelThree()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadSceneAsync(3);
     }
 }

@@ -7,7 +7,7 @@ namespace Script.Ui_Bar
     {
         public void ExitButton()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadSceneAsync(0);
         }
     }
 }
