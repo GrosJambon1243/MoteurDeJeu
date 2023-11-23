@@ -1,33 +1,54 @@
 
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Timeline;
-using Random = UnityEngine.Random;
-
 
 public class playerMovement : MonoBehaviour
 {
     #region variable
-    [SerializeField] private AudioSource swordSoundEffect, hurtSoundEffect;
+    [SerializeField] private AudioSource swordSoundEffect;
+    [SerializeField] private AudioSource hurtSoundEffect;
+
+// Movement
     [SerializeField] private float speed = 1f;
+    private float x, y;
+
+// Game Over
     [SerializeField] private GameObject gameOverCanvas;
+
+// Animator and Rigidbody
     private Animator _animator;
     private Rigidbody2D _theRb;
+
+// Sword Attack
     [SerializeField] private Transform getsugaSpot;
     [SerializeField] private GameObject getsuga;
-    [SerializeField] private float swordAtkCoold = 0;
-    private float swordTimer,attackTimer,x,y;
-    public float swordRange =0.5f;
-    public int swordDamage = 50, maxHealth = 100;
-    [HideInInspector]
+    [SerializeField] private float swordAtkCooldown = 0;
+    private float swordTimer, attackTimer;
     [SerializeField] private bool canSwingSword;
-    private bool isAttacking,isInvincible,_isFacingRight = true,boolExitCanvas;
+
+// Attack Parameters
+    [SerializeField] private float swordRange = 0.5f;
+    public int swordDamage = 50;
+
+// Player Health
+    public int maxHealth = 100;
+    private bool isInvincible;
+    private bool isAttacking;
+
+// Facing Direction
+    private bool _isFacingRight = true;
+
+// Exit Canvas
+    [SerializeField] private GameObject exitCanvas;
+    private bool boolExitCanvas;
+
+// Sword Attack Spot and Enemy Layers
     public Transform swordSpot;
     public LayerMask enemyLayers;
+
+// Health Bar
     public healthBar hpBar;
     public int currentHealth;
-    [SerializeField] private GameObject exitCanvas;
+
 
     #endregion
         public void FourFrameSword()
@@ -62,6 +83,13 @@ public class playerMovement : MonoBehaviour
 
         private void FixedUpdate()
         {
+            HandleMovement();
+            SwordAttack();
+
+        }
+
+        private void HandleMovement()
+        {
             x = Input.GetAxisRaw("Horizontal");
             y = Input.GetAxisRaw("Vertical");
             if (!isAttacking)
@@ -70,8 +98,6 @@ public class playerMovement : MonoBehaviour
                 _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
                 Flip();
             }
-            SwordAttack();
-
         }
 
         private void Flip()
@@ -110,7 +136,7 @@ public class playerMovement : MonoBehaviour
                 attackTimer = 0.8f;
                 canSwingSword = false;
                 isAttacking = true;
-                swordTimer = swordAtkCoold;
+                swordTimer = swordAtkCooldown;
                 _theRb.velocity = Vector2.zero;
             }
         }
@@ -143,8 +169,10 @@ public class playerMovement : MonoBehaviour
         }
         public void HealingPlayer(int healing)
         {
-            currentHealth += healing;
-            hpBar.SetHealth(currentHealth,maxHealth);
+                var maxHealing = maxHealth - currentHealth;
+                var actualHealing = Mathf.Min(healing, maxHealing);
+                currentHealth += actualHealing;
+                hpBar.SetHealth(currentHealth,maxHealth);
         }
         public void IncreaseSwordDmg()
         {
@@ -157,9 +185,13 @@ public class playerMovement : MonoBehaviour
             {
                 boolExitCanvas = !boolExitCanvas;
                 exitCanvas.SetActive(boolExitCanvas);
-                Time.timeScale = boolExitCanvas ? 0 : 1; // Freeze game when exit panel is active.
+                Time.timeScale = boolExitCanvas ? 0 : 1; 
             }
            
-           
         }
+
+
+        
 }
+
+

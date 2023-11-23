@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 0}
   skeleton: {fileID: 6299625939727077223, guid: cb69cc6b4a649894f84550deeea4fc39, type: 3}
   blob: {fileID: 2244014884298443723, guid: 56e8d10ca9e8afe4e97fc9c626590b22, type: 3}
+  cimetireSkeleton: {fileID: 6299625939727077223, guid: cb69cc6b4a649894f84550deeea4fc39, type: 3}
   experienceBar: {fileID: 0}
   _currencyBar: {fileID: 0}
   levelUpCanvas: {fileID: 0}

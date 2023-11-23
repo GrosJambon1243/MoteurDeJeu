@@ -19,7 +19,7 @@ public class Enemy : enemyDamage
     private bool isKnockBack;
     
 
-    [SerializeField] GameObject currency, experience;
+    [SerializeField] GameObject currency, experience,healPotion;
 
     void Start()
     {
@@ -62,13 +62,14 @@ public class Enemy : enemyDamage
         if (currentHealth <= 0)
         {
             animator.SetTrigger("isHurt");
-            DeathAnim(currency, experience,transform.position,_range);
+            DeathAnim(currency, experience,healPotion,transform.position,_range);
         }
     }
 
 
-    public override void DeathAnim(GameObject coin, GameObject expCrystal,Vector3 position, int range)
+    public override void DeathAnim(GameObject coin, GameObject expCrystal,GameObject heal,Vector3 position, int range)
     {
+        var potionDrop = Random.Range(0, 10);
         position = transform.position;
         range = Random.Range(0, 4);
         _boxCollider2D.enabled = false;
@@ -76,12 +77,14 @@ public class Enemy : enemyDamage
         Instantiate(expCrystal,position,Quaternion.identity);
         if (range == 2)
         {
-            Instantiate(coin,position + new Vector3(0.7f,0),Quaternion.identity);
+            Instantiate(coin,position + new Vector3(1f,0),Quaternion.identity);
         }
 
-        
+        if (potionDrop == 9)
+        {
+            Instantiate(heal,position + new Vector3(-1f,0),Quaternion.identity);
+        }
         Destroy(gameObject, 0);
-        
     }
 
   

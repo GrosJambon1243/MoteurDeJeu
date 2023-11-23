@@ -10,7 +10,7 @@ public class Axe : MonoBehaviour
     private void Start()
     {
 
-        theRb.velocity = Vector2.up * axeSpeed;
+        theRb.velocity = (Vector2.one + Vector2.up) * axeSpeed;
 
     }
     private void OnBecameInvisible()

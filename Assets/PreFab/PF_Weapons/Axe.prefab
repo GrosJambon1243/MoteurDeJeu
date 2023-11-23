@@ -194,5 +194,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axeDmg: 100
-  axeSpeed: 20
+  axeSpeed: 10
   theRb: {fileID: 2290968505431171393}

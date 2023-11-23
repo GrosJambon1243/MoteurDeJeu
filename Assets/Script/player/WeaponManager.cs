@@ -46,8 +46,7 @@ public class WeaponManager : MonoBehaviour
             fireBallCd -= Time.deltaTime;
             if (fireBallCd <= 0)
             {
-                var position = fireBallSpot1.position;
-                Instantiate(fireBall, position,fireBallSpot1.rotation);
+                Instantiate(fireBall, fireBallSpot1.transform.position,fireBallSpot1.rotation);
                 Instantiate(fireBall,fireBallSpot2.transform.position,fireBallSpot2.rotation);
                 fireBallCd = fireBallTimer;
             }
@@ -61,7 +60,7 @@ public class WeaponManager : MonoBehaviour
             axeCd -= Time.deltaTime;
             if (axeCd <= 0)
             {
-                Instantiate(axe, axeSpot.position,Quaternion.identity);
+                Instantiate(axe, axeSpot.position,axeSpot.rotation);
                 axeCd = axeTimer;
             }
         }
@@ -74,9 +73,11 @@ public class WeaponManager : MonoBehaviour
             arrowCd -= Time.deltaTime;
             if (arrowCd <= 0 )
             {
-                Instantiate(arrow, fireBallSpot1.transform.position,fireBallSpot1.rotation); 
-                Instantiate(arrow, new Vector3(0f,1f)+ fireBallSpot1.transform.position,fireBallSpot1.rotation);
-                Instantiate(arrow, new Vector3(0f,-1f)+ fireBallSpot1.transform.position,fireBallSpot1.rotation);
+                var position = fireBallSpot1.transform.position;
+                var rotation = fireBallSpot1.rotation;
+                Instantiate(arrow, position,rotation); 
+                Instantiate(arrow, new Vector3(0f,1f)+ position,rotation);
+                Instantiate(arrow, new Vector3(0f,-1f)+ position,rotation);
                 arrowCd = arrowTimer;
             }
         }

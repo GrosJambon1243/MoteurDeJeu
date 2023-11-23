@@ -1,7 +1,7 @@
 
-xcsharpsquid:S101"WRename class 'enemyBlob' to match pascal case naming rules, consider using 'EnemyBlob'.(…©Ğ÷şÿÿÿÿ
-Jcsharpsquid:S3903"(Move 'enemyBlob' into a named namespace.(…©Ğ÷şÿÿÿÿ
-acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.( ¶ÛÏ
-fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(êÌÙÃÿÿÿÿÿ
-fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Ãä°„üÿÿÿÿ
-\csharpsquid:S3459"3Remove unassigned field '_range', or set its value.(Ë¾éÈşÿÿÿÿ8ı€ì°´1
+csharpsquid:S101"WRename class 'enemyBlob' to match pascal case naming rules, consider using 'EnemyBlob'.(…©Ğ÷şÿÿÿÿ8Á³É¿1
+Qcsharpsquid:S3903"(Move 'enemyBlob' into a named namespace.(…©Ğ÷şÿÿÿÿ8Â³É¿1
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.( ¶ÛÏ8Â³É¿1
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(êÌÙÃÿÿÿÿÿ8Â³É¿1
+mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Ãä°„üÿÿÿÿ8Â³É¿1
+\csharpsquid:S3459"3Remove unassigned field '_range', or set its value.(Ë¾éÈşÿÿÿÿ8Â³É¿1

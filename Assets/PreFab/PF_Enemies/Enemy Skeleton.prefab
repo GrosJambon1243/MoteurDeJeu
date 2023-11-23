@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2521620557215478714}
   - component: {fileID: 7323433112124276633}
   - component: {fileID: 1615910254971787204}
-  - component: {fileID: 826397631544082620}
+  - component: {fileID: 4318020831179306570}
   m_Layer: 6
   m_Name: Enemy Skeleton
   m_TagString: Skeleton
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7537196482120660328, guid: 02027016afbc5d544ab92ba819bc8094, type: 3}
+  m_Sprite: {fileID: 4326287474489854147, guid: 02027016afbc5d544ab92ba819bc8094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -176,10 +176,11 @@ MonoBehaviour:
   moveSpeed: 75
   maxHealth: 50
   damageDone: 20
-  animator: {fileID: 826397631544082620}
+  animator: {fileID: 4318020831179306570}
   currency: {fileID: 7506878047627194280, guid: 67bec4e19bf40cd41b103be42bcdd44f, type: 3}
   experience: {fileID: 3600915012673053252, guid: be93360cae5f04b4a952d22a8fd49da7, type: 3}
---- !u!95 &826397631544082620
+  healPotion: {fileID: 1729750937221366557, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+--- !u!95 &4318020831179306570
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -226,7 +227,7 @@ Transform:
   m_GameObject: {fileID: 9149183507754018868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.069, y: -0.219, z: 0}
+  m_LocalPosition: {x: 0.22, y: -0.2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
