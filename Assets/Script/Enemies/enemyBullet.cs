@@ -27,7 +27,7 @@ public class enemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        var thePlayer = hitInfo.GetComponent<playerMovement>();
+        var thePlayer = hitInfo.GetComponent<PlayerMovement>();
 
         if (thePlayer != null)
         {

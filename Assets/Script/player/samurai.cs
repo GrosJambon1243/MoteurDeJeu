@@ -8,6 +8,9 @@ public class Samurai : MonoBehaviour
    private bool _canAttack = true;
    private float _atkCd = 3f;
    private float _atkTimer;
+   private int combo;
+   private float comboTimeWindow;
+   
 
 
    private void Start()
@@ -15,18 +18,35 @@ public class Samurai : MonoBehaviour
       _animator = GetComponent<Animator>();
    }
 
-   private void FixedUpdate()
+   private void Update()
    {
-      if (Input.GetMouseButton(0) )
+      if (Input.GetMouseButtonDown(0) )
       {
          if (_canAttack)
          {
+            _animator.SetInteger("ComboCount", combo);
             _animator.SetTrigger("Attack");
-            _atkTimer = _atkCd;
+            combo++;
+            combo %= 2;
+            comboTimeWindow = 0.5f;
+           // _atkTimer = _atkCd;
+         }
+
+         if (comboTimeWindow>0 )
+         {
+            comboTimeWindow -= Time.deltaTime;
+            if (comboTimeWindow <= 0)
+            {
+               combo = 0;
+            }
          }
 
       }
+     // KatanaAttack();
+   }
 
+   public void KatanaAttack()
+   {
       if (_atkTimer > 0)
       {
          _canAttack = false;

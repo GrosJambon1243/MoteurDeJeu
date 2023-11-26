@@ -6,7 +6,7 @@ using UnityEngine;
 public class ButtonUi : MonoBehaviour
 {
     private WeaponManager _weaponManager;
-    private playerMovement _playerMovement;
+    private PlayerMovement _playerMovement;
     
 
     public void FireBallButton()
@@ -27,7 +27,7 @@ public class ButtonUi : MonoBehaviour
 
     public void SwordButton()
     {
-        _playerMovement = FindObjectOfType<playerMovement>();
+        _playerMovement = FindObjectOfType<PlayerMovement>();
         _playerMovement.IncreaseSwordDmg();
         gameObject.SetActive(false);
         Time.timeScale = 1;

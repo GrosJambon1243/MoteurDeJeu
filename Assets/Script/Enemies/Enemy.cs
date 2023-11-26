@@ -93,7 +93,7 @@ public class Enemy : enemyDamage
     {
         if (hitInfo.collider.gameObject.CompareTag("Player") )
         {
-            player.GetComponent<playerMovement>().TakingDmg(damageDone);
+            player.GetComponent<PlayerMovement>().TakingDmg(damageDone);
             StartCoroutine(KnockBack());
         }
     }

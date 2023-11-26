@@ -7,11 +7,11 @@ public class HealingPotion : MonoBehaviour
     [SerializeField] private int healingAmount;
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        var thePlayer = hitInfo.GetComponent<playerMovement>();
+        var thePlayer = hitInfo.GetComponent<PlayerMovement>();
 
         if (thePlayer != null)
         {
-            thePlayer.GetComponent<playerMovement>().HealingPlayer(healingAmount);
+            thePlayer.GetComponent<PlayerMovement>().HealingPlayer(healingAmount);
             Destroy(gameObject);
         }
     }

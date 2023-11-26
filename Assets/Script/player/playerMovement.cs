@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     #region variable
     [SerializeField] private AudioSource swordSoundEffect;
@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
 
 // Movement
     [SerializeField] private float speed = 1f;
-    private float x, y;
+    private float _x, _y;
 
 // Game Over
     [SerializeField] private GameObject gameOverCanvas;
@@ -21,8 +21,8 @@ public class playerMovement : MonoBehaviour
 // Sword Attack
     [SerializeField] private Transform getsugaSpot;
     [SerializeField] private GameObject getsuga;
-    [SerializeField] private float swordAtkCooldown = 0;
-    private float swordTimer, attackTimer;
+    [SerializeField] private float swordAtkCooldown;
+    private float _swordTimer, _attackTimer;
     [SerializeField] private bool canSwingSword;
 
 // Attack Parameters
@@ -31,15 +31,15 @@ public class playerMovement : MonoBehaviour
 
 // Player Health
     public int maxHealth = 100;
-    private bool isInvincible;
-    private bool isAttacking;
+    private bool _isInvincible;
+    private bool _isAttacking;
 
 // Facing Direction
     private bool _isFacingRight = true;
 
 // Exit Canvas
     [SerializeField] private GameObject exitCanvas;
-    private bool boolExitCanvas;
+    private bool _boolExitCanvas;
 
 // Sword Attack Spot and Enemy Layers
     public Transform swordSpot;
@@ -47,8 +47,15 @@ public class playerMovement : MonoBehaviour
 
 // Health Bar
     public healthBar hpBar;
-    public int currentHealth;
+    private int _currentHealth;
 
+    public int CurrentHp
+    {
+        get => _currentHealth;
+        private set => _currentHealth = value;
+    }
+
+ 
 
     #endregion
         public void FourFrameSword()
@@ -65,36 +72,33 @@ public class playerMovement : MonoBehaviour
         }
         private void Start()
         {
-            isInvincible = false;
-            currentHealth = maxHealth;
+            _isInvincible = false;
+            _currentHealth = maxHealth;
             _theRb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _animator.SetInteger("AnimState",1);
             
             hpBar.SetMaxHealth(maxHealth);
-            hpBar.SetHealth(currentHealth,maxHealth);
+            hpBar.SetHealth(_currentHealth,maxHealth);
         }
 
         private void Update()
         {
             ExitButton();
-        }
-
-
-        private void FixedUpdate()
-        {
             HandleMovement();
             SwordAttack();
-
         }
+
+
+   
 
         private void HandleMovement()
         {
-            x = Input.GetAxisRaw("Horizontal");
-            y = Input.GetAxisRaw("Vertical");
-            if (!isAttacking)
+            _x = Input.GetAxisRaw("Horizontal");
+            _y = Input.GetAxisRaw("Vertical");
+            if (!_isAttacking)
             {
-                _theRb.velocity = new Vector3(x, y, 0f).normalized * (speed * Time.fixedDeltaTime);
+                _theRb.velocity = new Vector3(_x, _y, 0f).normalized * (speed * Time.fixedDeltaTime);
                 _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
                 Flip();
             }
@@ -102,7 +106,7 @@ public class playerMovement : MonoBehaviour
 
         private void Flip()
         {
-            if ((x < 0 && _isFacingRight) ||(x > 0 && !_isFacingRight))
+            if ((_x < 0 && _isFacingRight) ||(_x > 0 && !_isFacingRight))
             {
                 _isFacingRight = !_isFacingRight;
                 transform.Rotate(0f,180f,0f);
@@ -112,49 +116,49 @@ public class playerMovement : MonoBehaviour
         
         private void SwordAttack()
         {
-            if (swordTimer > 0)
+            if (_swordTimer > 0)
             {
-                swordTimer -= Time.deltaTime;
-                if (swordTimer <=0)
+                _swordTimer -= Time.deltaTime;
+                if (_swordTimer <=0)
                 {
                     canSwingSword = true;
                 }
             }
-            if (attackTimer > 0)
+            if (_attackTimer > 0)
             {
-                attackTimer -= Time.deltaTime;
-                if (attackTimer <=0)
+                _attackTimer -= Time.deltaTime;
+                if (_attackTimer <=0)
                 {
-                    isAttacking = false;
+                    _isAttacking = false;
                 }
             }
             
-            if (Input.GetMouseButton(0) && canSwingSword)
+            if (Input.GetMouseButtonDown(0) && canSwingSword)
             {
                 
                 _animator.SetTrigger("Attack");
-                attackTimer = 0.8f;
+                _attackTimer = 0.8f;
                 canSwingSword = false;
-                isAttacking = true;
-                swordTimer = swordAtkCooldown;
+                _isAttacking = true;
+                _swordTimer = swordAtkCooldown;
                 _theRb.velocity = Vector2.zero;
             }
         }
 
         public void TakingDmg(int damage)
         {
-            if (!isInvincible)
+            if (!_isInvincible)
             {
-                currentHealth -= damage;
-                hpBar.SetHealth(currentHealth,maxHealth);
-                isInvincible = true;
-                isAttacking = false;
+                _currentHealth -= damage;
+                hpBar.SetHealth(_currentHealth,maxHealth);
+                _isInvincible = true;
+                _isAttacking = false;
                 _animator.SetTrigger("Hurt");
                 hurtSoundEffect.Play();
                 Invoke("PlayerInvinsible",1);
             }
            
-            if (currentHealth<= 0)
+            if (_currentHealth<= 0)
             {
                 hpBar.SetHealth(0,maxHealth);
                 _animator.SetTrigger("Death");
@@ -165,14 +169,14 @@ public class playerMovement : MonoBehaviour
         }
         private void PlayerInvinsible()
         {
-            isInvincible = false;
+            _isInvincible = false;
         }
         public void HealingPlayer(int healing)
         {
-                var maxHealing = maxHealth - currentHealth;
+                var maxHealing = maxHealth - _currentHealth;
                 var actualHealing = Mathf.Min(healing, maxHealing);
-                currentHealth += actualHealing;
-                hpBar.SetHealth(currentHealth,maxHealth);
+                _currentHealth += actualHealing;
+                hpBar.SetHealth(_currentHealth,maxHealth);
         }
         public void IncreaseSwordDmg()
         {
@@ -183,9 +187,9 @@ public class playerMovement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                boolExitCanvas = !boolExitCanvas;
-                exitCanvas.SetActive(boolExitCanvas);
-                Time.timeScale = boolExitCanvas ? 0 : 1; 
+                _boolExitCanvas = !_boolExitCanvas;
+                exitCanvas.SetActive(_boolExitCanvas);
+                Time.timeScale = _boolExitCanvas ? 0 : 1; 
             }
            
         }

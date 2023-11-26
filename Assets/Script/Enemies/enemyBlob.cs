@@ -98,7 +98,7 @@ public class enemyBlob : enemyDamage
     {
         if (hitInfo.collider.gameObject.CompareTag("Player") )
         {
-            player.GetComponent<playerMovement>().TakingDmg(damageOnContact);
+            player.GetComponent<PlayerMovement>().TakingDmg(damageOnContact);
             StartCoroutine(KnockBack());
         }
     }
