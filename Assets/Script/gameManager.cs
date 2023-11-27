@@ -7,19 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
-    
+
     [SerializeField] private Transform[] spawPoints;
-    [SerializeField] private GameObject skeleton, blob,cimetireSkeleton;
+    [SerializeField] private GameObject skeleton, blob, cimetireSkeleton;
     [SerializeField] private experienceBar experienceBar;
     [SerializeField] private CurrencyBar _currencyBar;
     [SerializeField] private GameObject levelUpCanvas;
     private float timeUntilSpawn = 5f, spawnTimer;
     private int _currentLevel = 1;
-    
-    public float  expMax = 100, currentExp, expAddition = 50, expLevel,totalCurrency;
+
+    public float expMax = 100, currentExp, expAddition = 50, expLevel, totalCurrency;
     public AudioSource lvlUpSound;
 
-    
+
     private void Start()
     {
         LoadCoin();
@@ -36,7 +36,7 @@ public class gameManager : MonoBehaviour
         experienceBar.SetExperience(currentExp);
         if (currentExp >= expMax)
         {
-           LevelUp();
+            LevelUp();
         }
     }
     public void GainCurrency(float currencyGain)
@@ -44,7 +44,7 @@ public class gameManager : MonoBehaviour
         totalCurrency += currencyGain;
         _currencyBar.SetCurrency(totalCurrency);
     }
-    
+
 
     private void FixedUpdate()
     {
@@ -53,17 +53,17 @@ public class gameManager : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        
+
         if (spawnTimer > 0)
         {
             spawnTimer -= Time.deltaTime;
-            if (spawnTimer<= 0)
+            if (spawnTimer <= 0)
             {
-                Instantiate(skeleton, spawPoints[0].transform.position,quaternion.identity);
-                Instantiate(skeleton, spawPoints[1].transform.position,quaternion.identity);
-                Instantiate(blob, spawPoints[2].transform.position,quaternion.identity);
-                Instantiate(cimetireSkeleton, spawPoints[3].transform.position,quaternion.identity);
-                
+                Instantiate(skeleton, spawPoints[0].transform.position, quaternion.identity);
+                Instantiate(skeleton, spawPoints[1].transform.position, quaternion.identity);
+                Instantiate(blob, spawPoints[2].transform.position, quaternion.identity);
+                Instantiate(cimetireSkeleton, spawPoints[3].transform.position, quaternion.identity);
+
                 spawnTimer = timeUntilSpawn;
             }
         }
@@ -92,6 +92,6 @@ public class gameManager : MonoBehaviour
     {
         SavingData data = SaveSystem.LoadData();
 
-         totalCurrency= data.goldCoin;
+        totalCurrency = data?.goldCoin ?? 0;
     }
 }

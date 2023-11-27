@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 public class enemyBlob : enemyDamage
 {
     private GameObject player;
-    private SpriteRenderer _sprite;
     private Rigidbody2D _blobRigidBody;
     private BoxCollider2D _blobBoxCollider2D;
     private Vector3 direction;
@@ -24,7 +23,6 @@ public class enemyBlob : enemyDamage
     {
         attackCd = attackTimer;
         player = GameObject.FindGameObjectWithTag("Player");
-        _sprite = GetComponent<SpriteRenderer>();
         _blobRigidBody = GetComponent<Rigidbody2D>();
         _blobBoxCollider2D = GetComponent<BoxCollider2D>();
        
@@ -52,8 +50,9 @@ public class enemyBlob : enemyDamage
 
     public override void TakingDmg(int dmg)
     {
+        base.TakingDmg(dmg);
+
         blobCurrentHealth -= dmg;
-        StartCoroutine(Flashing());
         if (blobCurrentHealth <= 0)
         {
             DeathAnim(currency,experience,healPotion,transform.position,_range);
@@ -119,16 +118,5 @@ public class enemyBlob : enemyDamage
         isKnockBack = false;
        
     }
-    IEnumerator Flashing()
-    {
-        _sprite.material.SetFloat("_HurtValue",0.9f);
-        yield return new WaitForSeconds(0.1f);
-        _sprite.material.SetFloat("_HurtValue",0.8f);
-        yield return new WaitForSeconds(0.1f);
-        _sprite.material.SetFloat("_HurtValue",0.6f);
-        yield return new WaitForSeconds(0.1f);
-        _sprite.material.SetFloat("_HurtValue",0.4f);
-        yield return new WaitForSeconds(0.1f);
-        _sprite.material.SetFloat("_HurtValue",0f);
-    }
+
 }

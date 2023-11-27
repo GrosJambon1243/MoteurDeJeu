@@ -29,7 +29,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("merde");
+            Debug.LogWarning("merde");
             return null;
         }
     }

@@ -263,7 +263,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "1befc2e546c24de1b80d791865193126",
     "m_Id": 0,
-    "m_DisplayName": "SpriteText",
+    "m_DisplayName": "MainTex",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -809,10 +809,10 @@
     "m_Guid": {
         "m_GuidSerialized": "9f1dbafe-112c-4470-aa0b-067bf052f8ee"
     },
-    "m_Name": "SpriteText",
+    "m_Name": "MainTex",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "SpriteText",
-    "m_DefaultReferenceName": "_SpriteText",
+    "m_RefNameGeneratedByDisplayName": "MainTex",
+    "m_DefaultReferenceName": "_MainTex",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -823,7 +823,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"ff04e4a59675fad49995a9d7f974bc3d\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"39c4145949a5b6d4881070fdac8c94e5\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,

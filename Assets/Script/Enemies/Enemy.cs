@@ -56,6 +56,7 @@ public class Enemy : enemyDamage
 
     public override void TakingDmg(int dmg)
     {
+        base.TakingDmg(dmg);
         currentHealth -= dmg;
 
         animator.SetTrigger("isHurt");
