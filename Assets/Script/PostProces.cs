@@ -22,7 +22,7 @@ public class PostProces : MonoBehaviour
         if (_player.CurrentHp <= 100)
         {
             _vignette.active = true;
-            float x = Mathf.Sin((Time.time * 10) + 2) /4f;
+            float x = Mathf.Sin((Time.time * 5) + 2) /4f;
             _vignette.intensity.Override(x);
         }
         else
