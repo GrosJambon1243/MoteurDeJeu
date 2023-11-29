@@ -59,7 +59,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.26260653, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.6, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5656696293238094291}
@@ -478,18 +478,17 @@ MonoBehaviour:
   gameOverCanvas: {fileID: 0}
   getsugaSpot: {fileID: 1639542784872850670}
   getsuga: {fileID: 819077197958241975, guid: c32c10ffc56404542b0b1102168eb1f2, type: 3}
-  swordAtkCoold: 1.2
+  swordAtkCooldown: 1
+  canSwingSword: 1
   swordRange: 1.8
   swordDamage: 25
   maxHealth: 300
-  canSwingSword: 1
+  exitCanvas: {fileID: 0}
   swordSpot: {fileID: 2417216455745016137}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
   hpBar: {fileID: 0}
-  currentHealth: 0
-  exitCanvas: {fileID: 7260658334945749274, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
 --- !u!95 &4286654785050242131
 Animator:
   serializedVersion: 5

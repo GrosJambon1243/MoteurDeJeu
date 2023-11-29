@@ -32,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
 // Player Health
     public int maxHealth = 100;
     private bool _isInvincible;
+
+    public bool IsInvincible
+    {
+        get => _isInvincible;
+    }
     private bool _isAttacking;
 
 // Facing Direction
