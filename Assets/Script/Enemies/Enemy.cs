@@ -17,7 +17,7 @@ public class Enemy : enemyDamage
     private int currentHealth,_range;
     public Animator animator;
     private bool isKnockBack;
-    
+ 
 
     [SerializeField] GameObject currency, experience,healPotion;
 
@@ -62,6 +62,7 @@ public class Enemy : enemyDamage
         animator.SetTrigger("isHurt");
         if (currentHealth <= 0)
         {
+            player.GetComponent<monsterKill>().NumberOfKill();
             animator.SetTrigger("isHurt");
             DeathAnim(currency, experience,healPotion,transform.position,_range);
         }
@@ -75,6 +76,7 @@ public class Enemy : enemyDamage
         range = Random.Range(0, 4);
         _boxCollider2D.enabled = false;
         this.enabled = false;
+      
         Instantiate(expCrystal,position,Quaternion.identity);
         if (range == 2)
         {

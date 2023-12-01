@@ -18,7 +18,7 @@ public class enemyBlob : enemyDamage
     public Transform firePoint;
     [SerializeField] GameObject bullet,currency,experience,healPotion;
     private bool isKnockBack;
-
+ 
     private void Start()
     {
         attackCd = attackTimer;
@@ -55,6 +55,8 @@ public class enemyBlob : enemyDamage
         blobCurrentHealth -= dmg;
         if (blobCurrentHealth <= 0)
         {
+            player.GetComponent<monsterKill>().NumberOfKill();
+            
             DeathAnim(currency,experience,healPotion,transform.position,_range);
         }
     }
@@ -81,6 +83,7 @@ public class enemyBlob : enemyDamage
         range = Random.Range(0, 4);
         _blobBoxCollider2D.enabled = false;
         this.enabled = false;
+       
         Instantiate(expCrystal,position,Quaternion.identity);
         if (range == 2)
         {

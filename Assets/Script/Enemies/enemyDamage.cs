@@ -19,6 +19,7 @@ public class enemyDamage : MonoBehaviour
 
     public virtual void DeathAnim(GameObject coin, GameObject expCrystal, GameObject heal, Vector3 position, int range)
     {
+        
     }
 
     public IEnumerator Flashing()
@@ -30,6 +31,8 @@ public class enemyDamage : MonoBehaviour
         _sprite.material.SetFloat("_HurtValue", 0.6f);
         yield return new WaitForSeconds(0.1f);
         _sprite.material.SetFloat("_HurtValue", 0.4f);
+        yield return new WaitForSeconds(0.1f);
+        _sprite.material.SetFloat("_HurtValue", 0.2f);
         yield return new WaitForSeconds(0.1f);
         _sprite.material.SetFloat("_HurtValue", 0f);
     }
