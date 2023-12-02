@@ -7,6 +7,7 @@ TagManager:
   - Blob
   - Skeleton
   - SpawPoint
+  - Collecting
   layers:
   - Default
   - TransparentFX

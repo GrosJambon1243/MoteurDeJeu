@@ -17,6 +17,8 @@ public class Enemy : enemyDamage
     private int currentHealth,_range;
     public Animator animator;
     private bool isKnockBack;
+    private GameObject _dataCollecting;
+
  
 
     [SerializeField] GameObject currency, experience,healPotion;
@@ -27,7 +29,7 @@ public class Enemy : enemyDamage
         player = GameObject.FindGameObjectWithTag("Player");
         _skeleRigidBody = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
-        
+        _dataCollecting = GameObject.FindGameObjectWithTag("Collecting");
         currentHealth = maxHealth;
     }
 
@@ -62,7 +64,7 @@ public class Enemy : enemyDamage
         animator.SetTrigger("isHurt");
         if (currentHealth <= 0)
         {
-            player.GetComponent<monsterKill>().NumberOfKill();
+            _dataCollecting.GetComponent<monsterKill>().NumberOfKill();
             animator.SetTrigger("isHurt");
             DeathAnim(currency, experience,healPotion,transform.position,_range);
         }

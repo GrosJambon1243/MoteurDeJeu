@@ -1,4 +1,6 @@
 
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -6,13 +8,15 @@ public class PlayerMovement : MonoBehaviour
     #region variable
     [SerializeField] private AudioSource swordSoundEffect;
     [SerializeField] private AudioSource hurtSoundEffect;
-
+// General UI
+    [SerializeField] private GameObject GeneralUi;
 // Movement
     [SerializeField] private float speed = 1f;
     private float _x, _y;
 
 // Game Over
     [SerializeField] private GameObject gameOverCanvas;
+    private GameObject _dataCollecting;
 
 // Animator and Rigidbody
     private Animator _animator;
@@ -82,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
             _theRb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _animator.SetInteger("AnimState",1);
-            
+            _dataCollecting = GameObject.FindGameObjectWithTag("Collecting");
             hpBar.SetMaxHealth(maxHealth);
             hpBar.SetHealth(_currentHealth,maxHealth);
         }
@@ -166,10 +170,9 @@ public class PlayerMovement : MonoBehaviour
             if (_currentHealth<= 0)
             {
                 hpBar.SetHealth(0,maxHealth);
+                GeneralUi.SetActive(false);
                 _animator.SetTrigger("Death");
-                gameOverCanvas.SetActive(true);
-                gameObject.SetActive(false);
-                Time.timeScale = 0;
+                StartCoroutine(DeathAnimation());
             }
         }
         private void PlayerInvinsible()
@@ -197,6 +200,15 @@ public class PlayerMovement : MonoBehaviour
                 Time.timeScale = _boolExitCanvas ? 0 : 1; 
             }
            
+        }
+
+        private IEnumerator DeathAnimation()
+        {
+            yield return new WaitForSeconds(2f);
+            gameOverCanvas.SetActive(true);
+            _dataCollecting.GetComponent<monsterKill>().MonsterText();
+            gameObject.SetActive(false);
+            Time.timeScale = 0;
         }
 
 

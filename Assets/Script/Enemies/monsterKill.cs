@@ -1,23 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class monsterKill : MonoBehaviour
 {
-    private int monsterSlain;
+    private int _monsterSlain;
+    private int _coinCollected;
+    [SerializeField] private TMP_Text _monsterText;
 
     public int MonsterSlain
     {
-        get => monsterSlain;
+        get => _monsterSlain;
     }
     void Start()
     {
-        monsterSlain = 0;
+        _monsterSlain = 0;
+        _coinCollected = 0;
     }
 
     public void NumberOfKill()
     {
-        monsterSlain++;
-        Debug.Log(monsterSlain);
+        _monsterSlain++;
+        Debug.Log(_monsterSlain);
+    }
+
+    public void NumberCoin()
+    {
+        _coinCollected++;
+    }
+
+    public void MonsterText()
+    {
+        _monsterText.text += " " + _monsterSlain;
     }
 }

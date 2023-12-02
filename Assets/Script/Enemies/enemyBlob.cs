@@ -18,6 +18,7 @@ public class enemyBlob : enemyDamage
     public Transform firePoint;
     [SerializeField] GameObject bullet,currency,experience,healPotion;
     private bool isKnockBack;
+    private GameObject _dataCollecting;
  
     private void Start()
     {
@@ -25,6 +26,7 @@ public class enemyBlob : enemyDamage
         player = GameObject.FindGameObjectWithTag("Player");
         _blobRigidBody = GetComponent<Rigidbody2D>();
         _blobBoxCollider2D = GetComponent<BoxCollider2D>();
+        _dataCollecting = GameObject.FindGameObjectWithTag("Collecting");
        
         blobCurrentHealth = blobMaxHealth;
     }
@@ -55,7 +57,7 @@ public class enemyBlob : enemyDamage
         blobCurrentHealth -= dmg;
         if (blobCurrentHealth <= 0)
         {
-            player.GetComponent<monsterKill>().NumberOfKill();
+            _dataCollecting.GetComponent<monsterKill>().NumberOfKill();
             
             DeathAnim(currency,experience,healPotion,transform.position,_range);
         }
