@@ -774,63 +774,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8761898455519393129, guid: 29f0eb209f660be41918d8623f61f342, type: 3}
   m_PrefabInstance: {fileID: 2100283814875241646}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1649206474
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1729750937221366557, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_Name
-      value: HealingPotion
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.2288036
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.852777
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
 --- !u!114 &1711837912 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8882746232931524467, guid: ecc8b7d2e8652ea4dbd15198b17a6079, type: 3}
@@ -1014,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 1043174908}
     - target: {fileID: 2830970926125684695, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2830970926125684695, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
       propertyPath: exitCanvas
@@ -1072,6 +1015,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7035023587186242978, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: d7017143eb006f44292167ed646f955d, type: 3}
     - target: {fileID: 7772185670785422248, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
       propertyPath: m_Name
       value: Warrior
@@ -1278,10 +1225,6 @@ PrefabInstance:
     - target: {fileID: 1846747949891552288, guid: 2ada595564fa5564abe7b3561c2d24ae, type: 3}
       propertyPath: m_Name
       value: DataCollecting
-      objectReference: {fileID: 0}
-    - target: {fileID: 1846747949891552288, guid: 2ada595564fa5564abe7b3561c2d24ae, type: 3}
-      propertyPath: m_TagString
-      value: Collecting
       objectReference: {fileID: 0}
     - target: {fileID: 8933048319702519237, guid: 2ada595564fa5564abe7b3561c2d24ae, type: 3}
       propertyPath: _monsterText
@@ -1577,7 +1520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 368943426016243311, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 436589600482967474, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1790,5 +1733,4 @@ SceneRoots:
   - {fileID: 7049196784535436502}
   - {fileID: 8082958449978017125}
   - {fileID: 7401656148427125552}
-  - {fileID: 1649206474}
   - {fileID: 4981212701506207675}

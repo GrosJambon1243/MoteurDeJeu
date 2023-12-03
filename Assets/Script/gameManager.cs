@@ -43,6 +43,7 @@ public class gameManager : MonoBehaviour
     {
         totalCurrency += currencyGain;
         _currencyBar.SetCurrency(totalCurrency);
+        SaveCoin();
     }
 
 
@@ -71,7 +72,6 @@ public class gameManager : MonoBehaviour
 
     public void LevelUp()
     {
-        SaveCoin();
         _currentLevel += 1;
         lvlUpSound.Play();
         currentExp = 0;

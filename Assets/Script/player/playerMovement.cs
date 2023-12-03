@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject _dataCollecting;
 
 // Animator and Rigidbody
+    private SpriteRenderer _sprite;
     private Animator _animator;
     private Rigidbody2D _theRb;
 
@@ -36,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
 // Player Health
     public int maxHealth = 100;
     private bool _isInvincible;
-
     public bool IsInvincible
     {
         get => _isInvincible;
@@ -67,7 +68,16 @@ public class PlayerMovement : MonoBehaviour
  
 
     #endregion
-        public void FourFrameSword()
+
+    private void Awake()
+    {
+        _dataCollecting = GameObject.FindGameObjectWithTag("Collecting"); 
+        _theRb = GetComponent<Rigidbody2D>(); 
+        _animator = GetComponent<Animator>();
+        _sprite = GetComponent<SpriteRenderer>();
+    }
+
+    public void FourFrameSword()
         {
             Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
             swordSoundEffect.Play();
@@ -83,10 +93,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _isInvincible = false;
             _currentHealth = maxHealth;
-            _theRb = GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
             _animator.SetInteger("AnimState",1);
-            _dataCollecting = GameObject.FindGameObjectWithTag("Collecting");
             hpBar.SetMaxHealth(maxHealth);
             hpBar.SetHealth(_currentHealth,maxHealth);
         }
@@ -97,10 +104,6 @@ public class PlayerMovement : MonoBehaviour
             HandleMovement();
             SwordAttack();
         }
-
-
-   
-
         private void HandleMovement()
         {
             _x = Input.GetAxisRaw("Horizontal");
@@ -121,7 +124,6 @@ public class PlayerMovement : MonoBehaviour
                 transform.Rotate(0f,180f,0f);
             }
         }
-        
         
         private void SwordAttack()
         {
@@ -181,11 +183,14 @@ public class PlayerMovement : MonoBehaviour
         }
         public void HealingPlayer(int healing)
         {
+            StartCoroutine(FlashingHeal());            
                 var maxHealing = maxHealth - _currentHealth;
                 var actualHealing = Mathf.Min(healing, maxHealing);
                 _currentHealth += actualHealing;
                 hpBar.SetHealth(_currentHealth,maxHealth);
         }
+
+       
         public void IncreaseSwordDmg()
         {
             swordDamage += 50;
@@ -209,6 +214,20 @@ public class PlayerMovement : MonoBehaviour
             _dataCollecting.GetComponent<monsterKill>().MonsterText();
             gameObject.SetActive(false);
             Time.timeScale = 0;
+        }
+        public IEnumerator FlashingHeal()
+        {
+            _sprite.material.SetFloat("_Value", 0f);
+            yield return new WaitForSeconds(0.1f);
+            _sprite.material.SetFloat("_Value", 0.2f);
+            yield return new WaitForSeconds(0.1f);
+            _sprite.material.SetFloat("_Value", 0.4f);
+            yield return new WaitForSeconds(0.1f);
+            _sprite.material.SetFloat("_Value", 0.6f);
+            yield return new WaitForSeconds(0.1f);
+            _sprite.material.SetFloat("_Value", 0.8f);
+            yield return new WaitForSeconds(0.1f);
+            _sprite.material.SetFloat("_Value", 1f);
         }
 
 

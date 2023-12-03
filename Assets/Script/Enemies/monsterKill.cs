@@ -32,6 +32,6 @@ public class monsterKill : MonoBehaviour
 
     public void MonsterText()
     {
-        _monsterText.text += " " + _monsterSlain;
+        _monsterText.text +=  _monsterSlain;
     }
 }

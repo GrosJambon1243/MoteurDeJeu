@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class experienceDiamond : MonoBehaviour
@@ -8,9 +6,11 @@ public class experienceDiamond : MonoBehaviour
     public float expGain = 20;
     private Vector3 _direction;
     private gameManager _gameManager;
+    
 
     private void Start()
     {
+        
         _gameManager = FindObjectOfType<gameManager>();
     }
 
@@ -18,6 +18,7 @@ public class experienceDiamond : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") )
         {
+           
             _gameManager.GainExperience(expGain);
             Destroy(gameObject);
         }

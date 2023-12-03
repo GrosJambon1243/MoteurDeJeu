@@ -1,4 +1,4 @@
 
-Écsharpsquid:S101"gRename class 'experienceDiamond' to match pascal case naming rules, consider using 'ExperienceDiamond'.(„ı”≠
-Mcsharpsquid:S3903"0Move 'experienceDiamond' into a named namespace.(„ı”≠
-acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(“«Ùˇ
+Écsharpsquid:S101"gRename class 'experienceDiamond' to match pascal case naming rules, consider using 'ExperienceDiamond'.(„ı”≠
+Mcsharpsquid:S3903"0Move 'experienceDiamond' into a named namespace.(„ı”≠
+acsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(“«Ùˇ
