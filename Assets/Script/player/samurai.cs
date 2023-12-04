@@ -45,7 +45,7 @@ public class Samurai : MonoBehaviour
          _canSecondAttack = true;
 
       }
-      if (Input.GetMouseButtonDown(0) && timeBetweenAtk< coolDownTime - 0.4f && timeBetweenAtk>= 1.5f && _canSecondAttack)
+      if (Input.GetMouseButtonDown(0) && timeBetweenAtk< coolDownTime - 0.4f && timeBetweenAtk>= 0.5f && _canSecondAttack)
       {
          _animator.SetTrigger("Attack");
          _animator.SetInteger("ComboCount",1);

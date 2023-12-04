@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6744174243882828864}
   - component: {fileID: 5011913175790355685}
   - component: {fileID: 3847502035531291615}
+  - component: {fileID: 3074132245145391726}
   m_Layer: 10
   m_Name: Samurai
   m_TagString: Player
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1, y: -2.41, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6282532261784916308}
@@ -61,7 +62,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: d7017143eb006f44292167ed646f955d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -199,6 +200,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDownTime: 3
+--- !u!114 &3074132245145391726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003722991751075363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5ef587d21ed7d44bc7f178646c3e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtSoundEffect: {fileID: 0}
+  GeneralUi: {fileID: 0}
+  speed: 200
+  gameOverCanvas: {fileID: 0}
+  maxHealth: 200
+  exitCanvas: {fileID: 0}
+  hpBar: {fileID: 0}
 --- !u!1 &2823261052050663665
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,8 +276,8 @@ Transform:
   m_GameObject: {fileID: 3533650239224643995}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.18, y: -0.83, z: 0}
-  m_LocalScale: {x: 0.47362688, y: 0.71428573, z: 1}
+  m_LocalPosition: {x: 0.18, y: -0.81, z: 0}
+  m_LocalScale: {x: 0.6479185, y: 0.71428573, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519927973351961775}
