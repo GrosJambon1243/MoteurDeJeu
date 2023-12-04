@@ -8,20 +8,22 @@ public class PlayerMovement : MonoBehaviour
 {
     #region variable
     [SerializeField] private AudioSource hurtSoundEffect;
-// General UI
+    // General UI
     [SerializeField] private GameObject GeneralUi;
-// Movement
+    // Movement
     [SerializeField] private float speed = 1f;
     private float _x, _y;
-// Game Over
+    // Game Over
     [SerializeField] private GameObject gameOverCanvas;
     private GameObject _dataCollecting;
 
-// Animator and Rigidbody
+    // Animator and Rigidbody
     private SpriteRenderer _sprite;
+    private LineRenderer _lineRenderer;
+    private Camera _camera;
     private Animator _animator;
     private Rigidbody2D _theRb;
-// Player Health
+    // Player Health
     public int maxHealth = 100;
     private bool _isInvincible;
     public bool IsInvincible
@@ -30,15 +32,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-// Facing Direction
+    // Facing Direction
     private bool _isFacingRight = true;
 
-// Exit Canvas
+    // Exit Canvas
     [SerializeField] private GameObject exitCanvas;
     private bool _boolExitCanvas;
-// Health Bar
+    // Health Bar
     public healthBar hpBar;
     private int _currentHealth;
+    private Vector3 worldPos;
 
     public int CurrentHp
     {
@@ -49,115 +52,135 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        _dataCollecting = GameObject.FindGameObjectWithTag("Collecting"); 
-        _theRb = GetComponent<Rigidbody2D>(); 
+        _dataCollecting = GameObject.FindGameObjectWithTag("Collecting");
+        _theRb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _sprite = GetComponent<SpriteRenderer>();
+        _lineRenderer = GetComponent<LineRenderer>();
+        _camera = Camera.main;
     }
 
-  
-        private void Start()
+    private void Start()
+    {
+        _isInvincible = false;
+        _currentHealth = maxHealth;
+        _animator.SetInteger("AnimState", 1);
+        hpBar.SetMaxHealth(maxHealth);
+        hpBar.SetHealth(_currentHealth, maxHealth);
+    }
+
+    private void Update()
+    {
+        ExitButton();
+        HandleMovement();
+
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            _isInvincible = false;
-            _currentHealth = maxHealth;
-            _animator.SetInteger("AnimState",1);
-            hpBar.SetMaxHealth(maxHealth);
-            hpBar.SetHealth(_currentHealth,maxHealth);
+            _lineRenderer.enabled = true;
+
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = -_camera.transform.position.z;
+            worldPos = _camera.ScreenToWorldPoint(mousePosition);
+            _lineRenderer.SetPosition(0, transform.position);
+            _lineRenderer.SetPosition(1, worldPos);
+
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            _lineRenderer.enabled = false;
+            worldPos.z = 0;
+            transform.position = worldPos;
         }
 
-        private void Update()
+    }
+
+    private void HandleMovement()
+    {
+        _x = Input.GetAxisRaw("Horizontal");
+        _y = Input.GetAxisRaw("Vertical");
+        _theRb.velocity = new Vector3(_x, _y, 0f).normalized * (speed * Time.fixedDeltaTime);
+        _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
+        Flip();
+
+    }
+
+    private void Flip()
+    {
+        if ((_x < 0 && _isFacingRight) || (_x > 0 && !_isFacingRight))
         {
-            ExitButton();
-            HandleMovement();
-            
+            _isFacingRight = !_isFacingRight;
+            transform.Rotate(0f, 180f, 0f);
         }
-        private void HandleMovement()
+    }
+    public void TakingDmg(int damage)
+    {
+        if (!_isInvincible)
         {
-            _x = Input.GetAxisRaw("Horizontal");
-            _y = Input.GetAxisRaw("Vertical");
-            _theRb.velocity = new Vector3(_x, _y, 0f).normalized * (speed * Time.fixedDeltaTime);
-            _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
-            Flip();
-            
+            _currentHealth -= damage;
+            hpBar.SetHealth(_currentHealth, maxHealth);
+            _isInvincible = true;
+
+            _animator.SetTrigger("Hurt");
+            hurtSoundEffect.Play();
+            Invoke("PlayerInvinsible", 1);
         }
 
-        private void Flip()
+        if (_currentHealth <= 0)
         {
-            if ((_x < 0 && _isFacingRight) ||(_x > 0 && !_isFacingRight))
-            {
-                _isFacingRight = !_isFacingRight;
-                transform.Rotate(0f,180f,0f);
-            }
+            hpBar.SetHealth(0, maxHealth);
+            GeneralUi.SetActive(false);
+            _animator.SetTrigger("Death");
+            StartCoroutine(DeathAnimation());
         }
-        public void TakingDmg(int damage)
+    }
+    private void PlayerInvinsible()
+    {
+        _isInvincible = false;
+    }
+    public void HealingPlayer(int healing)
+    {
+        StartCoroutine(FlashingHeal());
+        var maxHealing = maxHealth - _currentHealth;
+        var actualHealing = Mathf.Min(healing, maxHealing);
+        _currentHealth += actualHealing;
+        hpBar.SetHealth(_currentHealth, maxHealth);
+    }
+    private void ExitButton()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!_isInvincible)
-            {
-                _currentHealth -= damage;
-                hpBar.SetHealth(_currentHealth,maxHealth);
-                _isInvincible = true;
-               
-                _animator.SetTrigger("Hurt");
-                hurtSoundEffect.Play();
-                Invoke("PlayerInvinsible",1);
-            }
-           
-            if (_currentHealth<= 0)
-            {
-                hpBar.SetHealth(0,maxHealth);
-                GeneralUi.SetActive(false);
-                _animator.SetTrigger("Death");
-                StartCoroutine(DeathAnimation());
-            }
-        }
-        private void PlayerInvinsible()
-        {
-            _isInvincible = false;
-        }
-        public void HealingPlayer(int healing)
-        {
-            StartCoroutine(FlashingHeal());            
-                var maxHealing = maxHealth - _currentHealth;
-                var actualHealing = Mathf.Min(healing, maxHealing);
-                _currentHealth += actualHealing;
-                hpBar.SetHealth(_currentHealth,maxHealth);
-        }
-        private void ExitButton()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                _boolExitCanvas = !_boolExitCanvas;
-                exitCanvas.SetActive(_boolExitCanvas);
-                Time.timeScale = _boolExitCanvas ? 0 : 1; 
-            }
-           
+            _boolExitCanvas = !_boolExitCanvas;
+            exitCanvas.SetActive(_boolExitCanvas);
+            Time.timeScale = _boolExitCanvas ? 0 : 1;
         }
 
-        private IEnumerator DeathAnimation()
-        {
-            yield return new WaitForSeconds(2f);
-            gameOverCanvas.SetActive(true);
-            _dataCollecting.GetComponent<monsterKill>().MonsterText();
-            gameObject.SetActive(false);
-            Time.timeScale = 0;
-        }
-        public IEnumerator FlashingHeal()
-        {
-            _sprite.material.SetFloat("_Value", 0f);
-            yield return new WaitForSeconds(0.1f);
-            _sprite.material.SetFloat("_Value", 0.2f);
-            yield return new WaitForSeconds(0.1f);
-            _sprite.material.SetFloat("_Value", 0.4f);
-            yield return new WaitForSeconds(0.1f);
-            _sprite.material.SetFloat("_Value", 0.6f);
-            yield return new WaitForSeconds(0.1f);
-            _sprite.material.SetFloat("_Value", 0.8f);
-            yield return new WaitForSeconds(0.1f);
-            _sprite.material.SetFloat("_Value", 1f);
-        }
+    }
+
+    private IEnumerator DeathAnimation()
+    {
+        yield return new WaitForSeconds(2f);
+        gameOverCanvas.SetActive(true);
+        _dataCollecting.GetComponent<monsterKill>().MonsterText();
+        gameObject.SetActive(false);
+        Time.timeScale = 0;
+    }
+    public IEnumerator FlashingHeal()
+    {
+        _sprite.material.SetFloat("_Value", 0f);
+        yield return new WaitForSeconds(0.1f);
+        _sprite.material.SetFloat("_Value", 0.2f);
+        yield return new WaitForSeconds(0.1f);
+        _sprite.material.SetFloat("_Value", 0.4f);
+        yield return new WaitForSeconds(0.1f);
+        _sprite.material.SetFloat("_Value", 0.6f);
+        yield return new WaitForSeconds(0.1f);
+        _sprite.material.SetFloat("_Value", 0.8f);
+        yield return new WaitForSeconds(0.1f);
+        _sprite.material.SetFloat("_Value", 1f);
+    }
 
 
-        
+
 }
 
 
