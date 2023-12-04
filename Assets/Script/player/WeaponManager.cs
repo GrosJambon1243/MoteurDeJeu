@@ -99,4 +99,10 @@ public class WeaponManager : MonoBehaviour
         asArrow = true;
     }
 
+    public void IncreaseMeleeDmg()
+    {
+        
+    }
+    
+
 }

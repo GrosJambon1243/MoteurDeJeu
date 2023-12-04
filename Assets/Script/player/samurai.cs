@@ -1,17 +1,14 @@
-
 using System;
 using UnityEngine;
 
 public class Samurai : MonoBehaviour
 {
    private Animator _animator;
-   private bool _canAttack = true;
-   private float _atkCd = 3f;
-   private float _atkTimer;
-   private int combo;
-   private float comboTimeWindow;
-   
 
+   [SerializeField]  private float coolDownTime = 3f;
+   private float timeBetweenAtk;
+   private bool _canAttack = true;
+   private bool _canSecondAttack;
 
    private void Start()
    {
@@ -20,44 +17,39 @@ public class Samurai : MonoBehaviour
 
    private void Update()
    {
-      if (Input.GetMouseButtonDown(0) )
-      {
-         if (_canAttack)
-         {
-            _animator.SetInteger("ComboCount", combo);
-            _animator.SetTrigger("Attack");
-            combo++;
-            combo %= 2;
-            comboTimeWindow = 0.5f;
-           // _atkTimer = _atkCd;
-         }
-
-         if (comboTimeWindow>0 )
-         {
-            comboTimeWindow -= Time.deltaTime;
-            if (comboTimeWindow <= 0)
-            {
-               combo = 0;
-            }
-         }
-
-      }
-     // KatanaAttack();
+      SamuraiAttack();
+      AttackCoolDown();
    }
 
-   public void KatanaAttack()
+   private void AttackCoolDown()
    {
-      if (_atkTimer > 0)
+      if (timeBetweenAtk > 0)
       {
-         _canAttack = false;
-         _atkTimer -= Time.deltaTime;
-         if (_atkTimer<= 0)
+         timeBetweenAtk -= Time.deltaTime;
+         if (timeBetweenAtk <= 0)
          {
             _canAttack = true;
+            _canSecondAttack = true;
          }
       }
    }
 
-   
+   private void SamuraiAttack()
+   {
+      if (Input.GetMouseButtonDown(0) && _canAttack)
+      {
+         _animator.SetTrigger("Attack");
+         _animator.SetInteger("ComboCount",0);
+         timeBetweenAtk = coolDownTime;
+         _canAttack = false;
+         _canSecondAttack = true;
 
+      }
+      if (Input.GetMouseButtonDown(0) && timeBetweenAtk< coolDownTime - 0.4f && timeBetweenAtk>= 1.5f && _canSecondAttack)
+      {
+         _animator.SetTrigger("Attack");
+         _animator.SetInteger("ComboCount",1);
+         _canSecondAttack = false;
+      }
+   }
 }

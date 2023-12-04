@@ -1,5 +1,6 @@
 
 Jcsharpsquid:S3903"&Move 'Samurai' into a named namespace.(Š†”¬8ß¾ã´½1
-Bcsharpsquid:S2933	"Make '_atkCd' 'readonly'.(¦ˆİùÿÿÿÿ8ˆ–ç´½1
-Bcsharpsquid:S125 "Remove this commented out code.(Û®ÀÌ8¯ø¬À1
-Gcsharpsquid:S125-"Remove this commented out code.(´îÈØûÿÿÿÿ8ŸÏ¬À1
+Acsharpsquid:S2933"Make '_canAttack' 'readonly'.(×´Ö«8ù–¨“Ã1
+Ecsharpsquid:S2933
+"!Make 'attackCooldown' 'readonly'.(ÅˆµË8ú–¨“Ã1
+Xcsharpsquid:S1066!"/Merge this if statement with the enclosing one.(’ÀÌıÿÿÿÿ8ú–¨“Ã1

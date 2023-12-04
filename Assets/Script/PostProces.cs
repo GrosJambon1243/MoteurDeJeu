@@ -9,12 +9,13 @@ public class PostProces : MonoBehaviour
 
     private Vignette _vignette;
     private ChromaticAberration _chromatic;
-    [SerializeField] private PlayerMovement _player;
+    private GameObject player;
 
     float invincibleTimer;
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         _volume.profile.TryGet(out _chromatic);
         _volume.profile.TryGet(out _vignette);
 
@@ -22,7 +23,7 @@ public class PostProces : MonoBehaviour
 
     private void Update()
     {
-        if (_player.IsInvincible)
+        if (player.GetComponent<PlayerMovement>().IsInvincible)
         {
             invincibleTimer = 1f;
         }
@@ -36,7 +37,7 @@ public class PostProces : MonoBehaviour
         }
         _chromatic.intensity.Override(invincibleTimer);
 
-        if (_player.CurrentHp <= 100)
+        if (player.GetComponent<PlayerMovement>().CurrentHp <= 100)
         {
             _vignette.active = true;
             float x = Mathf.Sin((Time.time * 5) + 2) / 4f;

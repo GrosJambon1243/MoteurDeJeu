@@ -27,8 +27,7 @@ public class ButtonUi : MonoBehaviour
 
     public void SwordButton()
     {
-        _playerMovement = FindObjectOfType<PlayerMovement>();
-        _playerMovement.IncreaseSwordDmg();
+        
         gameObject.SetActive(false);
         Time.timeScale = 1;
     }

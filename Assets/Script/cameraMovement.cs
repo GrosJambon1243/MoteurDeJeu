@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    private GameObject player;
     [SerializeField]  int zoom = -10;
-    
 
-    
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void LateUpdate()
     {
