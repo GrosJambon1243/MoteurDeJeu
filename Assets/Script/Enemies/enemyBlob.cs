@@ -14,12 +14,12 @@ public class enemyBlob : enemyDamage
     private float attackCd;
     public int blobMaxHealth = 100, damageOnContact;
     private int blobCurrentHealth,_range;
-    public Animator animator;
     public Transform firePoint;
     [SerializeField] GameObject bullet,currency,experience,healPotion;
     private bool isKnockBack;
     private GameObject _dataCollecting;
- 
+    
+
     private void Start()
     {
         attackCd = attackTimer;
@@ -28,6 +28,10 @@ public class enemyBlob : enemyDamage
         _blobBoxCollider2D = GetComponent<BoxCollider2D>();
         _dataCollecting = GameObject.FindGameObjectWithTag("Collecting");
        
+        if ( Time.time >= 30f)
+        {
+            blobMaxHealth += 50;
+        }
         blobCurrentHealth = blobMaxHealth;
     }
 

@@ -9,6 +9,13 @@ public class Samurai : MonoBehaviour
    private float timeBetweenAtk;
    private bool _canAttack = true;
    private bool _canSecondAttack;
+   [SerializeField] private Transform swordSpot;
+   [SerializeField]private float swordRange;
+   [SerializeField] private LayerMask enemyLayers;
+   [SerializeField] private AudioSource swordSoundEffect;
+   [SerializeField] private int swordDamage;
+   
+   [SerializeField] private float swordRange2;
 
    private void Start()
    {
@@ -51,5 +58,40 @@ public class Samurai : MonoBehaviour
          _animator.SetInteger("ComboCount",1);
          _canSecondAttack = false;
       }
+   }
+   public void KatanaFirstStrike()
+   {
+      Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange,enemyLayers);
+      
+      swordSoundEffect.Play();
+     
+            
+      foreach (Collider2D enemy in hitEnemys)
+      {
+         enemy.GetComponent<enemyDamage>().TakingDmg(swordDamage);
+      }
+            
+   }
+   public void KatanaSecondStrike()
+   {
+      Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(swordSpot.position,swordRange2,enemyLayers);
+      
+      swordSoundEffect.Play();
+     
+            
+      foreach (Collider2D enemy in hitEnemys)
+      {
+         enemy.GetComponent<enemyDamage>().TakingDmg(swordDamage/2);
+      }
+            
+   }
+
+   private void OnDrawGizmosSelected()
+   {
+      if (swordSpot == null)
+      {
+         return;
+      }
+      Gizmos.DrawWireSphere(swordSpot.position,swordRange2);
    }
 }

@@ -10,7 +10,12 @@ public class stopWatch : MonoBehaviour
 {
     [SerializeField] TMP_Text _textStopWatch;
 
-     private float ElapsedTime { get; set; }
+    private float _elapsedTime;
+
+    public float ElapsedTime
+    {
+        get => _elapsedTime;
+    }
     private bool _isRuning = false;
     
     
@@ -26,14 +31,15 @@ public class stopWatch : MonoBehaviour
     {
         if (_isRuning)
         {
-            ElapsedTime += Time.deltaTime;
+            _elapsedTime += Time.deltaTime;
+            
             UpdateStopWatch();
         }
     }
 
     private void UpdateStopWatch()
     {
-        string formattedTime = string.Format("{0:00}:{1:00}" , Mathf.Floor((ElapsedTime / 60) % 60), ElapsedTime % 60);
+        string formattedTime = string.Format("{0:00}:{1:00}" , Mathf.Floor((_elapsedTime / 60) % 60), _elapsedTime % 60);
 
         _textStopWatch.text = formattedTime;
 

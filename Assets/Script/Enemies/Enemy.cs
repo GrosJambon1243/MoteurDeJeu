@@ -18,9 +18,6 @@ public class Enemy : enemyDamage
     public Animator animator;
     private bool isKnockBack;
     private GameObject _dataCollecting;
-
- 
-
     [SerializeField] GameObject currency, experience,healPotion;
 
     void Start()
@@ -30,6 +27,10 @@ public class Enemy : enemyDamage
         _skeleRigidBody = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _dataCollecting = GameObject.FindGameObjectWithTag("Collecting");
+        if ( Time.time > 30f)
+        {
+            maxHealth += 50;
+        }
         currentHealth = maxHealth;
     }
 
@@ -54,6 +55,9 @@ public class Enemy : enemyDamage
         {
             transform.localScale = new Vector3(-1, 1, 0);
         }
+
+
+       
     }
 
     public override void TakingDmg(int dmg)

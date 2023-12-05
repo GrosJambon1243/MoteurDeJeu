@@ -22,7 +22,7 @@ public class monsterKill : MonoBehaviour
     public void NumberOfKill()
     {
         _monsterSlain++;
-        Debug.Log(_monsterSlain);
+        
     }
 
     public void NumberCoin()
