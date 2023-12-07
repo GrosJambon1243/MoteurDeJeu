@@ -2,10 +2,12 @@ using System;
 using UnityEngine.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class PostProces : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
+    [SerializeField] private Toggle _chromaticToggle, _vignetteToggle;
 
     private Vignette _vignette;
     private ChromaticAberration _chromatic;
@@ -23,29 +25,46 @@ public class PostProces : MonoBehaviour
 
     private void Update()
     {
-        if (player.GetComponent<PlayerMovement>().IsInvincible)
+        if (_chromaticToggle.isOn)
         {
-            invincibleTimer = 1f;
+            if (player.GetComponent<PlayerMovement>().IsInvincible)
+            {
+                invincibleTimer = 1f;
+            }
+            else
+            {
+                invincibleTimer -= Time.deltaTime * 2f;
+                if (invincibleTimer < 0)
+                {
+                    invincibleTimer = 0;
+                }
+            }
+            _chromatic.intensity.Override(invincibleTimer);
+            
         }
         else
         {
-            invincibleTimer -= Time.deltaTime * 2f;
-            if (invincibleTimer < 0)
-            {
-                invincibleTimer = 0;
-            }
+            _chromatic.active = false;
         }
-        _chromatic.intensity.Override(invincibleTimer);
 
-        if (player.GetComponent<PlayerMovement>().CurrentHp <= 100)
+        if (_vignetteToggle.isOn)
         {
-            _vignette.active = true;
-            float x = Mathf.Sin((Time.time * 5) + 2) / 4f;
-            _vignette.intensity.Override(x);
+            if (player.GetComponent<PlayerMovement>().CurrentHp <= 100)
+            {
+                _vignette.active = true;
+                float x = Mathf.Sin((Time.time * 5) + 2) / 4f;
+                _vignette.intensity.Override(x);
+            }
+            else
+            {
+                _vignette.active = false;
+            }
+            
         }
         else
         {
             _vignette.active = false;
         }
     }
+    
 }

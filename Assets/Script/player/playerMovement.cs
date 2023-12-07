@@ -19,8 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Animator and Rigidbody
     private SpriteRenderer _sprite;
-    private LineRenderer _lineRenderer;
-    private Camera _camera;
+    
     private Animator _animator;
     private Rigidbody2D _theRb;
     // Player Health
@@ -30,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     {
         get => _isInvincible;
     }
-
 
     // Facing Direction
     private bool _isFacingRight = true;
@@ -56,8 +54,7 @@ public class PlayerMovement : MonoBehaviour
         _theRb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _sprite = GetComponent<SpriteRenderer>();
-        _lineRenderer = GetComponent<LineRenderer>();
-        _camera = Camera.main;
+      
     }
 
     private void Start()
@@ -74,33 +71,19 @@ public class PlayerMovement : MonoBehaviour
         ExitButton();
         HandleMovement();
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            _lineRenderer.enabled = true;
-
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = -_camera.transform.position.z;
-            worldPos = _camera.ScreenToWorldPoint(mousePosition);
-            _lineRenderer.SetPosition(0, transform.position);
-            _lineRenderer.SetPosition(1, worldPos);
-
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            _lineRenderer.enabled = false;
-            worldPos.z = 0;
-            transform.position = worldPos;
-        }
-
     }
 
     private void HandleMovement()
     {
-        _x = Input.GetAxisRaw("Horizontal");
-        _y = Input.GetAxisRaw("Vertical");
-        _theRb.velocity = new Vector3(_x, _y, 0f).normalized * (speed * Time.fixedDeltaTime);
-        _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
-        Flip();
+        if (_currentHealth > 0)
+        {
+            _x = Input.GetAxisRaw("Horizontal");
+            _y = Input.GetAxisRaw("Vertical");
+            _theRb.velocity = new Vector3(_x, _y, 0f).normalized * (speed * Time.fixedDeltaTime);
+            _animator.SetInteger("AnimState", _theRb.velocity != Vector2.zero ? 2 : 1);
+            Flip();
+            
+        }
 
     }
 

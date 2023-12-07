@@ -7,9 +7,11 @@ public class Currency : MonoBehaviour
     [SerializeField] private float currencyValue;
     
     private gameManager _gameManager;
+    private GameObject _dataCollecting;
 
     private void Start()
     {
+        _dataCollecting = GameObject.FindGameObjectWithTag("Collecting");
         _gameManager = FindObjectOfType<gameManager>();
     }
 
@@ -17,6 +19,7 @@ public class Currency : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") )
         {
+            _dataCollecting.GetComponent<monsterKill>().NumberCoin();
             _gameManager.GainCurrency(currencyValue);
             Destroy(gameObject);
         }
