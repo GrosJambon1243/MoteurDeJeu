@@ -32,6 +32,37 @@ Transform:
   - {fileID: 6500614214399357817}
   m_Father: {fileID: 5656696293238094291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2507698886463967834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298958190947470539}
+  m_Layer: 10
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1298958190947470539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2507698886463967834}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.31, y: 1.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5656696293238094291}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3794452790868909154
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +340,8 @@ GameObject:
   - component: {fileID: 4286654785050242131}
   - component: {fileID: 5984839396162756257}
   - component: {fileID: 3097701887190533896}
+  - component: {fileID: 5474516456415427355}
+  - component: {fileID: 3453644263702411002}
   m_Layer: 10
   m_Name: Warrior
   m_TagString: Player
@@ -335,6 +368,7 @@ Transform:
   - {fileID: 9027310074979640553}
   - {fileID: 1639542784872850670}
   - {fileID: 4301050323077480291}
+  - {fileID: 1298958190947470539}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7035023587186242978
@@ -473,23 +507,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5ef587d21ed7d44bc7f178646c3e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSoundEffect: {fileID: 0}
   hurtSoundEffect: {fileID: 0}
   GeneralUi: {fileID: 0}
-  speed: 400
+  speed: 350
   gameOverCanvas: {fileID: 0}
-  getsugaSpot: {fileID: 1639542784872850670}
-  getsuga: {fileID: 819077197958241975, guid: c32c10ffc56404542b0b1102168eb1f2, type: 3}
-  swordAtkCooldown: 1
-  canSwingSword: 1
-  swordRange: 1.8
-  swordDamage: 25
   maxHealth: 250
   exitCanvas: {fileID: 0}
-  swordSpot: {fileID: 2417216455745016137}
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 64
   hpBar: {fileID: 0}
 --- !u!95 &4286654785050242131
 Animator:
@@ -555,6 +578,126 @@ MonoBehaviour:
   getsuga: {fileID: 819077197958241975, guid: c32c10ffc56404542b0b1102168eb1f2, type: 3}
   getsugaSpot: {fileID: 1639542784872850670}
   swordDamage: 25
+--- !u!120 &5474516456415427355
+LineRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772185670785422248}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 100
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 2, y: 2, z: 0}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 0.2
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.5
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0, g: 0.8424368, b: 0.9622642, a: 1}
+      key1: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0.29411766}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MaskInteraction: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+  m_ApplyActiveColorSpace: 1
+--- !u!114 &3453644263702411002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772185670785422248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648d6db2c47d76f408b96b9ff575e092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _teleportSound: {fileID: 0}
+  controlPoint: {fileID: 1298958190947470539}
+  segments: 100
+  curvature: -6
 --- !u!1 &8516404673672389005
 GameObject:
   m_ObjectHideFlags: 0

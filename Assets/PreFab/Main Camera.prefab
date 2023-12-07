@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5b6950f187a7b4191c20889cbd2ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   zoom: -10
 --- !u!114 &7939261828826149801
 MonoBehaviour:
@@ -184,4 +183,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _volume: {fileID: 7939261828826149801}
-  _player: {fileID: 0}
+  _chromaticToggle: {fileID: 0}
+  _vignetteToggle: {fileID: 0}

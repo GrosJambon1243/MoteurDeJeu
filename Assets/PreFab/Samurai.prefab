@@ -226,9 +226,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hurtSoundEffect: {fileID: 0}
   GeneralUi: {fileID: 0}
-  speed: 350
+  speed: 400
   gameOverCanvas: {fileID: 0}
-  maxHealth: 250
+  maxHealth: 50
   exitCanvas: {fileID: 0}
   hpBar: {fileID: 0}
 --- !u!120 &7385404921629059583
@@ -297,7 +297,7 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0, g: 0.8424368, b: 0.9622642, a: 1}
-      key1: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
+      key1: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0.29411766}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
