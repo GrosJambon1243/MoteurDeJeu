@@ -84,14 +84,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBullet Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2755304675989480374, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9085941542724873081, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6480318637070713733}
+    - targetCorrespondingSourceObject: {fileID: 9085941542724873081, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8060660370753267041}
   m_SourcePrefab: {fileID: 100100000, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}
+--- !u!50 &4003784538728880009 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: -987082686813292855, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}
+  m_PrefabInstance: {fileID: 5034286978396119360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4308501064849050169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9085941542724873081, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}
@@ -210,3 +219,18 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &8060660370753267041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308501064849050169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f7076b1f6f72842af14c455b858dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 20
+  rb: {fileID: 4003784538728880009}
+  bulletDmg: 25
