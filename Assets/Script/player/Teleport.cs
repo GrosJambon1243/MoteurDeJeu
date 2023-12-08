@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Teleport : MonoBehaviour
 {
     [SerializeField] private AudioSource _teleportSound;
+    [SerializeField] private Image _teleportIcon;
     [SerializeField]private Transform controlPoint;
     [SerializeField]private int segments = 10;
     [SerializeField]private int curvature = -6;
@@ -20,7 +21,6 @@ public class Teleport : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         _camera = Camera.main;
         _lineRenderer.positionCount = segments + 1;
-        
     }
 
     private void Update()
@@ -47,6 +47,9 @@ public class Teleport : MonoBehaviour
             _lineRenderer.enabled = false;
             if (_canTeleport)
             {
+                var teleportIconColor = _teleportIcon.color; 
+                teleportIconColor.a = 0f; 
+                _teleportIcon.color = teleportIconColor;
                 _teleportCoolDonw = teleportTimer;
                 _canTeleport = false;
                 _teleportSound.Play();
@@ -89,6 +92,10 @@ public class Teleport : MonoBehaviour
         if (_teleportCoolDonw >0)
         {
             _teleportCoolDonw -= Time.deltaTime;
+            var fillingImage = Mathf.Clamp01(1-(_teleportCoolDonw / teleportTimer));
+            var teleportIconColor = _teleportIcon.color; 
+            teleportIconColor.a = fillingImage; 
+            _teleportIcon.color = teleportIconColor;
             if (_teleportCoolDonw <= 0)
             {
                 _canTeleport = true;

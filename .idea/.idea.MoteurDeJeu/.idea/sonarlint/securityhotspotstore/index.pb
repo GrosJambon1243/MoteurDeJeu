@@ -55,3 +55,5 @@ T
 $Assets/Script/Enemies/monsterKill.cs,7\e\7e6c9cb7e736405e1d4dbb900a630762db2550c2
 U
 %Assets/Script/player/WarriorAttack.cs,c\7\c7feeb78ddcccc373bf526b0755f8ba491a5033f
+P
+ Assets/Script/player/Teleport.cs,c\1\c12a94235890e4a2b176c0e8f91beacd8096bfb2

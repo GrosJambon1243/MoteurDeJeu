@@ -348,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5656696293238094291
 Transform:
   m_ObjectHideFlags: 0
@@ -695,9 +695,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _teleportSound: {fileID: 0}
+  _teleportIcon: {fileID: 0}
   controlPoint: {fileID: 1298958190947470539}
   segments: 100
   curvature: -6
+  teleportTimer: 5
 --- !u!1 &8516404673672389005
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class PostProces : MonoBehaviour
     private ChromaticAberration _chromatic;
     private GameObject player;
 
-    float invincibleTimer;
+    private float invincibleTimer;
 
     private void Awake()
     {
