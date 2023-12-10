@@ -9,7 +9,7 @@ public class cameraMovement : MonoBehaviour
     [SerializeField]  int zoom = -10;
 
 
-    private void Awake()
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }

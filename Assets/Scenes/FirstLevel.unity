@@ -534,6 +534,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samurai
       objectReference: {fileID: 0}
+    - target: {fileID: 1003722991751075363, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2746578554282572762, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
       propertyPath: hpBar
       value: 
@@ -571,6 +575,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
+--- !u!1 &1162775761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1003722991751075363, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
+  m_PrefabInstance: {fileID: 1162775760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1241113923 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8068927434193141327, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
@@ -1094,6 +1103,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
+--- !u!1 &2184361024865982718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7772185670785422248, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
+  m_PrefabInstance: {fileID: 2184361024865982717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2332358981156372535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1238,8 +1252,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4961717682857726693, guid: 65869c6cc70183a4c8baf635ee08a2a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2857747253029185387}
   m_SourcePrefab: {fileID: 100100000, guid: 65869c6cc70183a4c8baf635ee08a2a4, type: 3}
+--- !u!1 &2857747253029185386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4961717682857726693, guid: 65869c6cc70183a4c8baf635ee08a2a4, type: 3}
+  m_PrefabInstance: {fileID: 2857747253029185385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2857747253029185387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2857747253029185386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eab1552abc536418addd0fde49c622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warrior: {fileID: 2184361024865982718}
+  samurai: {fileID: 1162775761}
 --- !u!1001 &4981212701506207675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1592,6 +1628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Game Over '
       objectReference: {fileID: 0}
+    - target: {fileID: 368943426016243311, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5380053123841747026, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1749,7 +1789,6 @@ SceneRoots:
   - {fileID: 2857747253029185385}
   - {fileID: 8818697766816943958}
   - {fileID: 619394802}
-  - {fileID: 2184361024865982717}
   - {fileID: 729417018}
   - {fileID: 17823737055706159}
   - {fileID: 1886792141858043633}
@@ -1769,3 +1808,4 @@ SceneRoots:
   - {fileID: 7401656148427125552}
   - {fileID: 4981212701506207675}
   - {fileID: 1162775760}
+  - {fileID: 2184361024865982717}

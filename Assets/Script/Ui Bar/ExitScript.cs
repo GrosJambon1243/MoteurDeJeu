@@ -7,6 +7,7 @@ namespace Script.Ui_Bar
     {
         public void ExitButton()
         {
+            Time.timeScale = 1;
             SceneManager.LoadSceneAsync(0);
         }
     }

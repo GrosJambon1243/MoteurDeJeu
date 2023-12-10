@@ -15,11 +15,11 @@ public class PostProces : MonoBehaviour
 
     private float invincibleTimer;
 
-    private void Awake()
+    private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         _volume.profile.TryGet(out _chromatic);
         _volume.profile.TryGet(out _vignette);
+        player = GameObject.FindGameObjectWithTag("Player");
 
     }
 
