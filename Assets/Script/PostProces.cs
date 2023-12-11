@@ -25,26 +25,29 @@ public class PostProces : MonoBehaviour
 
     private void Update()
     {
-        if (_chromaticToggle.isOn)
+        switch (_chromaticToggle.isOn)
         {
-            if (player.GetComponent<PlayerMovement>().IsInvincible)
+            case true:
             {
-                invincibleTimer = 1f;
-            }
-            else
-            {
-                invincibleTimer -= Time.deltaTime * 2f;
-                if (invincibleTimer < 0)
+                _chromatic.active = true;
+                if (player.GetComponent<PlayerMovement>().IsInvincible)
                 {
-                    invincibleTimer = 0;
+                    invincibleTimer = 1f;
                 }
+                else
+                {
+                    invincibleTimer -= Time.deltaTime * 2f;
+                    if (invincibleTimer < 0)
+                    {
+                        invincibleTimer = 0;
+                    }
+                }
+                _chromatic.intensity.Override(invincibleTimer);
+                break;
             }
-            _chromatic.intensity.Override(invincibleTimer);
-            
-        }
-        else
-        {
-            _chromatic.active = false;
+            case false:
+                _chromatic.active = false;
+                break;
         }
 
         if (_vignetteToggle.isOn)

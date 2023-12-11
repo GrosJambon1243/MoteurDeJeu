@@ -510,8 +510,9 @@ MonoBehaviour:
   hurtSoundEffect: {fileID: 0}
   GeneralUi: {fileID: 0}
   speed: 350
+  _theCollider2D: {fileID: 7635553436714012700}
   gameOverCanvas: {fileID: 0}
-  maxHealth: 250
+  maxHealth: 400
   exitCanvas: {fileID: 0}
   hpBar: {fileID: 0}
 --- !u!95 &4286654785050242131
@@ -577,7 +578,7 @@ MonoBehaviour:
   swordSoundEffect: {fileID: 0}
   getsuga: {fileID: 819077197958241975, guid: c32c10ffc56404542b0b1102168eb1f2, type: 3}
   getsugaSpot: {fileID: 1639542784872850670}
-  swordDamage: 25
+  swordDamage: 40
 --- !u!120 &5474516456415427355
 LineRenderer:
   serializedVersion: 2

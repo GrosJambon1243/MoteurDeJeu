@@ -173,11 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e5723bda657e4498440599cc6390e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 75
-  maxHealth: 50
+  moveSpeed: 100
+  maxHealth: 25
   damageDone: 20
   animator: {fileID: 4318020831179306570}
-  _watch: {fileID: 5092778626457941679, guid: ecc8b7d2e8652ea4dbd15198b17a6079, type: 3}
   currency: {fileID: 7506878047627194280, guid: 67bec4e19bf40cd41b103be42bcdd44f, type: 3}
   experience: {fileID: 3600915012673053252, guid: be93360cae5f04b4a952d22a8fd49da7, type: 3}
   healPotion: {fileID: 1729750937221366557, guid: d0b37f2570570a844b2b158b53779faa, type: 3}

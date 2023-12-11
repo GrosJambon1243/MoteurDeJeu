@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     // Movement
     [SerializeField] private float speed = 1f;
     private float _x, _y;
+
+    [SerializeField] private Collider2D _theCollider2D;
     // Game Over
     [SerializeField] private GameObject gameOverCanvas;
     private GameObject _dataCollecting;
@@ -109,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
         if (_currentHealth <= 0)
         {
             _theRb.velocity =  Vector2.zero;
+            _theCollider2D.enabled = false;
             StartCoroutine(DeathAnimation());
         }
 
@@ -143,6 +146,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(2f);
         gameOverCanvas.SetActive(true);
         _dataCollecting.GetComponent<monsterKill>().MonsterText();
+        gameObject.SetActive(false);
         Time.timeScale = 0;
     }
     public IEnumerator FlashingHeal()

@@ -13,7 +13,7 @@ public class Enemy : enemyDamage
     private Vector3 direction;
     private int deathCount;
     [SerializeField] float moveSpeed;
-    public int maxHealth = 100, damageDone;
+    public int maxHealth, damageDone;
     private int currentHealth,_range;
     public Animator animator;
     private bool isKnockBack;

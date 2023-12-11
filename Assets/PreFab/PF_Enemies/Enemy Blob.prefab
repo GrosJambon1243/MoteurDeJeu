@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98df9443d41fc664a8c48c0bce3b2a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 70
-  attackTimer: 5
+  moveSpeed: 75
+  attackTimer: 6
   blobMaxHealth: 100
   damageOnContact: 10
   firePoint: {fileID: 220119548829050969}
@@ -214,7 +214,6 @@ MonoBehaviour:
   currency: {fileID: 7506878047627194280, guid: 67bec4e19bf40cd41b103be42bcdd44f, type: 3}
   experience: {fileID: 3600915012673053252, guid: be93360cae5f04b4a952d22a8fd49da7, type: 3}
   healPotion: {fileID: 1729750937221366557, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
-  _watch: {fileID: 5092778626457941679, guid: ecc8b7d2e8652ea4dbd15198b17a6079, type: 3}
 --- !u!95 &5907782460201973671
 Animator:
   serializedVersion: 5

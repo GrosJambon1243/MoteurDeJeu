@@ -523,10 +523,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samurai
       objectReference: {fileID: 0}
-    - target: {fileID: 1003722991751075363, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2746578554282572762, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
       propertyPath: hpBar
       value: 
@@ -535,10 +531,6 @@ PrefabInstance:
       propertyPath: GeneralUi
       value: 
       objectReference: {fileID: 1043174908}
-    - target: {fileID: 2746578554282572762, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2746578554282572762, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
       propertyPath: exitCanvas
       value: 
@@ -637,6 +629,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1446564844
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1729750937221366557, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_Name
+      value: HealingPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.265406
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.009442568
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768143903522197502, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0b37f2570570a844b2b158b53779faa, type: 3}
 --- !u!114 &1485427952 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4548580028785748348, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
@@ -1026,10 +1075,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelUp Ui
       objectReference: {fileID: 0}
-    - target: {fileID: 8761898455519393129, guid: 29f0eb209f660be41918d8623f61f342, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1051,10 +1096,6 @@ PrefabInstance:
       propertyPath: GeneralUi
       value: 
       objectReference: {fileID: 1043174908}
-    - target: {fileID: 2830970926125684695, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2830970926125684695, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
       propertyPath: exitCanvas
       value: 
@@ -1122,10 +1163,6 @@ PrefabInstance:
     - target: {fileID: 7772185670785422248, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
       propertyPath: m_Name
       value: Warrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 7772185670785422248, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1278,33 +1315,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7090342284462208875, guid: 65869c6cc70183a4c8baf635ee08a2a4, type: 3}
+      propertyPath: samurai
+      value: 
+      objectReference: {fileID: 1162775761}
+    - target: {fileID: 7090342284462208875, guid: 65869c6cc70183a4c8baf635ee08a2a4, type: 3}
+      propertyPath: warrior
+      value: 
+      objectReference: {fileID: 2184361024865982718}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4961717682857726693, guid: 65869c6cc70183a4c8baf635ee08a2a4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2857747253029185387}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65869c6cc70183a4c8baf635ee08a2a4, type: 3}
---- !u!1 &2857747253029185386 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4961717682857726693, guid: 65869c6cc70183a4c8baf635ee08a2a4, type: 3}
-  m_PrefabInstance: {fileID: 2857747253029185385}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2857747253029185387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2857747253029185386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eab1552abc536418addd0fde49c622, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warrior: {fileID: 2184361024865982718}
-  samurai: {fileID: 1162775761}
 --- !u!1001 &4981212701506207675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1865,3 +1888,4 @@ SceneRoots:
   - {fileID: 4981212701506207675}
   - {fileID: 1162775760}
   - {fileID: 2184361024865982717}
+  - {fileID: 1446564844}

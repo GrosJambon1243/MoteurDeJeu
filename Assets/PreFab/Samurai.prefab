@@ -24,7 +24,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &519927973351961775
 Transform:
   m_ObjectHideFlags: 0
@@ -205,13 +205,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 1.5
   swordSpot: {fileID: 8568474400096721032}
-  swordRange: 1.43
+  swordRange: 2
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
   swordSoundEffect: {fileID: 0}
-  swordDamage: 40
-  swordRange2: 1.43
+  swordDamage: 50
+  swordRange2: 1.6
 --- !u!114 &2746578554282572762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,8 +227,9 @@ MonoBehaviour:
   hurtSoundEffect: {fileID: 0}
   GeneralUi: {fileID: 0}
   speed: 400
+  _theCollider2D: {fileID: 6744174243882828864}
   gameOverCanvas: {fileID: 0}
-  maxHealth: 250
+  maxHealth: 350
   exitCanvas: {fileID: 0}
   hpBar: {fileID: 0}
 --- !u!120 &7385404921629059583
