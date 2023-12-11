@@ -19,9 +19,7 @@ public class ActivateCharacter : MonoBehaviour
             case 2:
                 samurai.SetActive(true);
                 break;
-            default:
-                Debug.Log("Invalid");
-                break;
+           
         }
     }
 

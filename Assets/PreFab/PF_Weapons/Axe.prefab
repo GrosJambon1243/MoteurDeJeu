@@ -193,6 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381f62797a796b24a85d62f117462db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axeDmg: 100
+  axeDmg: 50
   axeSpeed: 10
   theRb: {fileID: 2290968505431171393}

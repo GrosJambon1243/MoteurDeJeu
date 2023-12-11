@@ -102,19 +102,16 @@ public class PlayerMovement : MonoBehaviour
             _currentHealth -= damage;
             hpBar.SetHealth(_currentHealth, maxHealth);
             _isInvincible = true;
-
             _animator.SetTrigger("Hurt");
             hurtSoundEffect.Play();
             Invoke("PlayerInvinsible", 1);
         }
-
         if (_currentHealth <= 0)
         {
-            hpBar.SetHealth(0, maxHealth);
-            GeneralUi.SetActive(false);
-            _animator.SetTrigger("Death");
+            _theRb.velocity =  Vector2.zero;
             StartCoroutine(DeathAnimation());
         }
+
     }
     private void PlayerInvinsible()
     {
@@ -141,10 +138,11 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator DeathAnimation()
     {
+        yield return new WaitForSeconds(0.5f);
+        _animator.SetTrigger("Death");
         yield return new WaitForSeconds(2f);
         gameOverCanvas.SetActive(true);
         _dataCollecting.GetComponent<monsterKill>().MonsterText();
-        gameObject.SetActive(false);
         Time.timeScale = 0;
     }
     public IEnumerator FlashingHeal()

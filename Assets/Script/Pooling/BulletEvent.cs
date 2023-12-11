@@ -14,11 +14,11 @@ public class BulletEvent : PoolObject
     void Start()
     {
         initalPosition = transform.position;
-        rb.velocity = Vector2.left * bulletSpeed;
     }
 
     private void Update()
     {
+        rb.velocity = Vector2.left * bulletSpeed;
         lifeTime -= Time.deltaTime;
         if (lifeTime <= 0)
         {

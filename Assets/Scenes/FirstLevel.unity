@@ -284,17 +284,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 368943426016243311, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
   m_PrefabInstance: {fileID: 8082958449978017125}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &659804092 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3590936017253228640, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
-  m_PrefabInstance: {fileID: 8082958449978017125}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659804091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c3b61f96232451f819614bdfeee520d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &729417017
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003722991751075363, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2746578554282572762, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
       propertyPath: hpBar
@@ -546,6 +535,10 @@ PrefabInstance:
       propertyPath: GeneralUi
       value: 
       objectReference: {fileID: 1043174908}
+    - target: {fileID: 2746578554282572762, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2746578554282572762, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
       propertyPath: exitCanvas
       value: 
@@ -580,6 +573,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1003722991751075363, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
   m_PrefabInstance: {fileID: 1162775760}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1179851111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8934537537135839056, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
+  m_PrefabInstance: {fileID: 8082958449978017125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1179851116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179851111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3b61f96232451f819614bdfeee520d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1241113923 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8068927434193141327, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
@@ -714,6 +724,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd8e84c5fd3859f40ac0cb786c9fd0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1725159293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3112451053811399697, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
+  m_PrefabInstance: {fileID: 7401656148427125552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3b61f96232451f819614bdfeee520d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1914415187 stripped
@@ -1005,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelUp Ui
       objectReference: {fileID: 0}
+    - target: {fileID: 8761898455519393129, guid: 29f0eb209f660be41918d8623f61f342, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1026,6 +1051,10 @@ PrefabInstance:
       propertyPath: GeneralUi
       value: 
       objectReference: {fileID: 1043174908}
+    - target: {fileID: 2830970926125684695, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2830970926125684695, guid: a88338aca436a2f4792f98ba5fbffb6f, type: 3}
       propertyPath: exitCanvas
       value: 
@@ -1603,14 +1632,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5639321227936224790, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7260658334945749274, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
       propertyPath: m_Name
       value: ExitCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7260658334945749274, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7781159911797368233, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 659804092}
+      objectReference: {fileID: 1725159293}
+    - target: {fileID: 7781159911797368233, guid: 8f6efb7e6753ef744a0a1e236502cc09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1631,6 +1672,14 @@ PrefabInstance:
     - target: {fileID: 368943426016243311, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922408147819401767, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1179851116}
+    - target: {fileID: 2922408147819401767, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitButton
       objectReference: {fileID: 0}
     - target: {fileID: 5380053123841747026, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
       propertyPath: m_Pivot.x
@@ -1712,10 +1761,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5782185062699246322, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8934537537135839056, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1179851116}
   m_SourcePrefab: {fileID: 100100000, guid: 83b0bc4524ea40d468b0043f21fdf253, type: 3}
 --- !u!1001 &8818697766816943958
 PrefabInstance:

@@ -25,13 +25,6 @@ public class ButtonUi : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void SwordButton()
-    {
-        
-        gameObject.SetActive(false);
-        Time.timeScale = 1;
-    }
-
     public void ArrowButton()
     {
         _weaponManager = FindObjectOfType<WeaponManager>();

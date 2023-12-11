@@ -3,8 +3,6 @@ O
 Assets/Script/cameraMovement.cs,0\9\09f8316723e52a630d843360659ca9e2715550d0
 L
 Assets/Script/gameManager.cs,c\4\c4d1820513dcb071688fad24a05294ef9d912ff9
-I
-Assets/Script/mainMenu.cs,d\6\d6ec29fba3a73447b0991f798c38c3350d28230c
 V
 &Assets/Script/player/playerMovement.cs,4\c\4c3a02a3cd33f0abf7e9e379d0957d12f25066b7
 [
@@ -65,3 +63,9 @@ T
 $Assets/Script/Pooling/BulletEvent.cs,3\8\385751dc2220b156f440d0d8aa507ed0d15e5695
 V
 &Assets/Script/Pooling/BulletSpawner.cs,d\b\dbad62d112b2172c633df5a9a82b63faee32171a
+R
+"Assets/Script/mainMenu/mainMenu.cs,4\4\4472781004505e3989504ac4765ab9d273a1c45b
+[
++Assets/Script/mainMenu/CharacterSelector.cs,f\9\f9a359b51b1e015afd928c8dcf8382d2a8c266b2
+R
+"Assets/Script/ActivateCharacter.cs,8\a\8a2d2c5c1b66bdab5ec7125d0999f01137bb504b

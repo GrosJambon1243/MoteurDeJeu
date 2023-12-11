@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568d6bb41c63921408727110a57a798d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBallDmg: 50
+  fireBallDmg: 25
   fireBallSpeed: 10
   theRb: {fileID: 5570753617522628517}
 --- !u!96 &-3772765798163775906

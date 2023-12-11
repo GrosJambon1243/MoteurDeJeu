@@ -18614,7 +18614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003722991751075363, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2746578554282572762, guid: d422122b0a8d72e4aba9584ec8fb71f4, type: 3}
       propertyPath: hpBar

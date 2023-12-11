@@ -1,0 +1,6 @@
+
+Mcsharpsquid:S3903"0Move 'CharacterSelector' into a named namespace.(á÷ÙÇ
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(Èë©ö8¼þüŽÅ1
+rcsharpsquid:S2223"NChange the visibility of 'characterSelected' or make it 'const' or 'readonly'.(Èë©ö8¼þüŽÅ1
+~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(˜ÝÌ¹øÿÿÿÿ8”ŽúŽÅ1
+~csharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(¬´ž¦üÿÿÿÿ8”ŽúŽÅ1
