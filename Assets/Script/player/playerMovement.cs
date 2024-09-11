@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
     private Rigidbody2D _theRb;
     // Player Health
-    public int maxHealth = 100;
+    public float maxHealth = 100;
     private bool _isInvincible;
     public bool IsInvincible
     {
@@ -40,10 +40,10 @@ public class PlayerMovement : MonoBehaviour
     private bool _boolExitCanvas;
     // Health Bar
     public healthBar hpBar;
-    private int _currentHealth;
+    private float _currentHealth;
     private Vector3 worldPos;
 
-    public int CurrentHp
+    public float CurrentHp
     {
         get => _currentHealth;
         private set => _currentHealth = value;
@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
         }
     }
-    public void TakingDmg(int damage)
+    public void TakingDmg(float damage)
     {
         if (!_isInvincible)
         {

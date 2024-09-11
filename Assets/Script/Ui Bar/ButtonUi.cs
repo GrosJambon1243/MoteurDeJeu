@@ -12,7 +12,7 @@ public class ButtonUi : MonoBehaviour
     public void FireBallButton()
     {
         _weaponManager = FindObjectOfType<WeaponManager>();
-        _weaponManager.UnlockFireBall();
+        _weaponManager.LevelUpFireBall();
         gameObject.SetActive(false);
         Time.timeScale = 1;
     }

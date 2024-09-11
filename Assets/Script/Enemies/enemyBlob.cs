@@ -12,8 +12,8 @@ public class enemyBlob : enemyDamage
     private Vector3 direction;
     [SerializeField]float moveSpeed,attackTimer;
     private float attackCd;
-    public int blobMaxHealth = 100, damageOnContact;
-    private int blobCurrentHealth,_range;
+    public float blobMaxHealth = 50, damageOnContact;
+    private float blobCurrentHealth,_range;
     public Transform firePoint;
     [SerializeField] GameObject bullet,currency,experience,healPotion;
     private bool isKnockBack;
@@ -54,7 +54,7 @@ public class enemyBlob : enemyDamage
         ShootBullet();
     }
 
-    public override void TakingDmg(int dmg)
+    public override void TakingDmg(float dmg)
     {
         base.TakingDmg(dmg);
 
@@ -82,7 +82,7 @@ public class enemyBlob : enemyDamage
        
     }
 
-    public override void DeathAnim(GameObject coin, GameObject expCrystal, GameObject heal,Vector3 position, int range)
+    public override void DeathAnim(GameObject coin, GameObject expCrystal, GameObject heal,Vector3 position, float range)
     {
         var potionDrop = Random.Range(0, 10);
         position = transform.position;

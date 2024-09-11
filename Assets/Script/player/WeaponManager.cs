@@ -6,19 +6,28 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] private GameObject fireBall,axe,arrow;
+    [SerializeField] private FireBall _fireBall;
+    [SerializeField] private Axe _axe;
+    [SerializeField] private Arrow _arrow;
+    
     [SerializeField] private Transform fireBallSpot1,axeSpot,fireBallSpot2;
     [SerializeField] private float fireBallTimer,axeTimer,arrowTimer;
     private float fireBallCd, axeCd, arrowCd;
-    private bool asFireBall,asAxe;
-    private bool asArrow;
-    private int fireBallLevel, axeLevel, arrowLevel;
+    private bool asFireBall,asAxe,asArrow;
+
+    private int _fireBallLevel;
+    private int _axeLevel;
+    private int _arrowBallLevel;
+
 
     private void Start()
     {
         fireBallCd = fireBallTimer;
         axeCd = axeTimer;
         arrowCd = arrowTimer;
+        _fireBallLevel = 0;
+        _axeLevel = 0;
+        _arrowBallLevel = 0;
 
     }
 
@@ -42,138 +51,140 @@ public class WeaponManager : MonoBehaviour
 
     private void ShootFireBall()
     {
-        if (fireBallCd >= 0)
+        if (fireBallCd < 0) return;
+        fireBallCd -= Time.deltaTime;
+        switch (_fireBallLevel)
         {
-            fireBallCd -= Time.deltaTime;
-            switch (fireBallLevel)
-            {
-                case 1:
-                    if (fireBallCd <= 0)
-                    {
-                        Instantiate(fireBall, fireBallSpot1.transform.position,fireBallSpot1.rotation);
-                        Instantiate(fireBall,fireBallSpot2.transform.position,fireBallSpot2.rotation);
-                        fireBallCd = fireBallTimer;
-                    }
-                    break;
-                case 2: 
-                    if (fireBallCd <= 0)
-                    {
-                        Instantiate(fireBall, fireBallSpot1.transform.position,fireBallSpot1.rotation);
-                        Instantiate(fireBall,fireBallSpot2.transform.position,fireBallSpot2.rotation);
-                        Instantiate(fireBall, fireBallSpot1.transform.position+ new Vector3(0f,1f),fireBallSpot1.rotation);
-                        Instantiate(fireBall,fireBallSpot2.transform.position + new Vector3(0f,1f),fireBallSpot2.rotation);
-                        fireBallCd = fireBallTimer;
-                    }
-                    break;
-            }
-            
-           
+            case 1:
+                if (fireBallCd <= 0)
+                {
+                    Instantiate(_fireBall, fireBallSpot1.transform.position,fireBallSpot1.rotation);
+                    Instantiate(_fireBall,fireBallSpot2.transform.position,fireBallSpot2.rotation);
+                    fireBallCd = fireBallTimer;
+                }
+                break;
+            case >1: 
+                if (fireBallCd <= 0)
+                {
+                    Instantiate(_fireBall, fireBallSpot1.transform.position,fireBallSpot1.rotation);
+                    Instantiate(_fireBall,fireBallSpot2.transform.position,fireBallSpot2.rotation);
+                    Instantiate(_fireBall, fireBallSpot1.transform.position+ new Vector3(0f,1f),fireBallSpot1.rotation);
+                    Instantiate(_fireBall,fireBallSpot2.transform.position + new Vector3(0f,1f),fireBallSpot2.rotation);
+                    fireBallCd = fireBallTimer;
+                }
+                break;
         }
     }
 
     private void ShootAxe()
     {
-        if (axeCd >= 0)
-        {
-            axeCd -= Time.deltaTime;
+        if (axeCd < 0) return;
+        axeCd -= Time.deltaTime;
 
-            switch (axeLevel)
-            {
-                case 1:
-                    if (axeCd <= 0)
-                    {
-                        Instantiate(axe, axeSpot.position,axeSpot.rotation);
-                        axeCd = axeTimer;
-                    }
-                    break;
-                case 2:
-                    if (axeCd <= 0)
-                    {
-                        Instantiate(axe, axeSpot.position,axeSpot.rotation);
-                        Instantiate(axe, axeSpot.position+new Vector3(1f,0f),axeSpot.rotation);
-                        axeCd = axeTimer;
-                    }
-                    break;
+        switch (_axeLevel)
+        {
+            case 1:
+                if (axeCd <= 0)
+                {
+                    Instantiate(_axe, axeSpot.position,axeSpot.rotation);
+                    axeCd = axeTimer;
+                }
+                break;
+            case >1:
+                if (axeCd <= 0)
+                {
+                    Instantiate(_axe, axeSpot.position,axeSpot.rotation);
+                    Instantiate(_axe, axeSpot.position+new Vector3(1f,0f),axeSpot.rotation);
+                    axeCd = axeTimer;
+                }
+                break;
                             
-            }
         }
     }
 
     private void ShootArrow()
     {
-        if (arrowCd>=0)
+        if (arrowCd < 0) return;
+        arrowCd -= Time.deltaTime;
+        switch (_arrowBallLevel)
         {
-            arrowCd -= Time.deltaTime;
-            switch (arrowLevel)
-            {
-                case 1:
-                    if (arrowCd <= 0 )
-                    {
-                        var position = fireBallSpot1.transform.position;
-                        var rotation = fireBallSpot1.rotation;
-                        Instantiate(arrow, position,rotation); 
-                        Instantiate(arrow, new Vector3(0f,1f)+ position,rotation);
-                        Instantiate(arrow, new Vector3(0f,-1f)+ position,rotation);
-                        arrowCd = arrowTimer;
-                    }
+            case 1:
+                if (arrowCd <= 0 )
+                {
+                    var position = fireBallSpot1.transform.position;
+                    var rotation = fireBallSpot1.rotation;
+                    Instantiate(_arrow, position,rotation); 
+                    Instantiate(_arrow, new Vector3(0f,1f)+ position,rotation);
+                    Instantiate(_arrow, new Vector3(0f,-1f)+ position,rotation);
+                    arrowCd = arrowTimer;
+                }
 
-                    break;
-                case 2:
-                    if (arrowCd <= 0 )
-                    {
-                        var position = fireBallSpot1.transform.position;
-                        var rotation = fireBallSpot1.rotation;
-                        Instantiate(arrow, position,rotation); 
-                        Instantiate(arrow, new Vector3(0f,1f)+ position,rotation);
-                        Instantiate(arrow, new Vector3(0f,-1f)+ position,rotation);
-                        Instantiate(arrow, new Vector3(0f,2f)+ position,rotation);
-                        Instantiate(arrow, new Vector3(0f,-2f)+ position,rotation);
-                        arrowCd = arrowTimer;
-                    }
+                break;
+            case >1:
+                if (arrowCd <= 0 )
+                {
+                    var position = fireBallSpot1.transform.position;
+                    var rotation = fireBallSpot1.rotation;
+                    Instantiate(_arrow, position,rotation); 
+                    Instantiate(_arrow, new Vector3(0f,1f)+ position,rotation);
+                    Instantiate(_arrow, new Vector3(0f,-1f)+ position,rotation);
+                    Instantiate(_arrow, new Vector3(0f,2f)+ position,rotation);
+                    Instantiate(_arrow, new Vector3(0f,-2f)+ position,rotation);
+                    arrowCd = arrowTimer;
+                }
 
-                    break;
+                break;
                 
-            }
         }
     }
    
 
-    public void UnlockFireBall()
+    public void LevelUpFireBall()
     {
-        if (fireBallLevel == 2)
+        switch (_fireBallLevel)
         {
-            fireBallLevel = 2;
+            case 0:
+                asFireBall = true;
+                _fireBallLevel++;    
+                break;
+            case >0 :
+                _fireBallLevel++; 
+                _fireBall.LevelUp(1.5f,1.5f,2);
+                
+                break;
         }
-        else
-        {
-            fireBallLevel++;
-        }
-        asFireBall = true;
+        
     }
 
     public void UnlockAxe()
     {
-        if (axeLevel == 2)
+        switch (_axeLevel)
         {
-            axeLevel = 2;
+            case 0:
+                asAxe = true;
+                _axeLevel++;    
+                break;
+            case >0 :
+                _axeLevel++;
+                _axe.LevelUp(10,5,1);
+                
+                break;
         }
-        else
-        {
-            axeLevel++;
-        }
-        asAxe = true;
     }
 
     public void UnlockArrow()
     {
-        if (arrowLevel == 2)
+        switch (_arrowBallLevel)
         {
-           arrowLevel = 2;
+            case 0:
+                asArrow = true;
+               _arrowBallLevel++;    
+                break;
+            case >0 :
+                _arrowBallLevel++;
+                _arrow.LevelUp(10,5,1);
+                
+                break;
         }
-        else
-        {
-            arrowLevel++;
-        }
-        asArrow = true;
     }
 }

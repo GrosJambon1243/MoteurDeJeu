@@ -19,12 +19,8 @@ R
 "Assets/Script/Enemies/enemyBlob.cs,f\1\f187dc51f32c98285dacf762075ae495b94bb32c
 U
 %Assets/Script/player/WeaponManager.cs,6\9\6978e1d2f90fe9b87237a33513253959c93caa8e
-P
- Assets/Script/player/FireBall.cs,5\2\521493c3c2db4399d6752b71b7fbc020909a41c9
 T
 $Assets/Script/Enemies/enemyDamage.cs,c\d\cd129868d9f2e3066766812f8a27c66d801225e6
-K
-Assets/Script/player/Axe.cs,8\3\83f26054047460dab187b122277cc137cd637c24
 P
  Assets/Script/Ui Bar/ButtonUi.cs,f\4\f4e63ac68a04eb6ca8d6bd1dab0f5313033f1443
 Q
@@ -35,8 +31,6 @@ S
 #Assets/Script/Ui Bar/CurrencyBar.cs,a\7\a7e803adf7835f3ecf7b5add7c0b3147d112535f
 O
 Assets/Script/player/Getsuga.cs,9\8\98878fc545b6f06abb0a71704f270b1b4393cada
-M
-Assets/Script/player/Arrow.cs,7\3\736531e1780ef71fd15974882b9c029cad657d42
 K
 Assets/Script/SavingData.cs,c\0\c0b691a7cc157a3b6a04015732fb26863dae1b93
 K
@@ -69,3 +63,11 @@ R
 "Assets/Script/ActivateCharacter.cs,8\a\8a2d2c5c1b66bdab5ec7125d0999f01137bb504b
 [
 +Assets/Script/mainMenu/CharacterSelector.cs,f\9\f9a359b51b1e015afd928c8dcf8382d2a8c266b2
+S
+#Assets/Script/player/Weapons/Axe.cs,7\3\73794f6eaef9e22730aba239cdd8bda24e2a3481
+U
+%Assets/Script/player/Weapons/Arrow.cs,5\3\53cf966da8cf6e140023576942b5764801dcb252
+X
+(Assets/Script/player/Weapons/FireBall.cs,b\3\b3689f408efaf59aad4baf6b7f50016bfd426a31
+N
+Assets/Script/WeaponLevelUp.cs,0\f\0fef727c53f240e0fa0ce73ae178d4753c94c320

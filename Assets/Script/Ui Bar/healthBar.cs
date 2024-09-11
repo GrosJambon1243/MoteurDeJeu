@@ -12,13 +12,13 @@ public class healthBar : MonoBehaviour
    public Image fill;
 
 
-   public void SetMaxHealth(int maxHp)
+   public void SetMaxHealth(float maxHp)
    {
       slider.maxValue = maxHp;
       fill.color = gradient.Evaluate(1f);
 
    }
-   public void SetHealth(int health, int maxHp)
+   public void SetHealth(float health, float maxHp)
    {
       slider.value = health;
       hpTexte.text = health + " / " + maxHp;

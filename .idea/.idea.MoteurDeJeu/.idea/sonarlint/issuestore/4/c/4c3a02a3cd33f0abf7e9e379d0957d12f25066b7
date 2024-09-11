@@ -1,5 +1,5 @@
 
-Qcsharpsquid:S3903"-Move 'PlayerMovement' into a named namespace.(É»á8ùšéæÀ1
-hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¶Ÿ“‚8´²¤«Ã1
-hcsharpsquid:S1104*"DMake this field 'private' and encapsulate it in a 'public' property.(è®÷8´²¤«Ã1
-zcsharpsquid:S1450"QRemove the field '_y' and declare it as a local variable in the relevant methods.(İé¥Úşÿÿÿÿ8´²¤«Ã1
+Qcsharpsquid:S3903"-Move 'PlayerMovement' into a named namespace.(É»á8´ÉÖ™2
+hcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(éŸé½8´ÉÖ™2
+hcsharpsquid:S1104*"DMake this field 'private' and encapsulate it in a 'public' property.(è®÷8´ÉÖ™2
+zcsharpsquid:S1450"QRemove the field '_y' and declare it as a local variable in the relevant methods.(İé¥Úşÿÿÿÿ8´ÉÖ™2

@@ -11,13 +11,13 @@ public class enemyDamage : MonoBehaviour
         _sprite = GetComponent<SpriteRenderer>();
     }
 
-    public virtual void TakingDmg(int dmg)
+    public virtual void TakingDmg(float dmg)
     {
         StartCoroutine(Flashing());
     }
 
 
-    public virtual void DeathAnim(GameObject coin, GameObject expCrystal, GameObject heal, Vector3 position, int range)
+    public virtual void DeathAnim(GameObject coin, GameObject expCrystal, GameObject heal, Vector3 position, float range)
     {
         
     }

@@ -13,8 +13,8 @@ public class Enemy : enemyDamage
     private Vector3 direction;
     private int deathCount;
     [SerializeField] float moveSpeed;
-    public int maxHealth, damageDone;
-    private int currentHealth,_range;
+    public float maxHealth, damageDone;
+    private float currentHealth,_range;
     public Animator animator;
     private bool isKnockBack;
     private GameObject _dataCollecting;
@@ -60,7 +60,7 @@ public class Enemy : enemyDamage
        
     }
 
-    public override void TakingDmg(int dmg)
+    public override void TakingDmg(float dmg)
     {
         base.TakingDmg(dmg);
         currentHealth -= dmg;
@@ -75,7 +75,7 @@ public class Enemy : enemyDamage
     }
 
 
-    public override void DeathAnim(GameObject coin, GameObject expCrystal,GameObject heal,Vector3 position, int range)
+    public override void DeathAnim(GameObject coin, GameObject expCrystal,GameObject heal,Vector3 position, float range)
     {
         var potionDrop = Random.Range(0, 10);
         position = transform.position;

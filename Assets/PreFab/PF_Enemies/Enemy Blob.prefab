@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 75
   attackTimer: 6
-  blobMaxHealth: 100
+  blobMaxHealth: 50
   damageOnContact: 10
   firePoint: {fileID: 220119548829050969}
   bullet: {fileID: 9085941542724873081, guid: 0252f9d5cf8c6174b92ebb4e34372a62, type: 3}

@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.07, y: 1.18, z: 0}
-  m_LocalScale: {x: 2, y: 2.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568d6bb41c63921408727110a57a798d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBallDmg: 25
-  fireBallSpeed: 10
+  fireBallDmg: 168.75
+  fireBallSpeed: 45
   theRb: {fileID: 5570753617522628517}
 --- !u!96 &-3772765798163775906
 TrailRenderer:
