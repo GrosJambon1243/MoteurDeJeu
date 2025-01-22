@@ -1,4 +1,4 @@
-# MoteurDeJeu
+# Vampire Survivor Clone
 Kevin Durocher
 
 1) System de point de vie fait pour joueur et enemies
