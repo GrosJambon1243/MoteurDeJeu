@@ -4,5 +4,6 @@
 
 <h3>Ce que j'ai appris avec ce projet</h3>
 <ol>
-  <li>L'importance des principes de base de la programmation orienté objet. Plus spécifiquement l'héritage et le polymorphisme, que j'ai négliger lors de la conception de mes ennemies et des différentes armes utiiser par le joueur </li>
+  <li>L'importance des principes de base de la programmation orienté objet. Plus spécifiquement l'héritage et le polymorphisme, que j'ai négliger lors de la conception de mes ennemies et des différentes armes utiiser par le joueur. </li>
+  <li></li>
 </ol>
