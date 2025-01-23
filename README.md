@@ -1,3 +1,3 @@
 # Vampire Survivor Clone
-link pour essayer le jeu: https://kevinduro.itch.io/the-legend-of-gros-jambon
-mot de passe : 1234
+#Link pour essayer le jeu: https://kevinduro.itch.io/the-legend-of-gros-jambon
+#Mot de passe : 1234
