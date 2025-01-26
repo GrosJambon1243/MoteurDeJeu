@@ -2,6 +2,9 @@
 <h3>URL : https://kevinduro.itch.io/the-legend-of-gros-jambon </h3>
 <h3>Password : 1234 </h3>
 
+![image](https://github.com/user-attachments/assets/79a38976-32ce-44e8-be0b-4b4e1e170c05)
+
+
 <h3>What I've done in this project</h3>
 <ol>
   <li>Object pooling</li>
