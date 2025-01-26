@@ -2,7 +2,12 @@
 <h3>URL : https://kevinduro.itch.io/the-legend-of-gros-jambon </h3>
 <h3>Password : 1234 </h3>
 
-![image](https://github.com/user-attachments/assets/79a38976-32ce-44e8-be0b-4b4e1e170c05)
+![image](https://github.com/user-attachments/assets/9baf01ea-6bfe-4253-8d3e-229ba9023117)
+![image](https://github.com/user-attachments/assets/532524b7-f449-4ba2-b48d-753eb01e6813)
+![image](https://github.com/user-attachments/assets/fa4bd6ff-25c2-40ab-a50c-d581f0a5396d)
+
+
+
 
 
 <h3>What I've done in this project</h3>
