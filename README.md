@@ -17,6 +17,7 @@
   <li>Prefabs </li>
   <li>Creating shader using Shader Graph</li>
   <li>Creating Vfx using the particle system</li>
+  <li>Adding post-process effects using the Universal Render Pipeline</li>
 </ol>
 
 <h3>What I've learned from this project</h3>
