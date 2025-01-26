@@ -1,16 +1,18 @@
 # Vampire Survivor Clone
-<h3>Link pour essayer le jeu: https://kevinduro.itch.io/the-legend-of-gros-jambon </h3>
-<h3>Mot de passe : 1234 </h3>
+<h3>URL : https://kevinduro.itch.io/the-legend-of-gros-jambon </h3>
+<h3>Password : 1234 </h3>
 
-<h3>Ce que j'ai fait dans ce projet</h3>
+<h3>What I've done in this project</h3>
 <ol>
   <li>Object pooling</li>
-  <li>Animation</li>
-  <li></li>
+  <li>Animation using the animator in unity</li>
+  <li>Prefabs </li>
+  <li>Creating shader using Shader Graph</li>
+  <li>Creating Vfx using the particle system</li>
 </ol>
 
-<h3>Ce que j'ai appris avec ce projet</h3>
+<h3>What I've learned from this project</h3>
 <ol>
-  <li>L'importance des principes de base de la programmation orienté objet. Plus spécifiquement l'héritage et le polymorphisme, que j'ai négliger lors de la conception de mes ennemies et des différentes armes utiiser par le joueur. </li>
-  <li></li>
+  <li>The importance of the basic principles of object-oriented programming. More specifically inheritance and polymorphism, which I neglected when designing my enemies and the different weapons used by the player.</li>
+  <li>This was my first project and it taught me the importance of time management and task management. Also, I've learned how crucial it is to break down ideas into smaller one??</li>
 </ol>
