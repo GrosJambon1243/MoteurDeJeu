@@ -11,6 +11,10 @@
 <h3>Pause menu</h3>
 
 ![image](https://github.com/user-attachments/assets/fa4bd6ff-25c2-40ab-a50c-d581f0a5396d)
+<h3>Gameplay</h3>
+
+![image](https://github.com/user-attachments/assets/5b94dc9b-0341-4a62-afb6-acdaae12f0d9)
+
 
 
 
