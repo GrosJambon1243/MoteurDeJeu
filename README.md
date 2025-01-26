@@ -3,10 +3,13 @@
 <h3>Password : 1234 </h3>
 
 <h3>Main menu</h3>
+
 ![image](https://github.com/user-attachments/assets/9baf01ea-6bfe-4253-8d3e-229ba9023117)
 <h3>Level up menu</h3>
+
 ![image](https://github.com/user-attachments/assets/532524b7-f449-4ba2-b48d-753eb01e6813)
 <h3>Pause menu</h3>
+
 ![image](https://github.com/user-attachments/assets/fa4bd6ff-25c2-40ab-a50c-d581f0a5396d)
 
 
