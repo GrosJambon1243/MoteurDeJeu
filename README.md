@@ -22,16 +22,16 @@
 
 <h3>What I've done in this project</h3>
 <ol>
-  <li>Object pooling</li>
+  <li>Using object pooling</li>
   <li>Animation using the animator in unity</li>
-  <li>Prefabs </li>
+  <li>Implementing and using prefabs </li>
   <li>Creating shader using Shader Graph</li>
-  <li>Creating Vfx using the particle system</li>
+  <li>Making VFX using the particle system</li>
   <li>Adding post-process effects using the Universal Render Pipeline</li>
 </ol>
 
 <h3>What I've learned from this project</h3>
 <ol>
   <li>The importance of the basic principles of object-oriented programming. More specifically inheritance and polymorphism, which I neglected when designing my enemies and the different weapons used by the player.</li>
-  <li>This was my first project and it taught me the importance of time management and task management. Also, I've learned how crucial it is to break down ideas into smaller one??</li>
+  <li>This was my first project and it taught me the importance of time management and task management. Also, I've learned how crucial it is to break down ideas into smaller ones</li>
 </ol>
