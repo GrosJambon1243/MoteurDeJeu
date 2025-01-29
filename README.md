@@ -1,5 +1,5 @@
 # 🧛‍♂️ Vampire Survivor Clone  
-> **A fast-paced action roguelike inspired by Vampire Survivors.**  
+ 
 
 🔗 **[Play the game](https://kevinduro.itch.io/the-legend-of-gros-jambon) 🔑 Password: `1234`**  
 
@@ -31,17 +31,17 @@
 ---
 
 ## 🛠 **What I've Done**  
-✔️ Implemented **Object Pooling** for optimized performance  
-✔️ Created animations using **Unity's Animator**  
-✔️ Designed and used **Prefabs** for modular game objects  
-✔️ Developed custom **Shaders using Shader Graph**  
-✔️ Created **VFX using the Particle System**  
-✔️ Integrated **Post-Processing Effects** via URP  
-✔️ Designed **two playable characters** with unique attack patterns
+ Implemented **Object Pooling** for optimized performance  
+ Created animations using **Unity's Animator**  
+ Designed and used **Prefabs** for modular game objects  
+ Developed custom **Shaders using Shader Graph**  
+ Created **VFX using the Particle System**  
+ Integrated **Post-Processing Effects** via URP  
+ Designed **two playable characters** with unique attack patterns
 
 ---
 ## 🎓 **What I've Learned**  
-✅ The importance of **Object-Oriented Programming (OOP)** principles, particularly **inheritance** and **polymorphism**  
-✅ The significance of **time management and task breakdown** in game development  
-✅ How crucial it is to **iterate and test gameplay mechanics** efficiently  
+The importance of **Object-Oriented Programming (OOP)** principles, particularly **inheritance** and **polymorphism**  
+The significance of **time management and task breakdown** in game development  
+How crucial it is to **iterate and test gameplay mechanics** efficiently  
 
