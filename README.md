@@ -38,3 +38,10 @@
 ✔️ Created **VFX using the Particle System**  
 ✔️ Integrated **Post-Processing Effects** via URP  
 ✔️ Designed **two playable characters** with unique attack patterns
+
+---
+## 🎓 **What I've Learned**  
+✅ The importance of **Object-Oriented Programming (OOP)** principles, particularly **inheritance** and **polymorphism**  
+✅ The significance of **time management and task breakdown** in game development  
+✅ How crucial it is to **iterate and test gameplay mechanics** efficiently  
+
