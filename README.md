@@ -1,41 +1,40 @@
-# Vampire Survivor Clone
-<h3>URL : https://kevinduro.itch.io/the-legend-of-gros-jambon </h3>
-<h3>Password : 1234 </h3>
+# 🧛‍♂️ Vampire Survivor Clone  
+> **A fast-paced action roguelike inspired by Vampire Survivors.**  
 
-<h3>Main menu</h3>
+🔗 **[Play the game](https://kevinduro.itch.io/the-legend-of-gros-jambon) 🔑 Password: `1234`**  
 
-![image](https://github.com/user-attachments/assets/9baf01ea-6bfe-4253-8d3e-229ba9023117)
-<h3>Level up menu</h3>
+---
 
-![image](https://github.com/user-attachments/assets/532524b7-f449-4ba2-b48d-753eb01e6813)
-<h3>Pause menu</h3>
+## 📸 Screenshots  
 
-![image](https://github.com/user-attachments/assets/fa4bd6ff-25c2-40ab-a50c-d581f0a5396d)
-<h3>Gameplay</h3>
+### **Main Menu**  
+![image](https://github.com/user-attachments/assets/9baf01ea-6bfe-4253-8d3e-229ba9023117)  
 
-![image](https://github.com/user-attachments/assets/5b94dc9b-0341-4a62-afb6-acdaae12f0d9)
+### **Level Up Menu**  
+![image](https://github.com/user-attachments/assets/532524b7-f449-4ba2-b48d-753eb01e6813)  
 
-![image](https://github.com/user-attachments/assets/dee71880-cd40-4c93-8710-59e79c36eec1)
+### **Pause Menu**  
+![image](https://github.com/user-attachments/assets/fa4bd6ff-25c2-40ab-a50c-d581f0a5396d)  
 
+### **Gameplay**  
+![image](https://github.com/user-attachments/assets/5b94dc9b-0341-4a62-afb6-acdaae12f0d9)  
+![image](https://github.com/user-attachments/assets/dee71880-cd40-4c93-8710-59e79c36eec1)  
 
+---
 
+## 🔧 **Technologies Used**  
+![Unity](https://img.shields.io/badge/Engine-Unity-black?style=for-the-badge&logo=unity)  
+![C#](https://img.shields.io/badge/Language-C%23-blue?style=for-the-badge&logo=csharp)  
+![Shader Graph](https://img.shields.io/badge/Graphics-Shader%20Graph-purple?style=for-the-badge)  
+![URP](https://img.shields.io/badge/Rendering-URP-lightgrey?style=for-the-badge)  
 
+---
 
-
-
-<h3>What I've done in this project</h3>
-<ol>
-  <li>Used and implemented the object pooling pattern</li>
-  <li>Created animations using the animator in unity</li>
-  <li>Implemented and used prefabs </li>
-  <li>Created shaders using Shader Graph</li>
-  <li>Made VFX using the particle system</li>
-  <li>Added post-process effects using the Universal Render Pipeline</li>
-  <li>Designed two playable characters with different attack patterns</li>
-</ol>
-
-<h3>What I've learned from this project</h3>
-<ol>
-  <li>The importance of the basic principles of object-oriented programming. More specifically inheritance and polymorphism, which I neglected when designing my enemies and the different weapons used by the player.</li>
-  <li>This was my first project and it taught me the importance of time management and task management. Also, I've learned how crucial it is to break down ideas into smaller ones</li>
-</ol>
+## 🛠 **What I've Done**  
+✔️ Implemented **Object Pooling** for optimized performance  
+✔️ Created animations using **Unity's Animator**  
+✔️ Designed and used **Prefabs** for modular game objects  
+✔️ Developed custom **Shaders using Shader Graph**  
+✔️ Created **VFX using the Particle System**  
+✔️ Integrated **Post-Processing Effects** via URP  
+✔️ Designed **two playable characters** with unique attack patterns
