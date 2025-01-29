@@ -25,13 +25,13 @@
 
 <h3>What I've done in this project</h3>
 <ol>
-  <li>Used and implemented the object pooling patern</li>
-  <li>Created animation using the animator in unity</li>
+  <li>Used and implemented the object pooling pattern</li>
+  <li>Created animations using the animator in unity</li>
   <li>Implemented and used prefabs </li>
-  <li>Created shader using Shader Graph</li>
-  <li>Maked VFX using the particle system</li>
+  <li>Created shaders using Shader Graph</li>
+  <li>Made VFX using the particle system</li>
   <li>Added post-process effects using the Universal Render Pipeline</li>
-  <li>Designed two playable character with different attack patern</li>
+  <li>Designed two playable characters with different attack patterns</li>
 </ol>
 
 <h3>What I've learned from this project</h3>
