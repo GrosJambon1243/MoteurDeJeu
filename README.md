@@ -29,17 +29,17 @@
 ---
 
 ## 🛠 **What I've Done**  
- 1. Implemented **Object Pooling** for optimized performance  
- 2. Created animations using **Unity's Animator**  
- 3. Designed and used **Prefabs** for modular game objects  
- 4. Developed custom **Shaders using Shader Graph**  
- 5. Created **VFX using the Particle System**  
- 6. Integrated **Post-Processing Effects** with the URP  
- 7. Designed **two playable characters** with unique attack patterns
+ - Implemented **Object Pooling** for optimized performance  
+ - Created animations using **Unity's Animator**  
+ - Designed and used **Prefabs** for modular game objects  
+ - Developed custom **Shaders using Shader Graph**  
+ - Created **VFX using the Particle System**  
+ - Integrated **Post-Processing Effects** with the URP  
+ - Designed **two playable characters** with unique attack patterns
 
 ---
 ## 🎓 **What I've Learned**  
-1. The importance of **Object-Oriented Programming (OOP)** principles, particularly **inheritance** and **polymorphism**  
-2. The significance of **time management and task breakdown** while developing a game   
-3. How crucial it is to **iterate and test gameplay mechanics** often
+- The importance of **Object-Oriented Programming (OOP)** principles, particularly **inheritance** and **polymorphism**  
+- The significance of **time management and task breakdown** while developing a game   
+- How crucial it is to **iterate and test gameplay mechanics** often
 
