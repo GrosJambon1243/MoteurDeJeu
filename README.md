@@ -2,7 +2,10 @@
  
 
 🔗 **[Play the game](https://kevinduro.itch.io/the-legend-of-gros-jambon) 🔑 Password: `1234`**  
-
+---
+## 🔧 **Technologies Used**  
+![Unity](https://img.shields.io/badge/Engine-Unity-black?style=for-the-badge&logo=unity)  
+![C#](https://img.shields.io/badge/Language-C%23-blue?style=for-the-badge&logo=csharp)  
 ---
 
 ## 📸 Screenshots  
@@ -20,11 +23,7 @@
 ![image](https://github.com/user-attachments/assets/5b94dc9b-0341-4a62-afb6-acdaae12f0d9)  
 ![image](https://github.com/user-attachments/assets/dee71880-cd40-4c93-8710-59e79c36eec1)  
 
----
 
-## 🔧 **Technologies Used**  
-![Unity](https://img.shields.io/badge/Engine-Unity-black?style=for-the-badge&logo=unity)  
-![C#](https://img.shields.io/badge/Language-C%23-blue?style=for-the-badge&logo=csharp)  
 
 ---
 
