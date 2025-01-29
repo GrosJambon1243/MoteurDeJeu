@@ -28,6 +28,7 @@
   <li>Creating shader using Shader Graph</li>
   <li>Making VFX using the particle system</li>
   <li>Adding post-process effects using the Universal Render Pipeline</li>
+  <li>Designing two playable character with different attack patern</li>
 </ol>
 
 <h3>What I've learned from this project</h3>
